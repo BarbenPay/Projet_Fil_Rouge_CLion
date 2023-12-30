@@ -1,0 +1,2 @@
+[30/12/2023 23:20:49] Démarrage du découpage de la phrase: Avance de 10 metre
+[30/12/2023 23:20:49] Découpage.c --- Découpage correctement effectué.
