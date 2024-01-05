@@ -43,33 +43,81 @@ bool isWordANumber(char* word){
     return isWordInDict(word, "../Dictionnaire/number_FR.txt");
 }
 
-int wordType (char* word){ //-1. Rien / 1. Mouvement / .2. Nombre
+bool isWordAUnite(char* word){
+    return isWordInDict(word, "../Dictionnaire/unite_FR.txt");
+}
+
+bool isWordANegation(char* word){
+    return isWordInDict(word, "../Dictionnaire/negation_FR.txt");
+}
+
+int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Unité
     if(isWordAMovementWord(word)){
+        char* toSend = (char*) malloc(sizeof (char) * (68 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
         return 1;
     }else if(isWordANumber(word)){
+        char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Nombre trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
         return 2;
+    }else if(isWordAUnite(word)){
+        char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Unité trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 3;
+    }else if (isWordANegation(word)){
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Négation potentielle trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 4;
     }else{
+        char* toSend = (char*) malloc(sizeof (char) * (45 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Mot non reconnu.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
         return -1;
     }
 }
 
 wordTypeStruct* init_wordTypeStruct(){
     wordTypeStruct* res = (wordTypeStruct*) malloc(sizeof(wordTypeStruct));
+    if (res == NULL){
+        log_file("Regroupement.c --- Erreur d'allocation de mémoire pour wordTypeStruct.");
+        exit(EXIT_FAILURE);
+    }
     res->typeWord = -2;
     res->word = NULL;
     return res;
 }
 
 wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase){
+    log_file("Regroupement.c --- Démarrage de l'analyse de la phrase.");
     wordTypeStruct** res = (wordTypeStruct**) malloc(sizeof (wordTypeStruct*) * phrase->wordNumber );
+    if (res == NULL){
+        log_file("Regroupement.c --- Erreur d'allocation de mémoire pour wordTypeStruct dans sentenceToWordTypeArray.");
+        exit(EXIT_FAILURE);
+    }
     for(int i = 0; i < phrase->wordNumber; i++){
         res[i] = init_wordTypeStruct();
         res[i]->typeWord = wordType(phrase->wordArray[i]);
         res[i]->word = phrase->wordArray[i];
         if(res[i]->typeWord==-2){
-
+            log_file("Regroupement.c --- Erreur dans l'initialisation de la valeur typeWord.");
+            exit(EXIT_FAILURE);
         }
     }
-
+    log_file("Regroupement.c --- Analyse correctement effectuée.");
     return res;
 }
+

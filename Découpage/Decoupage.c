@@ -22,7 +22,7 @@ Phrase * init_Sentence(){ //Permet d'initialiser la phrase la structure de la ph
     res->wordNumber = 0;
 
     return res;
-}
+} //initialise une structure de type Phrase
 
 
 Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé du nombre de mot et du tableau des différents mots de la phrase
@@ -63,7 +63,7 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
 
     for (int i = 0; i < lenght_sentence; i++){
 
-        if ((phrase[i]== ' ')||(phrase[i]=='\0')){
+        if ((phrase[i]== ' ')||(phrase[i]=='\0') || (phrase[i] == '\'')){
 
             if (strlen(tmp_word) != 0){
 
@@ -112,4 +112,4 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
     log_file("Découpage.c --- Découpage correctement effectué.");
     return res;
 
-}
+}// Découpage de la phrase passée en paramètre et renvoie une structure composée des différents mots en chaîne de caractère

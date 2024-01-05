@@ -1,2 +1,9 @@
-[30/12/2023 23:20:49] Démarrage du découpage de la phrase: Avance de 10 metre
-[30/12/2023 23:20:49] Découpage.c --- Découpage correctement effectué.
+[02/01/2024 22:23:47] Démarrage du découpage de la phrase: N'avance pas
+[02/01/2024 22:25:00] Découpage.c --- Découpage correctement effectué.
+[02/01/2024 22:25:00] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[02/01/2024 22:25:00] Regroupement.c --- Négation potentielle trouvée.     Mot: N
+[02/01/2024 22:25:00] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[02/01/2024 22:25:00] Regroupement.c --- Négation potentielle trouvée.     Mot: pas
+[02/01/2024 22:25:00] Regroupement.c --- Analyse correctement effectuée.
+[02/01/2024 22:25:00] Analyse.c --- Démarage du traitement de la phrase.
+[02/01/2024 22:25:00] Analyse.c --- Le traitement de la phrase n'est pas parvenu le sens de la phrase.

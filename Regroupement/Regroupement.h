@@ -17,14 +17,21 @@ typedef struct wordtype{
 }wordTypeStruct;
 
 
-bool isWordInDict(char* word, char* dict);
+bool isWordInDict(char* word, char* dict); // Définit si le mot est dans le dictionnaire passé en paramètre
 
+bool isWordAMovementWord(char* word); //Définit si le mot est verbe de mouvement vers l'avant
 
-bool isWordAMovementWord(char* word);
-bool isWordANumber(char* word);
-int wordType(char* word);
-wordTypeStruct* init_wordTypeStruct();
-wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase);
+bool isWordANumber(char* word); // Définit si le mot est un nombre
+
+bool isWordAUnite(char* word); // Définit si le mot est une unité
+
+bool isWordANegation(char* word); // Définit si le mot est un mot de négation
+
+int wordType(char* word); // Renvoie le code du type du mot
+
+wordTypeStruct* init_wordTypeStruct(); // Initialise une structure wordTypeStruct
+
+wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase); // Analyse de la phrase et renvoie un tableau de la structure composé du code et de la chaine de caractère du mot
 
 
 

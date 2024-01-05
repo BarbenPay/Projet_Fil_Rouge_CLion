@@ -2,7 +2,13 @@ centimetre
 centimetres
 centimètre
 centimètres
+cm
+Cm
+CM
+cM
 metre
 metres
 mètre
 mètres
+m
+M
