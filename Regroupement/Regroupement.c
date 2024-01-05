@@ -35,8 +35,12 @@ bool isWordInDict(char* word, char* dict){
 
 }
 
-bool isWordAMovementWord(char* word){
-    return isWordInDict(word, "../Dictionnaire/Forward_movement_FR.txt");
+bool isWordAForwardMovementWord(char* word){
+    return isWordInDict(word, "../Dictionnaire/forward_movement_FR.txt");
+}
+
+bool isWordABackwardMovementWord(char* word){
+    return isWordInDict(word, "../Dictionnaire/backward_movement_FR.txt");
 }
 
 bool isWordANumber(char* word){
@@ -51,8 +55,8 @@ bool isWordANegation(char* word){
     return isWordInDict(word, "../Dictionnaire/negation_FR.txt");
 }
 
-int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Unité
-    if(isWordAMovementWord(word)){
+int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Unité / 4. Négation / 5. Mouvement Backward
+    if(isWordAForwardMovementWord(word)){
         char* toSend = (char*) malloc(sizeof (char) * (68 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: ");
         strcat(toSend, word);
@@ -80,6 +84,13 @@ int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Un
         log_file(toSend);
         free(toSend);
         return 4;
+    }else if(isWordABackwardMovementWord(word)){
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 5;
     }else{
         char* toSend = (char*) malloc(sizeof (char) * (45 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Mot non reconnu.     Mot: ");

@@ -13,7 +13,7 @@ int charToNumber(char* numberChar){
 int analyse(wordTypeStruct** phrase, Phrase* wordArray){
 
     log_file("Analyse.c --- Démarage du traitement de la phrase.");
-    int isForwardMovementWordPresent = -1, isNumberPresent = -1, isUnitePresent = -1, isNegationPresent = 0;
+    int isForwardMovementWordPresent = -1, isBackwardMovementWordPresent = -1, isNumberPresent = -1, isUnitePresent = -1, isNegationPresent = 0;
 
     for( int i = 0; i < wordArray->wordNumber ; i++ ){
         if(phrase[i]->typeWord == 1){
@@ -24,6 +24,8 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
             isUnitePresent = i;
         }else if(phrase[i]->typeWord == 4){
             isNegationPresent +=1;
+        }else if(phrase[i]->typeWord == 5){
+            isBackwardMovementWordPresent = i;
         }
     } //Analyse des types de mots pour pouvoir comprendre la phrase et initilisation des variables
 
@@ -35,7 +37,20 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
         log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'avant sans spécification de la distance");
         printf("Le robot va avancer d'un mètre.\n");
         return 1;
-    }else{
+    }else if((isBackwardMovementWordPresent != -1) && (isUnitePresent = -1) && (isNumberPresent != -1) && (isNegationPresent != 2)){
+        log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière avec une spécification de la distance.");
+        printf("Le robot va reculer de %d %s.\n", charToNumber(phrase[isNumberPresent]->word), phrase[isUnitePresent]->word);
+        return 1;
+    }else if((isBackwardMovementWordPresent != -1) && (isNegationPresent != 2)){
+        log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière sans spécification de la distance");
+        printf("Le robot va reculer d'un mètre.\n");
+        return 1;
+    }
+
+
+
+
+    else{
         log_file("Analyse.c --- Le traitement de la phrase n'est pas parvenu à trouver le sens de la phrase.");
         printf("Le robot ne va rien faire.\n");
         return 0;

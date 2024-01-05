@@ -19,7 +19,9 @@ typedef struct wordtype{
 
 bool isWordInDict(char* word, char* dict); // Définit si le mot est dans le dictionnaire passé en paramètre
 
-bool isWordAMovementWord(char* word); //Définit si le mot est verbe de mouvement vers l'avant
+bool isWordAForwardMovementWord(char* word);//Définit si le mot est verbe de mouvement vers l'avant
+
+bool isWordABackwardMovementWord(char* word);//Définit si le mot est un verbe de mouvement vers l'arrière
 
 bool isWordANumber(char* word); // Définit si le mot est un nombre
 
