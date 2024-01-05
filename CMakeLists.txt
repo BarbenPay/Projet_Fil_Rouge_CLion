@@ -9,4 +9,6 @@ add_executable(Projet_Fil_Rouge_CLion main.c
         Log/fichier_Log.c
         Log/fichier_Log.h
         Regroupement/Regroupement.c
-        Regroupement/Regroupement.h)
+        Regroupement/Regroupement.h
+        Analyse_Phrase/Analyse.c
+        Analyse_Phrase/Analyse.h)

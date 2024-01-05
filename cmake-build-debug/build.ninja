@@ -73,6 +73,12 @@ build CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o: C_COM
   OBJECT_DIR = CMakeFiles/Projet_Fil_Rouge_CLion.dir
   OBJECT_FILE_DIR = CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement
 
+build CMakeFiles/Projet_Fil_Rouge_CLion.dir/Analyse_Phrase/Analyse.c.o: C_COMPILER__Projet_Fil_Rouge_CLion_unscanned_Debug /Users/jean-baptiste/1ere_annee_upssitech/Projet$ Fil$ Rouge/Projet$ Fil$ Rouge$ CLion/Analyse_Phrase/Analyse.c || cmake_object_order_depends_target_Projet_Fil_Rouge_CLion
+  DEP_FILE = CMakeFiles/Projet_Fil_Rouge_CLion.dir/Analyse_Phrase/Analyse.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Projet_Fil_Rouge_CLion.dir
+  OBJECT_FILE_DIR = CMakeFiles/Projet_Fil_Rouge_CLion.dir/Analyse_Phrase
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Projet_Fil_Rouge_CLion
@@ -81,7 +87,7 @@ build CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o: C_COM
 #############################################
 # Link the executable Projet_Fil_Rouge_CLion
 
-build Projet_Fil_Rouge_CLion: C_EXECUTABLE_LINKER__Projet_Fil_Rouge_CLion_Debug CMakeFiles/Projet_Fil_Rouge_CLion.dir/main.c.o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o
+build Projet_Fil_Rouge_CLion: C_EXECUTABLE_LINKER__Projet_Fil_Rouge_CLion_Debug CMakeFiles/Projet_Fil_Rouge_CLion.dir/main.c.o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Analyse_Phrase/Analyse.c.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
   OBJECT_DIR = CMakeFiles/Projet_Fil_Rouge_CLion.dir
   POST_BUILD = :
