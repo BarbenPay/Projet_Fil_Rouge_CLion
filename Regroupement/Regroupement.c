@@ -79,22 +79,22 @@ bool isWordAMovementWord(char*word, int code_language){
     }
 }
 
-bool isWordANumber(char* word, int code_language){
+bool isWordACentimeterUnite(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Nombre/number.txt");
+        return isWordInDict(word, "../Dictionnaire/FR/Unite/centimeter.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Number/number.txt");
+        return isWordInDict(word, "../Dictionnaire/EN/Unite/centimeter.txt");
     } else {
-        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordANumber.");
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAUnite.");
         exit(EXIT_FAILURE);
     }
 }
 
-bool isWordAUnite(char* word, int code_language){
+bool isWorsdACentimeterUnite(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Unite/unite.txt");
+        return isWordInDict(word, "../Dictionnaire/FR/Unite/meter.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Unite/unite.txt");
+        return isWordInDict(word, "../Dictionnaire/EN/Unite/meter.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAUnite.");
         exit(EXIT_FAILURE);
@@ -122,8 +122,6 @@ bool isWordANegation(char* word, int code_language){
         exit(EXIT_FAILURE);
     }
 }
-
-
 
 bool isWordABackwardDirection(char* word, int code_language){
     if (code_language == 1) {
@@ -171,67 +169,76 @@ bool isWordARightDirection(char* word, int code_language){
 
 
 
-// Code // -1. Rien / 1. backward_movement / 2. forward_movement / 3. rotating_movement / 4. movement / 10. forward_direction /
-// 11. backward_direction / 12. right_direction / 13. left_direction / 20. number / 30. object / 40. negation / 50. unite
+////////////////////////////////////////// Code ////////////////////////////////////////////////////
+// -1. Rien /
+// 1. backward_movement / 2. forward_movement / 3. rotating_movement / 4. movement /
+// 10. forward_direction / 11. backward_direction / 12. right_direction / 13. left_direction /
+// 20. number /
+// 30. object /
+// 40. negation /
+// 50. mètre / 51. centimètre
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 int wordType (char* word, int code_language){
     if(isWordABackwardMovementWord(word, code_language)) {
-        char *toSend = (char *) malloc(sizeof(char) * (58 + strlen(word)));
+        char *toSend = (char *) malloc(sizeof(char) * (71 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 1;
     }else if(isWordAForwardMovementWord(word, code_language)){
-        char* toSend = (char*) malloc(sizeof (char) * (68 + strlen(word)));
+        char* toSend = (char*) malloc(sizeof (char) * (69 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 2;
     }else if(isWordARotationWord(word, code_language)){
-        char* toSend = (char*) malloc(sizeof (char) * (54 + strlen(word)));
+        char* toSend = (char*) malloc(sizeof (char) * (55 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de rotation trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 3;
     }else if(isWordAMovementWord(word, code_language)){
-        char* toSend = (char*) malloc(sizeof (char) * (55 + strlen(word)));
+        char* toSend = (char*) malloc(sizeof (char) * (56 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de mouvement trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 4;
     }else if(isWordAForwardDirection(word, code_language)) {
-        char *toSend = (char *) malloc(sizeof(char) * (60 + strlen(word)));
+        char *toSend = (char *) malloc(sizeof(char) * (61 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers l'avant trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 10;
     }else if(isWordABackwardDirection(word, code_language)) {
-        char *toSend = (char *) malloc(sizeof(char) * (62 + strlen(word)));
+        char *toSend = (char *) malloc(sizeof(char) * (63 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers l'arrière trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 11;
     }else if(isWordARightDirection(word, code_language)) {
-        char *toSend = (char *) malloc(sizeof(char) * (62 + strlen(word)));
+        char *toSend = (char *) malloc(sizeof(char) * (63 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers la droite trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 12;
     }else if(isWordALeftDirection(word, code_language)) {
-        char *toSend = (char *) malloc(sizeof(char) * (62 + strlen(word)));
+        char *toSend = (char *) malloc(sizeof(char) * (63 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers la gauche trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 13;
     }else if(isWordANumber(word, code_language)){
-        char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
+        char* toSend = (char*) malloc(sizeof (char) * (44 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Nombre trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
@@ -245,21 +252,28 @@ int wordType (char* word, int code_language){
         free(toSend);
         return 30;
     }else if (isWordANegation(word, code_language)){
-        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        char* toSend = (char*) malloc(sizeof (char) * (59 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Négation potentielle trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 40;
-    }else if(isWordAUnite(word, code_language)){
-        char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
-        strcpy(toSend,"Regroupement.c --- Unité trouvée.     Mot: ");
+    }else if(isWordAMeterUnite(word, code_language)){
+        char* toSend = (char*) malloc(sizeof (char) * (54 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Unité \"Mètre\" trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 50;
+    }else if(isWordACentimeterUnite(word, code_language)){
+        char* toSend = (char*) malloc(sizeof (char) * (59 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Unité \"Centimètre\" trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 51;
     }else{
-        char* toSend = (char*) malloc(sizeof (char) * (45 + strlen(word)));
+        char* toSend = (char*) malloc(sizeof (char) * (46 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Mot non reconnu.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
