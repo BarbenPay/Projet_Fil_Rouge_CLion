@@ -1,4 +1,13 @@
-[07/01/2024 21:56:59] Démarrage du découpage de la phrase: N'avance pas
-[07/01/2024 21:56:59] Découpage.c --- Découpage correctement effectué.
-[07/01/2024 21:56:59] Regroupement.c --- Démarrage de l'analyse de la phrase.
-[07/01/2024 21:56:59] Regroupement.c --- Erreur lors de l'ouverture du dictionnaire: ../Dictionnaire/FR/Mouvement/forward_movement.txt
+[07/01/2024 22:11:52] Démarrage du découpage de la phrase: avance de 2 mètre pas
+[07/01/2024 22:11:52] Découpage.c --- Découpage correctement effectué.
+[07/01/2024 22:11:52] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[07/01/2024 22:11:52] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[07/01/2024 22:11:52] Regroupement.c --- Mot non reconnu.     Mot: de
+[07/01/2024 22:11:52] Regroupement.c --- Nombre trouvé.     Mot: 2
+[07/01/2024 22:11:52] Regroupement.c --- Unité trouvée.     Mot: mètre
+[07/01/2024 22:11:52] Regroupement.c --- Négation potentielle trouvée.     Mot: pas
+[07/01/2024 22:11:52] Regroupement.c --- Analyse correctement effectuée.
+[07/01/2024 22:11:52] Analyse.c --- Démarrage du traitement de la phrase.
+[07/01/2024 22:11:52] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'avant avec une spécification de la distance.
+[07/01/2024 22:11:52] Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.
+[07/01/2024 22:11:52] Analyse.c --- Traitement correctement effectué.

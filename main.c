@@ -9,7 +9,7 @@ int main() {
 
     log_file_init();
     Phrase* res;
-    res = decoupage("N'avance pas");
+    res = decoupage("avance de 2 mètre pas");
     for (int i = 0; i<res->wordNumber; i++) {
         printf("%s\n", res->wordArray[i]);
     }

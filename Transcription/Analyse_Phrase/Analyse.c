@@ -74,21 +74,6 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
         log_file("Analyse.c --- Traitement correctement effectué.");
         return 1;
     }
-/*
-    if(!negation){
-        if(Number){
-            if(avance){
-            }else if(recule){
-            }else if(rotation && direction){
-            }
-        }else{
-            if(avance){
-            }else if(recule){
-            }else if(rotation && direction){
-            }
-        }
-    }
-*/
 
     else{
         log_file("Analyse.c --- Le traitement de la phrase n'est pas parvenu à trouver le sens de la phrase.");

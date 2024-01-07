@@ -50,9 +50,9 @@ bool isWordABackwardMovementWord(char* word, int code_language) {
 
 bool isWordAForwardMovementWord(char* word, int code_language){
     if(code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/forward_movement.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Mouvement/forward_movement.txt");
     }else if(code_language == 2){
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/forward_movement.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Mouvement/forward_movement.txt");
     }else{
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAForwardMovementWord.");
         exit(EXIT_FAILURE);
@@ -61,9 +61,9 @@ bool isWordAForwardMovementWord(char* word, int code_language){
 
 bool isWordARotationWord(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/rotation.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Mouvement/rotation.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/rotation.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Mouvement/rotation.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordARotationWord.");
         exit(EXIT_FAILURE);
@@ -72,9 +72,9 @@ bool isWordARotationWord(char* word, int code_language){
 
 bool isWordAMovementWord(char*word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/movement.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Mouvement/movement.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/movement.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Mouvement/movement.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAMovementWord.");
         exit(EXIT_FAILURE);
@@ -83,9 +83,9 @@ bool isWordAMovementWord(char*word, int code_language){
 
 bool isWordANumber(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Nombre/number.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Nombre/number.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Number/number.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Number/number.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordANumber.");
         exit(EXIT_FAILURE);
@@ -94,9 +94,9 @@ bool isWordANumber(char* word, int code_language){
 
 bool isWordAUnite(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Unite/unite.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Unite/unite.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Unite/unite.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Unite/unite.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAUnite.");
         exit(EXIT_FAILURE);
@@ -105,9 +105,9 @@ bool isWordAUnite(char* word, int code_language){
 
 bool isWordAnObject(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Objet/objet.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Objet/objet.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Object/object.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Object/object.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAnObject.");
         exit(EXIT_FAILURE);
@@ -116,9 +116,9 @@ bool isWordAnObject(char* word, int code_language){
 
 bool isWordANegation(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Negation/negation.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Negation/negation.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Negation/negation.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Negation/negation.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordANegation.");
         exit(EXIT_FAILURE);
@@ -129,9 +129,9 @@ bool isWordANegation(char* word, int code_language){
 
 bool isWordABackwardDirection(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Direction/backward_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Direction/backward_direction.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Direction/backward_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Direction/backward_direction.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordABackwardDirection.");
         exit(EXIT_FAILURE);
@@ -140,9 +140,9 @@ bool isWordABackwardDirection(char* word, int code_language){
 
 bool isWordAForwardDirection(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Direction/forward_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Direction/forward_direction.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Direction/forward_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Direction/forward_direction.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAForwardDirection.");
         exit(EXIT_FAILURE);
@@ -151,9 +151,9 @@ bool isWordAForwardDirection(char* word, int code_language){
 
 bool isWordALeftDirection(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Direction/left_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Direction/left_direction.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Direction/left_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Direction/left_direction.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordALeftDirection.");
         exit(EXIT_FAILURE);
@@ -162,9 +162,9 @@ bool isWordALeftDirection(char* word, int code_language){
 
 bool isWordARightDirection(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Direction/right_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Direction/right_direction.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Direction/right_direction.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Direction/right_direction.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordARightDirection.");
         exit(EXIT_FAILURE);
