@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Découpage/Decoupage.h"
+#include "Transcription/Découpage/Decoupage.h"
 #include "Log/fichier_Log.h"
-#include "Regroupement/Regroupement.h"
-#include "Analyse_Phrase/Analyse.h"
+#include "Transcription/Regroupement/Regroupement.h"
+#include "Transcription/Analyse_Phrase/Analyse.h"
 
 int main() {
 
     log_file_init();
     Phrase* res;
-    res = decoupage("va vers l'avant de 1 m");
+    res = decoupage("N'avance pas");
     for (int i = 0; i<res->wordNumber; i++) {
         printf("%s\n", res->wordArray[i]);
     }
     wordTypeStruct ** typeWord;
-    typeWord = sentenceToWordTypeArray(res);
+    typeWord = sentenceToWordTypeArray(res, 1);
     for(int i = 0; i<res->wordNumber;i++){
 
         printf("Le mot %s est de type %d\n",typeWord[i]->word, typeWord[i]->typeWord);

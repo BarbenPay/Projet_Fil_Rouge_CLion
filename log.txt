@@ -1,14 +1,4 @@
-[06/01/2024 21:44:00] Démarrage du découpage de la phrase: va vers l'avant de 1 m
-[06/01/2024 21:44:00] Découpage.c --- Découpage correctement effectué.
-[06/01/2024 21:44:00] Regroupement.c --- Démarrage de l'analyse de la phrase.
-[06/01/2024 21:44:00] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: va
-[06/01/2024 21:44:00] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: vers
-[06/01/2024 21:44:00] Regroupement.c --- Mot non reconnu.     Mot: l
-[06/01/2024 21:44:00] Regroupement.c --- Mot non reconnu.     Mot: avant
-[06/01/2024 21:44:00] Regroupement.c --- Mot non reconnu.     Mot: de
-[06/01/2024 21:44:00] Regroupement.c --- Nombre trouvé.     Mot: 1
-[06/01/2024 21:44:00] Regroupement.c --- Unité trouvée.     Mot: m
-[06/01/2024 21:44:00] Regroupement.c --- Analyse correctement effectuée.
-[06/01/2024 21:44:00] Analyse.c --- Démarage du traitement de la phrase.
-[06/01/2024 21:44:00] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière avec une spécification de la distance.
-[06/01/2024 21:44:00] Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.
+[07/01/2024 21:56:59] Démarrage du découpage de la phrase: N'avance pas
+[07/01/2024 21:56:59] Découpage.c --- Découpage correctement effectué.
+[07/01/2024 21:56:59] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[07/01/2024 21:56:59] Regroupement.c --- Erreur lors de l'ouverture du dictionnaire: ../Dictionnaire/FR/Mouvement/forward_movement.txt

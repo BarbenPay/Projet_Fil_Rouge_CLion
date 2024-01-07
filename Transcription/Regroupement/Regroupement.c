@@ -3,21 +3,23 @@
 //
 
 #include "Regroupement.h"
-#include "../Log/fichier_Log.h"
+#include "../../Log/fichier_Log.h"
 
 
 bool isWordInDict(char* word, char* dict){
     FILE* dictionnaire = fopen(dict, "r"); //on ouvre le dictionnaire
 
     if (dictionnaire == NULL) { //Si le programme n'arrive pas à ouvrir le dictionnaire, il renvoie une erreur sur le fichier log
-        char* toSend = "Regroupement.c --- Erreur lors de l'ouverture du dictionnaire: ";
+
+        char* toSend = (char*)malloc(sizeof(char)*(64+ strlen(dict)));
+        strcpy(toSend, "Regroupement.c --- Erreur lors de l'ouverture du dictionnaire: ");
         strcat(toSend, dict);
         log_file(toSend);
         free(toSend);
-        return false;
+        exit(EXIT_FAILURE);
     }
 
-    char tampon[30];  // Taille de la chaine de cractère temporaire pour stocker les différents mots du dictionnaire
+    char tampon[30];  // Taille de la chaine de caractère temporaire pour stocker les différents mots du dictionnaire
     bool isFound = false;
 
 
@@ -37,9 +39,9 @@ bool isWordInDict(char* word, char* dict){
 
 bool isWordABackwardMovementWord(char* word, int code_language) {
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/backward_movement.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/FR/Mouvement/backward_movement.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/backward_movement.txt");
+        return isWordInDict(word, "../Transcription/Dictionnaire/EN/Mouvement/backward_movement.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordABackwardMovementWord.");
         exit(EXIT_FAILURE);
@@ -169,7 +171,16 @@ bool isWordARightDirection(char* word, int code_language){
     }
 }
 
-
+// -1 : RIEN
+//  0 : NEGATION
+//  1 : NOMBRE
+//  2 : MOUVEMENT
+//  21 : AVANT   // 22 : ARRIERE   // 23 : ROTATION
+                                   // 231 : GAUCHE   // 232 : DROITE
+//  3 : DIRECTION
+//  31 : CUBE   // 32 : BOULE   // 23 : POSITION
+                                // 231 : GAUCHE   // 232 : MILIEU   //  233 : DROITE
+//  4 : UNITE
 
 // Code // -1. Rien / 1. backward_movement / 2. forward_movement / 3. rotating_movement / 4. movement / 10. forward_direction /
 // 11. backward_direction / 12. right_direction / 13. left_direction / 20. number / 30. object / 40. negation / 50. unite
@@ -298,4 +309,3 @@ wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase, int code_language){
     log_file("Regroupement.c --- Analyse correctement effectuée.");
     return res;
 }
-

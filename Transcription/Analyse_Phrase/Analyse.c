@@ -3,7 +3,7 @@
 //
 
 #include "Analyse.h"
-#include "../Log/fichier_Log.h"
+#include "../../Log/fichier_Log.h"
 
 int charToNumber(char* numberChar){
     log_file("Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.");
@@ -12,7 +12,7 @@ int charToNumber(char* numberChar){
 
 int analyse(wordTypeStruct** phrase, Phrase* wordArray){
 
-    log_file("Analyse.c --- Démarage du traitement de la phrase.");
+    log_file("Analyse.c --- Démarrage du traitement de la phrase.");
     int isBackwardMovementWordPresent = -1, isForwardMovementWordPresent = -1, isRotatingWordPresent = -1, isMovementWordPresent = -1, isForwardDirectionPresent = -1, isBackwardDirectionPresent = -1, isRightDirectionPresent = -1, isLeftDirectionPresent = -1,isNumberPresent = -1, isObjectPresent = -1, isNegationPresent = 0, isUnitePresent = -1;
 
     for( int i = 0; i < wordArray->wordNumber ; i++ ){
@@ -63,9 +63,9 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
         printf("Le robot va reculer d'un mètre.\n");
         log_file("Analyse.c --- Traitement correctement effectué.");
         return 1;
-    }else if((isRotatingWordPresent != -1) && (isDirectionPresent != -1) && (isNegationPresent != 2)){
+    }else if((isRotatingWordPresent != -1) && (isLeftDirectionPresent != -1) && (isNegationPresent != 2)){
         log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation avec une spécification du sens.");
-        printf("Le robot va s'orienter vers la %s.\n", phrase[isDirectionPresent]->word);
+        printf("Le robot va s'orienter vers la %s.\n", phrase[isLeftDirectionPresent]->word);
         log_file("Analyse.c --- Traitement correctement effectué.");
         return 1;
     }else if((isRotatingWordPresent != -1) && (isNegationPresent != 2)){
@@ -74,9 +74,21 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
         log_file("Analyse.c --- Traitement correctement effectué.");
         return 1;
     }
-
-
-
+/*
+    if(!negation){
+        if(Number){
+            if(avance){
+            }else if(recule){
+            }else if(rotation && direction){
+            }
+        }else{
+            if(avance){
+            }else if(recule){
+            }else if(rotation && direction){
+            }
+        }
+    }
+*/
 
     else{
         log_file("Analyse.c --- Le traitement de la phrase n'est pas parvenu à trouver le sens de la phrase.");

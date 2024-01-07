@@ -5,7 +5,7 @@
 
 #include <string.h>
 #include <stdlib.h>
-#include "../Log/fichier_Log.h"
+#include "../../Log/fichier_Log.h"
 
 
 
@@ -55,10 +55,6 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
 
 
     int number_of_word = 0;
-
-
-
-
 
 
     for (int i = 0; i < lenght_sentence; i++){
