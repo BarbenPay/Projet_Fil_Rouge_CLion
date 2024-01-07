@@ -13,23 +13,33 @@ int charToNumber(char* numberChar){
 int analyse(wordTypeStruct** phrase, Phrase* wordArray){
 
     log_file("Analyse.c --- Démarage du traitement de la phrase.");
-    int isForwardMovementWordPresent = -1, isBackwardMovementWordPresent = -1, isRotatingWordPresent = -1, isDirectionPresent =-1, isNumberPresent = -1, isUnitePresent = -1, isNegationPresent = 0;
+    int isBackwardMovementWordPresent = -1, isForwardMovementWordPresent = -1, isRotatingWordPresent = -1, isMovementWordPresent = -1, isForwardDirectionPresent = -1, isBackwardDirectionPresent = -1, isRightDirectionPresent = -1, isLeftDirectionPresent = -1,isNumberPresent = -1, isObjectPresent = -1, isNegationPresent = 0, isUnitePresent = -1;
 
     for( int i = 0; i < wordArray->wordNumber ; i++ ){
         if(phrase[i]->typeWord == 1){
-            isForwardMovementWordPresent = i;
-        }else if(phrase[i]->typeWord == 2){
-            isNumberPresent = i;
-        }else if(phrase[i]->typeWord == 3){
-            isUnitePresent = i;
-        }else if(phrase[i]->typeWord == 4){
-            isNegationPresent +=1;
-        }else if(phrase[i]->typeWord == 5){
             isBackwardMovementWordPresent = i;
-        }else if(phrase[i]->typeWord == 6){
+        }else if(phrase[i]->typeWord == 2){
+            isForwardMovementWordPresent = i;
+        }else if(phrase[i]->typeWord == 3){
             isRotatingWordPresent = i;
-        }else if(phrase[i]->typeWord == 7){
-            isDirectionPresent = i;
+        }else if(phrase[i]->typeWord == 4){
+            isMovementWordPresent = i;
+        }else if(phrase[i]->typeWord == 10){
+            isForwardDirectionPresent = i;
+        }else if(phrase[i]->typeWord == 11){
+            isBackwardDirectionPresent = i;
+        }else if(phrase[i]->typeWord == 12){
+            isRightDirectionPresent = i;
+        }else if(phrase[i]->typeWord == 13){
+            isLeftDirectionPresent = i;
+        }else if(phrase[i]->typeWord == 20){
+            isNumberPresent = i;
+        }else if(phrase[i]->typeWord == 30){
+            isObjectPresent = i;
+        }else if(phrase[i]->typeWord == 40){
+            isNegationPresent += 1;
+        }else if(phrase[i]->typeWord == 50){
+            isUnitePresent = i;
         }
     } //Analyse des types de mots pour pouvoir comprendre la phrase et initilisation des variables
 

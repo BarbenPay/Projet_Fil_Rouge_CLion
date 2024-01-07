@@ -1,0 +1,10 @@
+Ball
+ball
+Sphere
+sphere
+Cube
+cube
+Square
+square
+Object
+object

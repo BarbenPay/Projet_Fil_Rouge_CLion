@@ -35,84 +35,229 @@ bool isWordInDict(char* word, char* dict){
 
 }
 
-bool isWordAForwardMovementWord(char* word){
-    return isWordInDict(word, "../Dictionnaire/Forward_movement_FR.txt");
+bool isWordABackwardMovementWord(char* word, int code_language) {
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/backward_movement.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/backward_movement.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordABackwardMovementWord.");
+        exit(EXIT_FAILURE);
+    }
 }
 
-bool isWordABackwardMovementWord(char* word){
-    return isWordInDict(word, "../Dictionnaire/backward_movement_FR.txt");
+bool isWordAForwardMovementWord(char* word, int code_language){
+    if(code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/forward_movement.txt");
+    }else if(code_language == 2){
+        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/forward_movement.txt");
+    }else{
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAForwardMovementWord.");
+        exit(EXIT_FAILURE);
+    }
 }
 
-bool isWordANumber(char* word){
-    return isWordInDict(word, "../Dictionnaire/number_FR.txt");
+bool isWordARotationWord(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/rotation.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/rotation.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordARotationWord.");
+        exit(EXIT_FAILURE);
+    }
 }
 
-bool isWordAUnite(char* word){
-    return isWordInDict(word, "../Dictionnaire/unite_FR.txt");
+bool isWordAMovementWord(char*word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/movement.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/movement.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAMovementWord.");
+        exit(EXIT_FAILURE);
+    }
 }
 
-bool isWordANegation(char* word){
-    return isWordInDict(word, "../Dictionnaire/negation_FR.txt");
+bool isWordANumber(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Nombre/number.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Number/number.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordANumber.");
+        exit(EXIT_FAILURE);
+    }
 }
 
-bool isWordARotationWord(char* word){
-    return isWordInDict(word, "../Dictionnaire/rotation_FR.txt");
+bool isWordAUnite(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Unite/unite.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Unite/unite.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAUnite.");
+        exit(EXIT_FAILURE);
+    }
 }
 
-bool isWordADirection(char* word){
-    return isWordInDict(word, "../Dictionnaire/direction_FR.txt");
+bool isWordAnObject(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Objet/objet.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Object/object.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAnObject.");
+        exit(EXIT_FAILURE);
+    }
 }
 
-int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Unité / 4. Négation / 5. Mouvement Backward / 6. Rotation / 7. Direction
-    if(isWordAForwardMovementWord(word)){
+bool isWordANegation(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Negation/negation.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Negation/negation.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordANegation.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+
+
+bool isWordABackwardDirection(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Direction/backward_direction.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Direction/backward_direction.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordABackwardDirection.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordAForwardDirection(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Direction/forward_direction.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Direction/forward_direction.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAForwardDirection.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordALeftDirection(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Direction/left_direction.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Direction/left_direction.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordALeftDirection.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordARightDirection(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Direction/right_direction.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Direction/right_direction.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordARightDirection.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+
+
+// Code // -1. Rien / 1. backward_movement / 2. forward_movement / 3. rotating_movement / 4. movement / 10. forward_direction /
+// 11. backward_direction / 12. right_direction / 13. left_direction / 20. number / 30. object / 40. negation / 50. unite
+int wordType (char* word, int code_language){
+    if(isWordABackwardMovementWord(word, code_language)) {
+        char *toSend = (char *) malloc(sizeof(char) * (58 + strlen(word)));
+        strcpy(toSend, "Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 1;
+    }else if(isWordAForwardMovementWord(word, code_language)){
         char* toSend = (char*) malloc(sizeof (char) * (68 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
-        return 1;
-    }else if(isWordANumber(word)){
+        return 2;
+    }else if(isWordARotationWord(word, code_language)){
+        char* toSend = (char*) malloc(sizeof (char) * (54 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Verbe de rotation trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 3;
+    }else if(isWordAMovementWord(word, code_language)){
+        char* toSend = (char*) malloc(sizeof (char) * (55 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Verbe de mouvement trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 4;
+    }else if(isWordAForwardDirection(word, code_language)) {
+        char *toSend = (char *) malloc(sizeof(char) * (60 + strlen(word)));
+        strcpy(toSend, "Regroupement.c --- Direction vers l'avant trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 10;
+    }else if(isWordABackwardDirection(word, code_language)) {
+        char *toSend = (char *) malloc(sizeof(char) * (62 + strlen(word)));
+        strcpy(toSend, "Regroupement.c --- Direction vers l'arrière trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 11;
+    }else if(isWordARightDirection(word, code_language)) {
+        char *toSend = (char *) malloc(sizeof(char) * (62 + strlen(word)));
+        strcpy(toSend, "Regroupement.c --- Direction vers la droite trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 12;
+    }else if(isWordALeftDirection(word, code_language)) {
+        char *toSend = (char *) malloc(sizeof(char) * (62 + strlen(word)));
+        strcpy(toSend, "Regroupement.c --- Direction vers la gauche trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 13;
+    }else if(isWordANumber(word, code_language)){
         char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Nombre trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
-        return 2;
-    }else if(isWordAUnite(word)){
+        return 20;
+    }else if(isWordAnObject(word, code_language)){
         char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
-        strcpy(toSend,"Regroupement.c --- Unité trouvée.     Mot: ");
+        strcpy(toSend,"Regroupement.c --- Objet trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
-        return 3;
-    }else if (isWordANegation(word)){
+        return 30;
+    }else if (isWordANegation(word, code_language)){
         char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Négation potentielle trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
-        return 4;
-    }else if(isWordABackwardMovementWord(word)){
-        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
-        strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: ");
+        return 40;
+    }else if(isWordAUnite(word, code_language)){
+        char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Unité trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
-        return 5;
-    }else if(isWordARotationWord(word)){
-        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
-        strcpy(toSend,"Regroupement.c --- Verbe de rotation trouvé.     Mot: ");
-        strcat(toSend, word);
-        log_file(toSend);
-        free(toSend);
-        return 6;
-    }else if(isWordADirection(word)){
-        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
-        strcpy(toSend,"Regroupement.c --- Direction trouvée.     Mot: ");
-        strcat(toSend, word);
-        log_file(toSend);
-        free(toSend);
-        return 7;
+        return 50;
     }else{
         char* toSend = (char*) malloc(sizeof (char) * (45 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Mot non reconnu.     Mot: ");
@@ -134,7 +279,7 @@ wordTypeStruct* init_wordTypeStruct(){
     return res;
 }
 
-wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase){
+wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase, int code_language){
     log_file("Regroupement.c --- Démarrage de l'analyse de la phrase.");
     wordTypeStruct** res = (wordTypeStruct**) malloc(sizeof (wordTypeStruct*) * phrase->wordNumber );
     if (res == NULL){
@@ -143,7 +288,7 @@ wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase){
     }
     for(int i = 0; i < phrase->wordNumber; i++){
         res[i] = init_wordTypeStruct();
-        res[i]->typeWord = wordType(phrase->wordArray[i]);
+        res[i]->typeWord = wordType(phrase->wordArray[i], code_language);
         res[i]->word = strdup(phrase->wordArray[i]);
         if(res[i]->typeWord==-2){
             log_file("Regroupement.c --- Erreur dans l'initialisation de la valeur typeWord.");
