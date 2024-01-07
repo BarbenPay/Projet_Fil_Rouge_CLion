@@ -55,7 +55,15 @@ bool isWordANegation(char* word){
     return isWordInDict(word, "../Dictionnaire/negation_FR.txt");
 }
 
-int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Unité / 4. Négation / 5. Mouvement Backward
+bool isWordARotationWord(char* word){
+    return isWordInDict(word, "../Dictionnaire/rotation_FR.txt");
+}
+
+bool isWordADirection(char* word){
+    return isWordInDict(word, "../Dictionnaire/direction_FR.txt");
+}
+
+int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Unité / 4. Négation / 5. Mouvement Backward / 6. Rotation / 7. Direction
     if(isWordAForwardMovementWord(word)){
         char* toSend = (char*) malloc(sizeof (char) * (68 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: ");
@@ -91,6 +99,20 @@ int wordType (char* word){ //-1. Rien / 1. Mouvement Forward / 2. Nombre / 3. Un
         log_file(toSend);
         free(toSend);
         return 5;
+    }else if(isWordARotationWord(word)){
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Verbe de rotation trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 6;
+    }else if(isWordADirection(word)){
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Direction trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 7;
     }else{
         char* toSend = (char*) malloc(sizeof (char) * (45 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Mot non reconnu.     Mot: ");
@@ -122,7 +144,7 @@ wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase){
     for(int i = 0; i < phrase->wordNumber; i++){
         res[i] = init_wordTypeStruct();
         res[i]->typeWord = wordType(phrase->wordArray[i]);
-        res[i]->word = phrase->wordArray[i];
+        res[i]->word = strdup(phrase->wordArray[i]);
         if(res[i]->typeWord==-2){
             log_file("Regroupement.c --- Erreur dans l'initialisation de la valeur typeWord.");
             exit(EXIT_FAILURE);

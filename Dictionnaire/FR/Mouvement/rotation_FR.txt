@@ -10,7 +10,3 @@ Oriente
 oriente
 Orientes
 orientes
-Droite
-droite
-Gauche
-gauche
