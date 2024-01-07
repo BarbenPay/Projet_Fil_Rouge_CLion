@@ -37,7 +37,7 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
         log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'avant sans spécification de la distance");
         printf("Le robot va avancer d'un mètre.\n");
         return 1;
-    }else if((isBackwardMovementWordPresent != -1) && (isUnitePresent = -1) && (isNumberPresent != -1) && (isNegationPresent != 2)){
+    }else if((isBackwardMovementWordPresent != -1) && (isUnitePresent != -1) && (isNumberPresent != -1) && (isNegationPresent != 2)){
         log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière avec une spécification de la distance.");
         printf("Le robot va reculer de %d %s.\n", charToNumber(phrase[isNumberPresent]->word), phrase[isUnitePresent]->word);
         return 1;
