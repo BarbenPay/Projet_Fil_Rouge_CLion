@@ -19,21 +19,35 @@ typedef struct wordtype{
 
 bool isWordInDict(char* word, char* dict); // Définit si le mot est dans le dictionnaire passé en paramètre
 
-bool isWordAForwardMovementWord(char* word);//Définit si le mot est verbe de mouvement vers l'avant
+bool isWordAForwardMovementWord(char* word, int code_language);//Définit si le mot est un verbe de mouvement vers l'avant
 
-bool isWordABackwardMovementWord(char* word);//Définit si le mot est un verbe de mouvement vers l'arrière
+bool isWordABackwardMovementWord(char* word, int code_language);//Définit si le mot est un verbe de mouvement vers l'arrière
 
-bool isWordANumber(char* word); // Définit si le mot est un nombre
+bool isWordAMovementWord(char*word, int code_language);
 
-bool isWordAUnite(char* word); // Définit si le mot est une unité
+bool isWordANumber(char* word, int code_language); // Définit si le mot est un nombre
 
-bool isWordANegation(char* word); // Définit si le mot est un mot de négation
+bool isWordAUnite(char* word, int code_language); // Définit si le mot est une unité
 
-int wordType(char* word); // Renvoie le code du type du mot
+bool isWordAnObject(char* word, int code_language);
+
+bool isWordANegation(char* word, int code_language); // Définit si le mot est un mot de négation
+
+bool isWordARotationWord(char* word, int code_language); // Définit si le mot est un verbe de rotation
+
+bool isWordABackwardDirection(char* word, int code_language);
+
+bool isWordAForwardDirection(char* word, int code_language);
+
+bool isWordALeftDirection(char* word, int code_language);
+
+bool isWordARightDirection(char* word, int code_language);
+
+int wordType(char* word, int code_language); // Renvoie le code du type du mot
 
 wordTypeStruct* init_wordTypeStruct(); // Initialise une structure wordTypeStruct
 
-wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase); // Analyse de la phrase et renvoie un tableau de la structure composé du code et de la chaine de caractère du mot
+wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase, int code_language); // Analyse de la phrase et renvoie un tableau de la structure composé du code et de la chaine de caractère du mot
 
 
 

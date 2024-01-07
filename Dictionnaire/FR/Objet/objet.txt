@@ -1,0 +1,14 @@
+Boule
+boule
+Balle
+balle
+Sphere
+sphere
+Sphère
+sphère
+Cube
+cube
+Carré
+carré
+Objet
+objet
