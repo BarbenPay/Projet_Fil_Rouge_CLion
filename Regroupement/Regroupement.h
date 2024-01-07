@@ -27,7 +27,9 @@ bool isWordAMovementWord(char*word, int code_language);
 
 bool isWordANumber(char* word, int code_language); // Définit si le mot est un nombre
 
-bool isWordAUnite(char* word, int code_language); // Définit si le mot est une unité
+bool isWordAMeterUnite(char* word, int code_language); // Définit si le mot représente le mot "Mètre"
+
+bool isWordACentimeterUnite(char* word, int code_language); // Définit si le mot représente le mot "Centimètre"
 
 bool isWordAnObject(char* word, int code_language);
 
