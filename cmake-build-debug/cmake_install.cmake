@@ -1,4 +1,4 @@
-# Install script for directory: /Users/jean-baptiste/1ere_annee_upssitech/Projet Fil Rouge/Projet Fil Rouge CLion
+# Install script for directory: /Users/jean-baptiste/Downloads/Projet1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/jean-baptiste/1ere_annee_upssitech/Projet Fil Rouge/Projet Fil Rouge CLion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/jean-baptiste/Downloads/Projet1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
