@@ -36,7 +36,7 @@ bool isWordInDict(char* word, char* dict){
 }
 
 bool isWordAForwardMovementWord(char* word){
-    return isWordInDict(word, "../Dictionnaire/forward_movement_FR.txt");
+    return isWordInDict(word, "../Dictionnaire/Forward_movement_FR.txt");
 }
 
 bool isWordABackwardMovementWord(char* word){
