@@ -6,9 +6,3 @@ cm
 Cm
 CM
 cM
-meter
-meters
-metre
-metres
-m
-M

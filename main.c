@@ -9,12 +9,12 @@ int main() {
 
     log_file_init();
     Phrase* res;
-    res = decoupage("va vers l'avant de 1 m");
+    res = decoupage("tournes toi de 64 degrés vers la gauche");
     for (int i = 0; i<res->wordNumber; i++) {
         printf("%s\n", res->wordArray[i]);
     }
     wordTypeStruct ** typeWord;
-    typeWord = sentenceToWordTypeArray(res);
+    typeWord = sentenceToWordTypeArray(res, 1);
     for(int i = 0; i<res->wordNumber;i++){
 
         printf("Le mot %s est de type %d\n",typeWord[i]->word, typeWord[i]->typeWord);

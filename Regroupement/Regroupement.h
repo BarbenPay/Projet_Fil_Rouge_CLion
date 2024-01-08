@@ -31,6 +31,8 @@ bool isWordAMeterUnite(char* word, int code_language); // Définit si le mot rep
 
 bool isWordACentimeterUnite(char* word, int code_language); // Définit si le mot représente le mot "Centimètre"
 
+bool isWordADegreeUnite(char* word, int code_language);
+
 bool isWordAnObject(char* word, int code_language);
 
 bool isWordANegation(char* word, int code_language); // Définit si le mot est un mot de négation

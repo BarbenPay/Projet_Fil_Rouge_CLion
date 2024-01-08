@@ -42,6 +42,8 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
             isThereUnite += 1; // si isThereUnite est égale à 1, alors le programme peut savoir que l'unité est le mètre
         }else if(phrase[i]->typeWord == 51){
             isThereUnite += 2; // si isThereUnite est égale à 2, alors le programme peut savoir que l'unité est le centimètre
+        }else if(phrase[i]->typeWord == 52){
+            isThereUnite += 3; // si isThereUnite est égale à 3, alors le programme peut savoir que l'unité est le degré
         }
     } //Analyse des types de mots pour pouvoir comprendre la phrase et initilisation des variables
 
@@ -203,6 +205,31 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
 
 
             }
+            if(isRotatingWordPresent != -1)
+            {
+                if(isRightDirectionPresent != -1)
+                    {
+                        log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite avec une spécification de l'angle.");
+                        printf("Le robot va tourner de %d degré(s) vers la droite.\n", charToNumber(phrase[isNumberPresent]->word));
+                        log_file("Analyse.c --- Traitement correctement effectué.");
+                        return 1;
+                    }
+                else if(isLeftDirectionPresent != -1)
+                    {
+                        log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la gauche avec une spécification de l'angle.");
+                        printf("Le robot va tourner de %d degré(s) vers la gauche.\n", charToNumber(phrase[isNumberPresent]->word));
+                        log_file("Analyse.c --- Traitement correctement effectué.");
+                        return 1;
+                    }
+                else
+                    {
+                        log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite avec une spécification de l'angle.");
+                        printf("Le sens principale de ce programme est le sens horaire.\nLe robot va tourner de %d degré(s) vers la droite.\n", charToNumber(phrase[isNumberPresent]->word));
+                        log_file("Analyse.c --- Traitement correctement effectué.");
+                        return 1;
+                    }
+
+            }
             else
             {
                 log_file("Analyse.c --- Le traitement de la phrase n'est pas parvenu à trouver le sens de la phrase.");
@@ -212,7 +239,43 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
         }
         else
         {
-            if(isThereUnite == 0)
+            if(isRotatingWordPresent != -1) {
+                if (isRightDirectionPresent != -1) {
+                    log_file(
+                            "Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite sans spécification de l'angle.");
+                    printf("Le robot va tourner de 45 degrés vers la droite.\n");
+                    log_file("Analyse.c --- Traitement correctement effectué.");
+                    return 1;
+                }
+                else if (isLeftDirectionPresent != -1) {
+                    log_file(
+                            "Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la gauche sans spécification de l'angle.");
+                    printf("Le robot va tourner de 45 degrés vers la gauche.\n");
+                    log_file("Analyse.c --- Traitement correctement effectué.");
+                    return 1;
+                }
+                else if (isBackwardDirectionPresent != -1) {
+                    log_file(
+                            "Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers l'arrière sans spécification de l'angle.");
+                    printf("Le robot va tourner de 90 degrés vers la droite.\n");
+                    log_file("Analyse.c --- Traitement correctement effectué.");
+                    return 1;
+                }
+                else if (isThereUnite == 3)
+                {
+                    log_file("Analyse.c --- Le traitement de la phrase n'est pas parvenu à trouver le sens de la phrase.");
+                    printf("Le traitement de la phrase n'est pas parvenu a déterminer le sens de la phrase.\nle robot ne va rien faire.\n");
+                    return 0;
+                }
+                else
+                {
+                    log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite avec une spécification de l'angle.");
+                    printf("Le sens principale de ce programme est le sens horaire.\nDe plus vous n'avez pas précisez l'angle.\nLe robot va tourner de 45 degrés vers la droite.\n");
+                    log_file("Analyse.c --- Traitement correctement effectué.");
+                    return 1;
+                }
+            }
+            else if(isThereUnite == 0)
             {
 
                 if(isForwardMovementWordPresent != -1)

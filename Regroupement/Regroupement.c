@@ -10,7 +10,8 @@ bool isWordInDict(char* word, char* dict){
     FILE* dictionnaire = fopen(dict, "r"); //on ouvre le dictionnaire
 
     if (dictionnaire == NULL) { //Si le programme n'arrive pas à ouvrir le dictionnaire, il renvoie une erreur sur le fichier log
-        char* toSend = "Regroupement.c --- Erreur lors de l'ouverture du dictionnaire: ";
+        char* toSend = (char*)malloc(sizeof(char)*(64 + strlen(dict)));
+        strcpy(toSend,"Regroupement.c --- Erreur lors de l'ouverture du dictionnaire: ");
         strcat(toSend, dict);
         log_file(toSend);
         free(toSend);
@@ -85,7 +86,7 @@ bool isWordACentimeterUnite(char* word, int code_language){
     } else if (code_language == 2) {
         return isWordInDict(word, "../Dictionnaire/EN/Unite/centimeter.txt");
     } else {
-        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAUnite.");
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordACentimeterUnite.");
         exit(EXIT_FAILURE);
     }
 }
@@ -96,7 +97,18 @@ bool isWordAMeterUnite(char* word, int code_language){
     } else if (code_language == 2) {
         return isWordInDict(word, "../Dictionnaire/EN/Unite/meter.txt");
     } else {
-        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAUnite.");
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAMeterUnite.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordADegreeUnite(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Unite/degree.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Unite/degree.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordADegreeUnite.");
         exit(EXIT_FAILURE);
     }
 }
@@ -283,6 +295,13 @@ int wordType (char* word, int code_language){
         log_file(toSend);
         free(toSend);
         return 51;
+    }else if(isWordADegreeUnite(word, code_language)){
+        char* toSend = (char*) malloc(sizeof (char) * (54 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Unité \"Degré\" trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 52;
     }else{
         char* toSend = (char*) malloc(sizeof (char) * (46 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Mot non reconnu.     Mot: ");
