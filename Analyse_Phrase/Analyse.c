@@ -49,7 +49,7 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
     if(isNegationPresent ==0 )
     {
 
-        if(isNumberPresent != 0)
+        if(isNumberPresent != -1)
         {
 
             if((isThereUnite == 1) || (isThereUnite == 2))

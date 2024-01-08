@@ -90,7 +90,7 @@ bool isWordACentimeterUnite(char* word, int code_language){
     }
 }
 
-bool isWorsdACentimeterUnite(char* word, int code_language){
+bool isWordAMeterUnite(char* word, int code_language){
     if (code_language == 1) {
         return isWordInDict(word, "../Dictionnaire/FR/Unite/meter.txt");
     } else if (code_language == 2) {
@@ -117,6 +117,17 @@ bool isWordANegation(char* word, int code_language){
         return isWordInDict(word, "../Dictionnaire/FR/Negation/negation.txt");
     } else if (code_language == 2) {
         return isWordInDict(word, "../Dictionnaire/EN/Negation/negation.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordANegation.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordANumber(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Nombre/number.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Number/number.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordANegation.");
         exit(EXIT_FAILURE);
