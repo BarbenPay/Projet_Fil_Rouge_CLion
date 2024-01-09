@@ -9,7 +9,7 @@ int main() {
 
     log_file_init();
     Phrase* res;
-    res = decoupage("tournes toi de 64 degrés vers la gauche");
+    res = decoupage("N'avance pas");
     for (int i = 0; i<res->wordNumber; i++) {
         printf("%s\n", res->wordArray[i]);
     }

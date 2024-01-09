@@ -30,9 +30,8 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
 
 
 
-    int lenght_sentence = strlen( phrase )+1; /* Taille de la phrase sans le caractère null de fin de chaine */
 
-    char* toSend = (char*)malloc(sizeof(char)*(36+ lenght_sentence));
+    char* toSend = (char*)malloc(sizeof(char)*(38+ strlen(phrase)));
 
     strcpy(toSend,"Démarrage du découpage de la phrase: ");
 
@@ -61,7 +60,7 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
 
 
 
-    for (int i = 0; i < lenght_sentence; i++){
+    for (int i = 0; i < strlen(phrase)+1; i++){
 
         if ((phrase[i]== ' ')||(phrase[i]=='\0') || (phrase[i] == '\'')){
 
