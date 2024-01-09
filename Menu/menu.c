@@ -21,15 +21,15 @@ int choix_langue() {
 }
 
 int choix_test(int l) {
-    if(l == 1) {
+    if (l == 1) {
         printf("\nSélectioner ce que vous voulez tester : \n\nTraitement d'image : 3 \nTraitement de commande : 4 \n\n");
     } else {
         printf("\nSelect what you want to test : \n\nImage processing : 3 \nOrder processing : 4 \n\n");
     }
     int t;
     scanf("%d", &t);
-    while(t != 3 && t != 4) {
-        if(l == 1) {
+    while (t != 3 && t != 4) {
+        if (l == 1) {
             printf("\nSélection incorrecte, essayer encore : \n\n");
         } else {
             printf("\nIncorrect selection, try again : \n\n");
@@ -38,14 +38,4 @@ int choix_test(int l) {
         scanf("%d", &t);
     }
     return t;
-}
-
-int main(){
-    int l = choix_langue();
-    viderBuffer();
-    int t = choix_test(l);
-    if(t == 4) {
-        system("make main.out; ./main.out");
-    }
-    return 0;
 }

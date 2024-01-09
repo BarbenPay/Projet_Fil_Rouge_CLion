@@ -63,9 +63,9 @@ int analyse(wordTypeStruct** phrase, Phrase* wordArray){
         printf("Le robot va reculer d'un mètre.\n");
         log_file("Analyse.c --- Traitement correctement effectué.");
         return 1;
-    }else if((isRotatingWordPresent != -1) && (isDirectionPresent != -1) && (isNegationPresent != 2)){
+    }else if((isRotatingWordPresent != -1) && (isLeftDirectionPresent != -1) && (isNegationPresent != 2)){
         log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation avec une spécification du sens.");
-        printf("Le robot va s'orienter vers la %s.\n", phrase[isDirectionPresent]->word);
+        printf("Le robot va s'orienter vers la %s.\n", phrase[isLeftDirectionPresent]->word);
         log_file("Analyse.c --- Traitement correctement effectué.");
         return 1;
     }else if((isRotatingWordPresent != -1) && (isNegationPresent != 2)){
