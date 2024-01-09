@@ -1,16 +1,8 @@
-[08/01/2024 17:02:55] Démarrage du découpage de la phrase: tournes toi de 64 degrés vers la gauche
-[08/01/2024 17:02:55] Découpage.c --- Découpage correctement effectué.
-[08/01/2024 17:02:55] Regroupement.c --- Démarrage de l'analyse de la phrase.
-[08/01/2024 17:02:55] Regroupement.c --- Verbe de rotation trouvé.     Mot: tournes
-[08/01/2024 17:02:55] Regroupement.c --- Mot non reconnu.     Mot: toi
-[08/01/2024 17:02:55] Regroupement.c --- Mot non reconnu.     Mot: de
-[08/01/2024 17:02:55] Regroupement.c --- Nombre trouvé.     Mot: 64
-[08/01/2024 17:02:55] Regroupement.c --- Unité "Degré" trouvée.     Mot: degrés
-[08/01/2024 17:02:55] Regroupement.c --- Mot non reconnu.     Mot: vers
-[08/01/2024 17:02:55] Regroupement.c --- Mot non reconnu.     Mot: la
-[08/01/2024 17:02:55] Regroupement.c --- Direction vers la gauche trouvée.     Mot: gauche
-[08/01/2024 17:02:55] Regroupement.c --- Analyse correctement effectuée.
-[08/01/2024 17:02:55] Analyse.c --- Démarage du traitement de la phrase.
-[08/01/2024 17:02:55] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la gauche avec une spécification de l'angle.
-[08/01/2024 17:02:55] Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.
-[08/01/2024 17:02:55] Analyse.c --- Traitement correctement effectué.
+[09/01/2024 21:46:30] Démarrage du découpage de la phrase: reculer
+[09/01/2024 21:46:30] Découpage.c --- Découpage correctement effectué.
+[09/01/2024 21:46:30] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[09/01/2024 21:46:30] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: reculer
+[09/01/2024 21:46:30] Regroupement.c --- Analyse correctement effectuée.
+[09/01/2024 21:46:30] Analyse.c --- Démarage du traitement de la phrase.
+[09/01/2024 21:46:30] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière sans spécification de la distance
+[09/01/2024 21:46:30] Analyse.c --- Traitement correctement effectué.

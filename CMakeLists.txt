@@ -11,4 +11,6 @@ add_executable(Projet_Fil_Rouge_CLion main.c
         Regroupement/Regroupement.c
         Regroupement/Regroupement.h
         Analyse_Phrase/Analyse.c
-        Analyse_Phrase/Analyse.h)
+        Analyse_Phrase/Analyse.h
+        Menu/menu.c
+        Menu/menu.h)
