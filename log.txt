@@ -1,8 +1,14 @@
-[09/01/2024 21:46:30] Démarrage du découpage de la phrase: reculer
-[09/01/2024 21:46:30] Découpage.c --- Découpage correctement effectué.
-[09/01/2024 21:46:30] Regroupement.c --- Démarrage de l'analyse de la phrase.
-[09/01/2024 21:46:30] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: reculer
-[09/01/2024 21:46:30] Regroupement.c --- Analyse correctement effectuée.
-[09/01/2024 21:46:30] Analyse.c --- Démarage du traitement de la phrase.
-[09/01/2024 21:46:30] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière sans spécification de la distance
-[09/01/2024 21:46:30] Analyse.c --- Traitement correctement effectué.
+[09/01/2024 22:15:57] Démarrage du découpage de la phrase: reculer de 3 m
+
+[09/01/2024 22:15:57] Découpage.c --- Découpage correctement effectué.
+[09/01/2024 22:15:57] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[09/01/2024 22:15:57] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: reculer
+[09/01/2024 22:15:57] Regroupement.c --- Mot non reconnu.     Mot: de
+[09/01/2024 22:15:57] Regroupement.c --- Nombre trouvé.     Mot: 3
+[09/01/2024 22:15:57] Regroupement.c --- Mot non reconnu.     Mot: m
+
+[09/01/2024 22:15:57] Regroupement.c --- Analyse correctement effectuée.
+[09/01/2024 22:15:57] Analyse.c --- Démarage du traitement de la phrase.
+[09/01/2024 22:15:57] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière avec une spécification de la distance.
+[09/01/2024 22:15:57] Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.
+[09/01/2024 22:15:57] Analyse.c --- Traitement correctement effectué.

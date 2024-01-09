@@ -16,7 +16,8 @@ int main() {
     if (test == 4) {
         char phrase[100];
         printf("\nSaissez votre commande : \n\n");
-        scanf("%s", &phrase);
+        viderBuffer();
+        fgets(phrase, 100, stdin);
         Phrase* res;
         res = decoupage(phrase);
         for (int i = 0; i<res->wordNumber; i++) {
