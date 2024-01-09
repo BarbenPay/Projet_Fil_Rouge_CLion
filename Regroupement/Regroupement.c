@@ -199,7 +199,7 @@ bool isWordARightDirection(char* word, int code_language){
 // 20. number /
 // 30. object /
 // 40. negation /
-// 50. mètre / 51. centimètre
+// 50. mètre / 51. centimètre / 52.degré
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
