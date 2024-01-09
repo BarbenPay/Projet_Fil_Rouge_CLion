@@ -1,11 +1,6 @@
-menu.out: menu.o
-	gcc -o menu.out menu.o
 
-menu.o: menu.c
-	gcc -c menu.c -o menu.o
-
-main.out: main.o Regroupement.o fichier_Log.o Decoupage.o Analyse.o
-	gcc -o main.out main.o Regroupement.o fichier_Log.o Decoupage.o Analyse.o
+main.out: main.o Regroupement.o fichier_Log.o Decoupage.o Analyse.o Menu.o
+	gcc -o main.out main.o Regroupement.o fichier_Log.o Decoupage.o Analyse.o Menu.o
 
 main.o: main.c Regroupement/Regroupement.h Log/fichier_Log.h Découpage/Decoupage.h
 	gcc -c main.c -o main.o
@@ -21,6 +16,9 @@ Decoupage.o: Découpage/Decoupage.c Découpage/Decoupage.h Log/fichier_Log.h
 	
 Analyse.o: Analyse_Phrase/Analyse.c Analyse_Phrase/Analyse.h
 	gcc -c Analyse_Phrase/Analyse.c -o Analyse.o
+
+Menu.o: Menu/menu.c Menu/menu.h
+	gcc -c Menu/menu.c -o Menu.o
 
 clean:
 	rm -rf *.o
