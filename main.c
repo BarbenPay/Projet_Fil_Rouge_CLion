@@ -14,8 +14,11 @@ int main() {
     int test = choix_test(langue);
 
     if (test == 4) {
+        char phrase[100];
+        printf("\nEntrer votre commande : \n\n");
+        scanf("%s", &phrase);
         Phrase *res;
-        res = decoupage("va vers l'avant de 1 m");
+        res = decoupage(phrase);
         for (int i = 0; i < res->wordNumber; i++) {
             printf("%s\n", res->wordArray[i]);
         }
