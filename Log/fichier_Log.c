@@ -16,7 +16,7 @@ char* date(){
     time_t now;
     time(&now);
     struct tm *local = localtime(&now);
-    char* res = (char*) malloc(sizeof(20));
+    char* res = (char*) malloc(sizeof(int)*6+sizeof(char)*6);
     snprintf(res, 20, "%02d/%02d/%d %02d:%02d:%02d", local->tm_mday, local->tm_mon + 1,local->tm_year + 1900, local->tm_hour, local->tm_min, local->tm_sec);
     return res;
 }
