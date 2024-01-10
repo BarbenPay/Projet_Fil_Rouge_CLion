@@ -29,9 +29,9 @@ Valeur input() {
     return l;
 }
 
-Valeur choix_langue()
+void choix_langue()
 {
-    printf("\nSélectioner la langue : \n\nFrançais : 1 \nEnglish : 2 \n\n");
+    printf("\nSélectionez la langue : \n\nFrançais : 1 \nEnglish : 2 \n\n");
     Valeur l = input();
     while(strcmp((const char *) l.c, "1") != 0 && strcmp((const char *) l.c, "2") != 0)
     {
@@ -46,22 +46,22 @@ Valeur choix_langue()
     {
         l.i = 2;
     }
-    return l;
+    choix_test(l);
 }
 
-Valeur choix_test(Valeur l)
+void choix_test(Valeur l)
 {
     if (l.i == 1)
     {
-        printf("\nSélectioner ce que vous voulez tester : \n\nTraitement d'image : 1 \nTraitement de commande : 2 \n\n");
+        printf("\nSélectionez ce que vous voulez tester : \n\nTraitement d'image : 1 \nTraitement de commande : 2 \n\nRetour : 3 \n\n");
     }
     else
     {
-        printf("\nSelect what you want to test : \n\nImage processing : 1 \nOrder processing : 2 \n\n");
+        printf("\nSelect what you want to test : \n\nImage processing : 1 \nOrder processing : 2 \n\nBack : 3 \n\n");
     }
     Valeur v;
-    input(v);
-    while (strcmp((const char *) v.c, "1") != 0 && strcmp((const char *) v.c, "2") != 0)
+    v = input();
+    while (strcmp((const char *) v.c, "1") != 0 && strcmp((const char *) v.c, "2") != 0 && strcmp((const char *) v.c, "3") != 0)
     {
         if (l.i == 1)
         {
@@ -77,42 +77,36 @@ Valeur choix_test(Valeur l)
     {
         v.i = 1;
     }
-    else
+    else if(strcmp((const char *) v.c, "2") == 0)
     {
         v.i = 2;
+        traitement_commande(l);
     }
-    return v;
+    else
+    {
+        choix_langue();
+    }
 }
 
-void traitement_commande(const char * langue)
+void traitement_commande(Valeur l)
 {
-    char phrase[100];
-    if (langue == "1") {
+    Valeur v;
+    if (l.i == 1) {
         printf("\nSaissez votre commande : \n\n");
     }
     else
     {
         printf("\nEnter your order : \n\n");
     }
-    viderBuffer();
-    fgets(phrase, 100, stdin);
+    v = input();
     Phrase* res;
-    res = decoupage(phrase);
+    res = decoupage(v.c);
     for (int i = 0; i<res->wordNumber; i++)
     {
         printf("%s\n", res->wordArray[i]);
     }
     wordTypeStruct ** typeWord;
-    int num_langue;
-    if (strcmp((const char *) langue, "1") == 0)
-    {
-        num_langue = 1;
-    }
-    else
-    {
-        num_langue = 2;
-    }
-    typeWord = sentenceToWordTypeArray(res, num_langue);
+    typeWord = sentenceToWordTypeArray(res, l.i);
     for(int i = 0; i<res->wordNumber;i++)
     {
         printf("Le mot %s est de type %d\n",typeWord[i]->word, typeWord[i]->typeWord);
@@ -121,4 +115,28 @@ void traitement_commande(const char * langue)
 
     free(res);
     free(typeWord);
+
+    Valeur p;
+    printf("\nNouvelle commande : 1 \nRetour : 2 \n\n");
+    p = input();
+    while(strcmp((const char *) p.c, "1") != 0 && strcmp((const char *) p.c, "2") != 0)
+    {
+        if (l.i == 1)
+        {
+            printf("\nSélection incorrecte, essayer encore : \n\n");
+        }
+        else
+        {
+            printf("\nIncorrect selection, try again : \n\n");
+        }
+        p = input();
+    }
+    if(strcmp((const char *) p.c, "1") == 0)
+    {
+        traitement_commande(l);
+    }
+    else
+    {
+        choix_test(l);
+    }
 }

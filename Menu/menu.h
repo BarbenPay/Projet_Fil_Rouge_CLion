@@ -14,12 +14,13 @@ typedef struct valeur
 {
     char c[100];
     int i;
-} Valeur;
+}
+Valeur;
 
 void viderBuffer();
 Valeur input();
-Valeur choix_langue();
-Valeur choix_test(Valeur);
-void traitement_commande(const char *);
+void choix_langue();
+void choix_test(Valeur);
+void traitement_commande(Valeur);
 
 #endif //PROJET_FIL_ROUGE_CLION_MENU_H
