@@ -11,7 +11,8 @@ int main()
     if (test == 4)
     {
         traitement_commande(langue);
-        printf("Nouvelle");
+        printf("\nNouvelle commande : 5 \nRetour au choix du test : 6 \n\n");
+
     }
     return 0;
 }
