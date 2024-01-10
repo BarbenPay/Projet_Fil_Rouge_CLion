@@ -10,9 +10,16 @@
 #include "../Regroupement/Regroupement.h"
 #include "../Analyse_Phrase/Analyse.h"
 
+typedef struct valeur
+{
+    char c[100];
+    int i;
+} Valeur;
+
 void viderBuffer();
-int choix_langue();
-int choix_test(int);
-void traitement_commande(int);
+Valeur input();
+Valeur choix_langue();
+Valeur choix_test(Valeur);
+void traitement_commande(const char *);
 
 #endif //PROJET_FIL_ROUGE_CLION_MENU_H

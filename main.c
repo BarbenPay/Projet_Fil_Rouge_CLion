@@ -4,14 +4,12 @@
 int main()
 {
     log_file_init();
-    int langue = choix_langue();
-    viderBuffer();
-    int test = choix_test(langue);
-
-    if (test == 4)
+    Valeur langue = choix_langue();
+    Valeur test = choix_test(langue);
+    if (test.i == 1)
     {
-        traitement_commande(langue);
-        printf("\nNouvelle commande : 5 \nRetour au choix du test : 6 \n\n");
+    //    traitement_commande(langue);
+        printf("\nNouvelle commande : 1 \nRetour au choix du test : 2 \n\n");
 
     }
     return 0;
