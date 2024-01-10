@@ -2,6 +2,7 @@
 // Created by mc2 on 09/01/24.
 //
 #include <stdio.h>
+#include <string.h>
 #include "menu.h"
 #include "../Découpage/Decoupage.h"
 #include "../Log/fichier_Log.h"
@@ -17,35 +18,52 @@ void viderBuffer()
     }
 }
 
-int choix_langue()
-{
-    int l;
-    printf("\nSélectioner la langue : \n\nFrançais : 1 \nEnglish : 2 \n\n");
-    scanf("%d", &l);
-    while(l != 1 && l != 2)
+Valeur input() {
+    Valeur l;
+    fgets(l.c, 100, stdin);
+    int len = strlen(l.c);
+    if (len > 0 && l.c[len - 1] == '\n')
     {
-        printf("\nSélection incorecte, essayer encore : \n\n");
-        viderBuffer();
-        scanf("%d", &l);
+        l.c[len - 1] = '\0';
     }
     return l;
 }
 
-int choix_test(int l)
+Valeur choix_langue()
 {
-    if (l == 1)
+    printf("\nSélectioner la langue : \n\nFrançais : 1 \nEnglish : 2 \n\n");
+    Valeur l = input();
+    while(strcmp((const char *) l.c, "1") != 0 && strcmp((const char *) l.c, "2") != 0)
     {
-        printf("\nSélectioner ce que vous voulez tester : \n\nTraitement d'image : 3 \nTraitement de commande : 4 \n\n");
+        printf("\nSélection incorecte, essayer encore : \n\n");
+        l = input();
+    }
+    if(strcmp((const char *) l.c, "1") == 0)
+    {
+        l.i = 1;
     }
     else
     {
-        printf("\nSelect what you want to test : \n\nImage processing : 3 \nOrder processing : 4 \n\n");
+        l.i = 2;
     }
-    int t;
-    scanf("%d", &t);
-    while (t != 3 && t != 4)
+    return l;
+}
+
+Valeur choix_test(Valeur l)
+{
+    if (l.i == 1)
     {
-        if (l == 1)
+        printf("\nSélectioner ce que vous voulez tester : \n\nTraitement d'image : 1 \nTraitement de commande : 2 \n\n");
+    }
+    else
+    {
+        printf("\nSelect what you want to test : \n\nImage processing : 1 \nOrder processing : 2 \n\n");
+    }
+    Valeur v;
+    input(v);
+    while (strcmp((const char *) v.c, "1") != 0 && strcmp((const char *) v.c, "2") != 0)
+    {
+        if (l.i == 1)
         {
             printf("\nSélection incorrecte, essayer encore : \n\n");
         }
@@ -53,16 +71,23 @@ int choix_test(int l)
         {
             printf("\nIncorrect selection, try again : \n\n");
         }
-        viderBuffer();
-        scanf("%d", &t);
+        v = input();
     }
-    return t;
+    if(strcmp((const char *) v.c, "1") == 0)
+    {
+        v.i = 1;
+    }
+    else
+    {
+        v.i = 2;
+    }
+    return v;
 }
 
-void traitement_commande(int langue)
+void traitement_commande(const char * langue)
 {
     char phrase[100];
-    if (langue == 1) {
+    if (langue == "1") {
         printf("\nSaissez votre commande : \n\n");
     }
     else
@@ -78,7 +103,16 @@ void traitement_commande(int langue)
         printf("%s\n", res->wordArray[i]);
     }
     wordTypeStruct ** typeWord;
-    typeWord = sentenceToWordTypeArray(res, langue);
+    int num_langue;
+    if (strcmp((const char *) langue, "1") == 0)
+    {
+        num_langue = 1;
+    }
+    else
+    {
+        num_langue = 2;
+    }
+    typeWord = sentenceToWordTypeArray(res, num_langue);
     for(int i = 0; i<res->wordNumber;i++)
     {
         printf("Le mot %s est de type %d\n",typeWord[i]->word, typeWord[i]->typeWord);
