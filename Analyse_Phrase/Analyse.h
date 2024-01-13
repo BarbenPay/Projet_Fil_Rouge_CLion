@@ -8,6 +8,6 @@
 #include "../Regroupement/Regroupement.h"
 
 int charToNumber(char* numberChar);
-int analyse(wordTypeStruct** phrase, Phrase* wordArray);
+int analyse(sentenceTypeStruct* phrase);
 
 #endif //PROJET_FIL_ROUGE_CLION_ANALYSE_H

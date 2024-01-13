@@ -190,6 +190,17 @@ bool isWordARightDirection(char* word, int code_language){
     }
 }
 
+bool isWordAConjunction(char* word, int code_language){
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Conjonction/conjunction.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Conjunction/conjunction.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordARightDirection.");
+        exit(EXIT_FAILURE);
+    }
+}
+
 
 
 ////////////////////////////////////////// Code ////////////////////////////////////////////////////
@@ -199,110 +210,149 @@ bool isWordARightDirection(char* word, int code_language){
 // 20. number /
 // 30. object /
 // 40. negation /
-// 50. mètre / 51. centimètre / 52.degré
+// 50. mètre / 51. centimètre / 52.degré /
+// 60. conjonction /
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 int wordType (char* word, int code_language){
-    if(isWordABackwardMovementWord(word, code_language)) {
+    if(isWordABackwardMovementWord(word, code_language))
+    {
         char *toSend = (char *) malloc(sizeof(char) * (71 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 1;
-    }else if(isWordAForwardMovementWord(word, code_language)){
+    }
+    else if(isWordAForwardMovementWord(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (69 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 2;
-    }else if(isWordARotationWord(word, code_language)){
+    }
+    else if(isWordARotationWord(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (55 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de rotation trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 3;
-    }else if(isWordAMovementWord(word, code_language)){
+    }
+    else if(isWordAMovementWord(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (56 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Verbe de mouvement trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 4;
-    }else if(isWordAForwardDirection(word, code_language)) {
+    }
+    else if(isWordAForwardDirection(word, code_language))
+    {
         char *toSend = (char *) malloc(sizeof(char) * (61 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers l'avant trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 10;
-    }else if(isWordABackwardDirection(word, code_language)) {
+    }
+    else if(isWordABackwardDirection(word, code_language))
+    {
         char *toSend = (char *) malloc(sizeof(char) * (63 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers l'arrière trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 11;
-    }else if(isWordARightDirection(word, code_language)) {
+    }
+    else if(isWordARightDirection(word, code_language))
+    {
         char *toSend = (char *) malloc(sizeof(char) * (63 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers la droite trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 12;
-    }else if(isWordALeftDirection(word, code_language)) {
+    }
+    else if(isWordALeftDirection(word, code_language))
+    {
         char *toSend = (char *) malloc(sizeof(char) * (63 + strlen(word)));
         strcpy(toSend, "Regroupement.c --- Direction vers la gauche trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 13;
-    }else if(isWordANumber(word, code_language)){
+    }
+    else if(isWordANumber(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (44 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Nombre trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 20;
-    }else if(isWordAnObject(word, code_language)){
+    }
+    else if(isWordAnObject(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Objet trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 30;
-    }else if (isWordANegation(word, code_language)){
+    }
+    else if (isWordANegation(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (59 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Négation potentielle trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 40;
-    }else if(isWordAMeterUnite(word, code_language)){
+    }
+    else if(isWordAMeterUnite(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (54 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Unité \"Mètre\" trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 50;
-    }else if(isWordACentimeterUnite(word, code_language)){
+    }
+    else if(isWordACentimeterUnite(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (59 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Unité \"Centimètre\" trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 51;
-    }else if(isWordADegreeUnite(word, code_language)){
+    }
+    else if(isWordADegreeUnite(word, code_language))
+    {
         char* toSend = (char*) malloc(sizeof (char) * (54 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Unité \"Degré\" trouvée.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 52;
-    }else{
+    }
+    else if(isWordAConjunction(word, code_language))
+    {
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Connecteur de phrase trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 60;
+    }
+    else
+    {
         char* toSend = (char*) malloc(sizeof (char) * (46 + strlen(word)));
         strcpy(toSend,"Regroupement.c --- Mot non reconnu.     Mot: ");
         strcat(toSend, word);
@@ -323,23 +373,81 @@ wordTypeStruct* init_wordTypeStruct(){
     return res;
 }
 
-wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase, int code_language){
-    log_file("Regroupement.c --- Démarrage de l'analyse de la phrase.");
-    wordTypeStruct** res = (wordTypeStruct**) malloc(sizeof (wordTypeStruct*) * phrase->wordNumber );
-    if (res == NULL){
-        log_file("Regroupement.c --- Erreur d'allocation de mémoire pour wordTypeStruct dans sentenceToWordTypeArray.");
+sentenceTypeStruct* init_sentenceTypeStruct()
+{
+    sentenceTypeStruct* res = (sentenceTypeStruct*)malloc(sizeof(sentenceTypeStruct));
+    if(res == NULL)
+    {
+        log_file("Regroupement.c --- Erreur d'allocation de mémoire pour sentenceTypeStruct.");
         exit(EXIT_FAILURE);
     }
-    for(int i = 0; i < phrase->wordNumber; i++){
-        res[i] = init_wordTypeStruct();
-        res[i]->typeWord = wordType(phrase->wordArray[i], code_language);
-        res[i]->word = strdup(phrase->wordArray[i]);
-        if(res[i]->typeWord==-2){
-            log_file("Regroupement.c --- Erreur dans l'initialisation de la valeur typeWord.");
-            exit(EXIT_FAILURE);
+    res->words = NULL;
+    res->numberOfWord = 0;
+    return res;
+}
+
+sentencesStruct* init_sentencesStruct(){
+    sentencesStruct* res = (sentencesStruct*)malloc(sizeof(sentencesStruct));
+    if(res == NULL){
+        log_file("Regroupement.c --- Erreur d'allocation de mémoire pour sentenceTypeStruct.");
+        exit(EXIT_FAILURE);
+    }
+    res->numberOfSentence = -1;
+    res->sentences = NULL;
+    return res;
+}
+
+sentencesStruct* sentencesToAnalysedSentencesTab(Phrase* phrase, int code_language)
+{
+    log_file("Regroupement.c --- Démarrage de l'analyse de la phrase.");
+    sentencesStruct* res = init_sentencesStruct();
+    int decalage = 0;
+    if(phrase->wordNumber != 0)
+    {
+        res->numberOfSentence = 1;
+    }
+    else
+    {
+        log_file("Regroupement.c --- L'analyse de la phrase a reçu en entré une phrase sans mot.");
+        exit(EXIT_FAILURE);
+    }
+    res->sentences = (sentenceTypeStruct**)malloc(sizeof(sentenceTypeStruct*));
+    res->sentences[res->numberOfSentence - 1] = init_sentenceTypeStruct();
+    for(int i = 0; i< phrase->wordNumber; i++){
+        if(wordType(phrase->wordArray[i],code_language) != 60)
+        {
+            res->sentences[res->numberOfSentence-1]->words = (wordTypeStruct**)realloc(res->sentences[res->numberOfSentence-1]->words, ((i-decalage)+1)*sizeof(wordTypeStruct*));
+            res->sentences[res->numberOfSentence-1]->words[i-decalage] = init_wordTypeStruct();
+            res->sentences[res->numberOfSentence-1]->words[i-decalage]->typeWord = wordType(phrase->wordArray[i], code_language);
+            res->sentences[res->numberOfSentence-1]->words[i-decalage]->word = strdup(phrase->wordArray[i]);
+            if(res->sentences[res->numberOfSentence-1]->words[i-decalage]->typeWord == -2)
+            {
+                log_file("Regroupement.c --- Erreur dans l'initialisation de la valeur typeWord.");
+                exit(EXIT_FAILURE);
+            }
+            res->sentences[res->numberOfSentence-1]->numberOfWord += 1;
+        }
+        else
+        {
+            decalage = i + 1;
+            res->numberOfSentence += 1;
+
+            res->sentences = (sentenceTypeStruct**) realloc(res->sentences,res->numberOfSentence * sizeof(sentenceTypeStruct*));
+            if(res->sentences == NULL)
+            {
+                log_file("Regroupement.c --- Erreur dans la ré-allocation de la mémoire de res->sentences.");
+                exit(EXIT_FAILURE);
+            }
+
+            res->sentences[res->numberOfSentence-1] = init_sentenceTypeStruct();
+            if(res->sentences[res->numberOfSentence-1]==NULL)
+            {
+                log_file("Regroupement.c --- Erreur dans l'allocation de la mémoire de res->sentence[res->numberOfSentence].");
+                exit(EXIT_FAILURE);
+            }
+
         }
     }
     log_file("Regroupement.c --- Analyse correctement effectuée.");
     return res;
 }
-
