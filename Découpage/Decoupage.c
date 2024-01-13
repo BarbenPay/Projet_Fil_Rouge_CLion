@@ -62,7 +62,7 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
 
     for (int i = 0; i < strlen(phrase)+1; i++){
 
-        if ((phrase[i]== ' ')||(phrase[i]=='\0') || (phrase[i] == '\'')){
+        if ((phrase[i]== ' ')||(phrase[i]=='\0') || (phrase[i] == '\'') || (phrase[i] == '.')){
 
             if (strlen(tmp_word) != 0){
 

@@ -105,13 +105,18 @@ void traitement_commande(Valeur l)
     {
         printf("%s\n", res->wordArray[i]);
     }
-    wordTypeStruct ** typeWord;
-    typeWord = sentenceToWordTypeArray(res, l.i);
-    for(int i = 0; i<res->wordNumber;i++)
+    sentencesStruct* typeWord;
+    typeWord = sentencesToAnalysedSentencesTab(res, l.i);
+    for(int indexPhrase = 0; indexPhrase < typeWord->numberOfSentence; indexPhrase++)
     {
-        printf("Le mot %s est de type %d\n",typeWord[i]->word, typeWord[i]->typeWord);
+        for (int i = 0; i < typeWord->sentences[indexPhrase]->numberOfWord; i++) {
+            printf("Le mot %s est de type %d\n", typeWord->sentences[indexPhrase]->words[i]->word , typeWord->sentences[indexPhrase]->words[i]->typeWord);
+        }
     }
-    analyse(typeWord,res);
+    for(int indexPhrase = 0; indexPhrase < typeWord->numberOfSentence; indexPhrase++)
+    {
+        analyse(typeWord->sentences[indexPhrase]);
+    }
 
     free(res);
     free(typeWord);

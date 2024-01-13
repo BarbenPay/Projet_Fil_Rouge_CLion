@@ -16,6 +16,16 @@ typedef struct wordtype{
     char* word;
 }wordTypeStruct;
 
+typedef struct sentenceTypeStruct{
+    wordTypeStruct** words;
+    int numberOfWord;
+}sentenceTypeStruct;
+
+typedef struct sentencesStruct{
+    sentenceTypeStruct** sentences;
+    int numberOfSentence;
+}sentencesStruct;
+
 
 bool isWordInDict(char* word, char* dict); // Définit si le mot est dans le dictionnaire passé en paramètre
 
@@ -51,7 +61,11 @@ int wordType(char* word, int code_language); // Renvoie le code du type du mot
 
 wordTypeStruct* init_wordTypeStruct(); // Initialise une structure wordTypeStruct
 
-wordTypeStruct** sentenceToWordTypeArray(Phrase* phrase, int code_language); // Analyse de la phrase et renvoie un tableau de la structure composé du code et de la chaine de caractère du mot
+sentenceTypeStruct* init_sentenceTypeStruct();
+
+sentencesStruct* init_sentencesStruct();
+
+sentencesStruct* sentencesToAnalysedSentencesTab(Phrase* phrase, int code_language); // Analyse de la phrase et renvoie une structure composé du nombre de phrase et de la chaine de caractère du mot
 
 
 

@@ -1,0 +1,15 @@
+[13/01/2024 21:17:02] Démarrage du découpage de la phrase: tourne et avance
+[13/01/2024 21:17:02] Découpage.c --- Découpage correctement effectué.
+[13/01/2024 21:17:02] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[13/01/2024 21:17:02] Regroupement.c --- Verbe de rotation trouvé.     Mot: tourne
+[13/01/2024 21:17:02] Regroupement.c --- Verbe de rotation trouvé.     Mot: tourne
+[13/01/2024 21:17:02] Regroupement.c --- Connecteur de phrase trouvé.     Mot: et
+[13/01/2024 21:17:02] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[13/01/2024 21:17:02] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[13/01/2024 21:17:02] Regroupement.c --- Analyse correctement effectuée.
+[13/01/2024 21:17:02] Analyse.c --- Démarage du traitement de la phrase.
+[13/01/2024 21:17:02] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite avec une spécification de l'angle.
+[13/01/2024 21:17:02] Analyse.c --- Traitement correctement effectué.
+[13/01/2024 21:17:02] Analyse.c --- Démarage du traitement de la phrase.
+[13/01/2024 21:17:02] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'avant sans spécification de la distance
+[13/01/2024 21:17:02] Analyse.c --- Traitement correctement effectué.
