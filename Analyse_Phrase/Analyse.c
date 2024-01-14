@@ -243,21 +243,21 @@ int analyse(sentenceTypeStruct* phrase){
                 if (isRightDirectionPresent != -1) {
                     log_file(
                             "Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite sans spécification de l'angle.");
-                    printf("Le robot va tourner de 45 degrés vers la droite.\n");
+                    printf("Le robot va tourner de 90 degrés vers la droite.\n");
                     log_file("Analyse.c --- Traitement correctement effectué.");
                     return 1;
                 }
                 else if (isLeftDirectionPresent != -1) {
                     log_file(
                             "Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la gauche sans spécification de l'angle.");
-                    printf("Le robot va tourner de 45 degrés vers la gauche.\n");
+                    printf("Le robot va tourner de 90 degrés vers la gauche.\n");
                     log_file("Analyse.c --- Traitement correctement effectué.");
                     return 1;
                 }
                 else if (isBackwardDirectionPresent != -1) {
                     log_file(
                             "Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers l'arrière sans spécification de l'angle.");
-                    printf("Le robot va tourner de 90 degrés vers la droite.\n");
+                    printf("Le robot va tourner de 180 degrés vers la droite.\n");
                     log_file("Analyse.c --- Traitement correctement effectué.");
                     return 1;
                 }
@@ -270,7 +270,7 @@ int analyse(sentenceTypeStruct* phrase){
                 else
                 {
                     log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite avec une spécification de l'angle.");
-                    printf("Le sens principale de ce programme est le sens horaire.\nDe plus vous n'avez pas précisez l'angle.\nLe robot va tourner de 45 degrés vers la droite.\n");
+                    printf("Le sens principale de ce programme est le sens horaire.\nDe plus vous n'avez pas précisez l'angle.\nLe robot va tourner de 90 degrés vers la droite.\n");
                     log_file("Analyse.c --- Traitement correctement effectué.");
                     return 1;
                 }
