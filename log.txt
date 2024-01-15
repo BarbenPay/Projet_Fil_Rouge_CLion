@@ -1,0 +1,15 @@
+[15/01/2024 15:58:21] Démarrage du découpage de la phrase: avance puis recul!
+[15/01/2024 15:58:21] Découpage.c --- Découpage correctement effectué.
+[15/01/2024 15:58:21] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[15/01/2024 15:58:21] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[15/01/2024 15:58:21] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[15/01/2024 15:58:21] Regroupement.c --- Connecteur de phrase trouvé.     Mot: puis
+[15/01/2024 15:58:21] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: recule
+[15/01/2024 15:58:21] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: recule
+[15/01/2024 15:58:21] Regroupement.c --- Analyse correctement effectuée.
+[15/01/2024 15:58:21] Analyse.c --- Démarage du traitement de la phrase.
+[15/01/2024 15:58:21] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'avant sans spécification de la distance
+[15/01/2024 15:58:21] Analyse.c --- Traitement correctement effectué.
+[15/01/2024 15:58:21] Analyse.c --- Démarage du traitement de la phrase.
+[15/01/2024 15:58:21] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière sans spécification de la distance
+[15/01/2024 15:58:21] Analyse.c --- Traitement correctement effectué.
