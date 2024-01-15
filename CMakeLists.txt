@@ -14,7 +14,7 @@ add_executable(Projet_Fil_Rouge_CLion main.c
         Analyse_Phrase/Analyse.h
         Menu/menu.c
         Menu/menu.h
-        Image/test.c
+        Image/main.c
         Image/scan_image.c
         Image/header.h
 )
