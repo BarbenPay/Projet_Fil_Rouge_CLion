@@ -149,33 +149,38 @@ void traitement_commande(Valeur l)
 
 void traitement_image(Valeur l)
 {
-    int largeur;   /* a definir */
-    int hauteur;
-    int dimmention;
-    int image[400][400][3];
-    int image_origine[400][400][3];
+    FILE* picture = fopen("../Image/banque/IMG_5389.txt", "r");
+    int largeur = -1;
+    int longueur = -1;
+    int dimension = -1;
+    fscanf(picture,"%d %d %d",&largeur,&longueur,&dimension);
+    int*** matrice = (int***)malloc(largeur * sizeof(int**));
+    for(int i = 0; i < largeur; i++){
+        matrice[i] = (int**)malloc(longueur * sizeof(int*));
+        for (int j = 0; j < longueur; j++){
+            matrice[i][j]=(int*)malloc(sizeof(int)* dimension);
+        }
+    }
+
+
+    for(int i = 0; i<largeur;i++) {
+        for (int j = 0; j < dimension; j++) {
+            for (int v = 0; v < longueur; v++) {
+                fscanf(picture, "%d", &matrice[i][v][j]);
+            }
+        }
+    }
     objet tab[10];
     int compteur_objet=0;
     int* p= &compteur_objet;
-    scanf("%d",&largeur);
-    scanf("%d",&hauteur);
-    scanf("%d",&dimmention);
-    if(largeur > 400|| hauteur > 400){
+    if(largeur > 400|| longueur > 400){
         printf("l'image est trop volumineuse");
     }
-    if(dimmention != 3){
+    if(dimension != 3){
         printf("la photo n'est pas en couleur");
     }
     remplirMatriceImage(image,largeur,hauteur);
-    for(int a=0;a < largeur;a++){
-        for(int b=0;b < hauteur;b++){
-            image_origine[a][b][0]=image[a][b][0];
-            image_origine[a][b][1]=image[a][b][1];
-            image_origine[a][b][2]=image[a][b][2];
-
-        }
-    }
-    bin_pixel(image,largeur,hauteur);
+    bin_pixel(matrice,largeur,longueur);
     saturation(image,largeur,hauteur);
     quantification(image,hauteur,largeur,tab,p);
     for (int i=0;i<compteur_objet;i++){
