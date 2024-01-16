@@ -151,7 +151,7 @@ void traitement_commande(Valeur l)
 
 void traitement_image()
 {
-    FILE* picture = fopen("../Image/banque/IMG_5389.txt", "r");
+    FILE* picture = fopen("../Image/banque/IMG_01.txt", "r");
     int largeur = -1;
     int longueur = -1;
     int dimension = -1;
