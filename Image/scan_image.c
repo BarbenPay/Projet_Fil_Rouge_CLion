@@ -205,7 +205,7 @@ void remplirMatriceImage(int*** image,int largeur,int hauteur){
     }
 }
 /*test des pixel sur les coté pour definir les */
-void propagation(objet *test,int image[400][400][3]){
+void propagation(objet *test,int*** image){
     int s_couleur[3];
     if(test->couleur=='O'){
         s_couleur[0]=16;
@@ -230,7 +230,7 @@ void propagation(objet *test,int image[400][400][3]){
 /*sous fonction pour simplifier la propagation*/
 void propagation_sous_f(objet *test,int*** image,int s_couleur[3]){
     int i=1;
-    while(image[test->coor_G][test->coor_H-i][0] == s_couleur[0] && image[test->coor_G][test->coor_H-i][1] == s_couleur[1] && image[test->coor_G][test->coor_H-i][2] == s_couleur[2]){
+    while(image[test->coor_G][test->coor_H+i][0] == s_couleur[0] && image[test->coor_G][test->coor_H+i][1] == s_couleur[1] && image[test->coor_G][test->coor_H+i][2] == s_couleur[2]){
         test->coor_B = test->coor_B - 1;
         i++;
     }
@@ -360,7 +360,7 @@ void quantification(int*** image, int hauteur, int largeur, objet tab[10],int *c
             else if(compteur != 0 && color != 'N'){
                 for(int t=0;t < compteur;t++){
                     /*si le pixel est dans la zone d'un autre objet*/
-                    if(j < tab[t].coor_D && j > tab[t].coor_G && i < tab[t].coor_B && i > tab[t].coor_H && Bool == 0 && tab[t].couleur == color ){
+                    if((j < tab[t].coor_D) && (j > tab[t].coor_G )&& (i < tab[t].coor_B )&& (i > tab[t].coor_H )&& (Bool == 0 )&& (tab[t].couleur == color )){
                         Bool = 1;
                     }
                 }

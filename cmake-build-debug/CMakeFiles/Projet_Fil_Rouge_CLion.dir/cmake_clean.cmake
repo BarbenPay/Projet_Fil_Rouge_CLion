@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.o.d"
   "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/image.c.o"
   "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/image.c.o.d"
+  "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.o"
+  "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.o.d"
   "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o"
   "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o.d"
   "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Menu/menu.c.o"

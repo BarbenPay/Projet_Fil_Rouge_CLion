@@ -4,6 +4,7 @@
 
 #include "Regroupement.h"
 #include "../Log/fichier_Log.h"
+#include <ctype.h>
 
 
 bool isWordInDict(char* word, char* dict){
@@ -22,6 +23,12 @@ bool isWordInDict(char* word, char* dict){
     bool isFound = false;
 
 
+    for(int i = 0; i < strlen(word); i++){
+        if( isupper(word[i])){
+            word[i] = tolower(word[i]);
+        }
+    }
+
     while (fscanf(dictionnaire, "%s", tampon) == 1) { //lire chaque mot dans le dictionnaire et le stocker dans tampon
         if (strcmp(tampon, word) == 0) { //Si tampon et le mot cherché sont égaux
             isFound = true;
@@ -31,7 +38,7 @@ bool isWordInDict(char* word, char* dict){
 
     // Fermer le fichier de dictionnaire
     fclose(dictionnaire);
-
+    free(tampon);
     return isFound;
 
 }

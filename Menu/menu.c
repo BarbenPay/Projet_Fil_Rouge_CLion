@@ -181,7 +181,7 @@ void traitement_image()
     if(dimension != 3){
         printf("la photo n'est pas en couleur");
     }
-    remplirMatriceImage(matrice,largeur,longueur);
+    //remplirMatriceImage(matrice,largeur,longueur);
     bin_pixel(matrice,largeur,longueur);
     saturation(matrice,largeur,longueur);
     quantification(matrice,longueur,largeur,tab,p);

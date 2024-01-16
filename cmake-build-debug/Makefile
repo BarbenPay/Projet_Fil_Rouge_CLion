@@ -201,6 +201,30 @@ Image/image.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/image.c.s
 .PHONY : Image/image.c.s
 
+Image/scan_image.o: Image/scan_image.c.o
+.PHONY : Image/scan_image.o
+
+# target to build an object file
+Image/scan_image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.o
+.PHONY : Image/scan_image.c.o
+
+Image/scan_image.i: Image/scan_image.c.i
+.PHONY : Image/scan_image.i
+
+# target to preprocess a source file
+Image/scan_image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.i
+.PHONY : Image/scan_image.c.i
+
+Image/scan_image.s: Image/scan_image.c.s
+.PHONY : Image/scan_image.s
+
+# target to generate assembly for a file
+Image/scan_image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.s
+.PHONY : Image/scan_image.c.s
+
 Log/fichier_Log.o: Log/fichier_Log.c.o
 .PHONY : Log/fichier_Log.o
 
@@ -315,6 +339,9 @@ help:
 	@echo "... Image/image.o"
 	@echo "... Image/image.i"
 	@echo "... Image/image.s"
+	@echo "... Image/scan_image.o"
+	@echo "... Image/scan_image.i"
+	@echo "... Image/scan_image.s"
 	@echo "... Log/fichier_Log.o"
 	@echo "... Log/fichier_Log.i"
 	@echo "... Log/fichier_Log.s"

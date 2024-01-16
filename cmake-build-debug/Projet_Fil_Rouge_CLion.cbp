@@ -97,6 +97,9 @@
 		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet Fil Rouge/Projet_Fil_Rouge_CLion/Image/image.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet Fil Rouge/Projet_Fil_Rouge_CLion/Image/scan_image.c">
+			<Option target="Projet_Fil_Rouge_CLion"/>
+		</Unit>
 		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet Fil Rouge/Projet_Fil_Rouge_CLion/Log/fichier_Log.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
