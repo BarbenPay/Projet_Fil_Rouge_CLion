@@ -15,18 +15,18 @@ struct objet{
     char position;
 };
 typedef struct objet objet;
-void bin_pixel(int image[400][400][3],int largeur,int hauteur);
+void bin_pixel(int*** matrice,int largeur,int hauteur);
 void verif_objet(objet* test);
-void nature_objet(objet* test,int image[400][400][3]);
-void remplirMatriceImage(int Image[400][400][3],int largeur,int hauteur);
-void propagation(objet* test,int image[400][400][3]);
-void propagation_sous_f(objet* test,int image[400][400][3],int s_couleur[3]);
+void nature_objet(objet* test,int*** image);
+void remplirMatriceImage(int*** image,int largeur,int hauteur);
+void propagation(objet* test,int*** image);
+void propagation_sous_f(objet* test,int*** image,int s_couleur[3]);
 void donner_position(objet* test,int largeur);
-void saturation(int image[400][400][3],int largeur,int hauteur);
+void saturation(int*** image,int largeur,int hauteur);
 char detecter_couleur(int rouge, int vert, int bleu);
-void quantification(int image[400][400][3], int hauteur, int largeur, objet tab[10],int *cpt);
-void encadrement(int image[400][400][3], int hauteur, int largeur,objet *test);
-void sortie_image(int image[400][400][3],int hauteur,int largeur,int dimmention);
+void quantification(int*** image, int hauteur, int largeur, objet tab[10],int *cpt);
+void encadrement(int*** image, int hauteur, int largeur,objet *test);
+void sortie_image(int*** image,int hauteur,int largeur,int dimmention);
 void sortie_objet(objet *test,int compteur_objet);
 
 #endif //PROJET_FIL_ROUGE_CLION_HEADER_H

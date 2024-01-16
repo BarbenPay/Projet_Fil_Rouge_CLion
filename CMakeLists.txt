@@ -12,9 +12,10 @@ add_executable(Projet_Fil_Rouge_CLion main.c
         Regroupement/Regroupement.h
         Analyse_Phrase/Analyse.c
         Analyse_Phrase/Analyse.h
+        Image/header.h
+        Image/image.c
+        Image/image.h
         Menu/menu.c
         Menu/menu.h
-        Image/main.c
-        Image/scan_image.c
-        Image/header.h
+
 )

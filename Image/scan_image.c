@@ -6,15 +6,15 @@
 #include "header.h"
 #include <stdio.h>
 /*binarise les val des pixel*/
-void bin_pixel(int image[400][400][3],int largeur,int hauteur){
+void bin_pixel(int*** matrice,int largeur,int hauteur){
     int val_pixel;
     int seuil;
     seuil = 255 / 16;
     for(int i=0;i < 3;i++){
         for(int j=0;j < hauteur;j++){
             for(int k=0;k < largeur;k++){
-                val_pixel = image[k][j][i];
-                image[k][j][i] = val_pixel / seuil;
+                val_pixel = matrice[k][j][i];
+                matrice[k][j][i] = val_pixel / seuil;
             }
         }
     }
@@ -33,7 +33,7 @@ void verif_objet(objet *test){
 }
 
 /*donne la nature Sphere ou Cube*/
-void nature_objet(objet *test,int image[400][400][3]){
+void nature_objet(objet *test,int*** image){
     /*test si l'objet n'as pas déja été tester et donner comme Non conforme*/
     if(test->nature == 'N'){
         return;
@@ -193,13 +193,13 @@ void nature_objet(objet *test,int image[400][400][3]){
     }
 }
 /*fonction pour remplir une matrice 3d avec les donné venant de la cam*/
-void remplirMatriceImage(int Image[400][400][3],int largeur,int hauteur){
+void remplirMatriceImage(int*** image,int largeur,int hauteur){
     int pixel;
     for(int k=0;k < 3;k++){
         for(int j=0;j < hauteur;j++){
             for(int i=0;i < largeur;i++){
                 scanf("%d",&pixel);
-                Image[i][j][k]=pixel;
+                image[i][j][k]=pixel;
             }
         }
     }
@@ -228,7 +228,7 @@ void propagation(objet *test,int image[400][400][3]){
 }
 
 /*sous fonction pour simplifier la propagation*/
-void propagation_sous_f(objet *test,int image[400][400][3],int s_couleur[3]){
+void propagation_sous_f(objet *test,int*** image,int s_couleur[3]){
     int i=1;
     while(image[test->coor_G][test->coor_H-i][0] == s_couleur[0] && image[test->coor_G][test->coor_H-i][1] == s_couleur[1] && image[test->coor_G][test->coor_H-i][2] == s_couleur[2]){
         test->coor_B = test->coor_B - 1;
@@ -283,7 +283,7 @@ void donner_position(objet* test,int largeur){
     }
 }
 
-void saturation(int image[400][400][3],int largeur,int hauteur){
+void saturation(int*** image,int largeur,int hauteur){
     char color;
     int orange[3];
     int bleu[3];
@@ -312,13 +312,13 @@ void saturation(int image[400][400][3],int largeur,int hauteur){
             }
             else if(color == 'B'){
                 image[i][j][0]=bleu[0];
-                image[i][j][0]=bleu[1];
-                image[i][j][0]=bleu[2];
+                image[i][j][1]=bleu[1];
+                image[i][j][2]=bleu[2];
             }
             else if(color == 'J'){
                 image[i][j][0]=jaune[0];
-                image[i][j][0]=jaune[1];
-                image[i][j][0]=jaune[2];
+                image[i][j][1]=jaune[1];
+                image[i][j][2]=jaune[2];
             }
             else{
                 image[i][j][0]=0;
@@ -329,7 +329,7 @@ void saturation(int image[400][400][3],int largeur,int hauteur){
     }
 }
 
-void quantification(int image[400][400][3], int hauteur, int largeur, objet tab[10],int *cpt){
+void quantification(int*** image, int hauteur, int largeur, objet tab[10],int *cpt){
     char color;
     *cpt = 0;
     int Bool;
@@ -364,7 +364,7 @@ void quantification(int image[400][400][3], int hauteur, int largeur, objet tab[
                         Bool = 1;
                     }
                 }
-                /* Si on se trouve dans un objet deja cree, on n'en creer pas un nouveau*/
+                /* Si on se trouve dans un objet deja cree, on n'en crée pas un nouveau*/
                 if(Bool == 0 && color != 'N'){
                     objet* tempon2=&tab[*cpt];
                     tempon2->couleur = color;
@@ -414,7 +414,7 @@ char detecter_couleur(int rouge, int vert, int bleu) {
     }
 }
 
-void encadrement(int image[400][400][3], int hauteur, int largeur,objet *test){
+void encadrement(int*** image, int hauteur, int largeur,objet *test){
     for(int i=test->coor_G;i<test->coor_D;i++){
         image[i][test->coor_H][0]=0;
         image[i][test->coor_H][1]=255;
@@ -433,7 +433,7 @@ void encadrement(int image[400][400][3], int hauteur, int largeur,objet *test){
     }
 }
 
-void sortie_image(int image[400][400][3],int hauteur,int largeur,int dimmention){
+void sortie_image(int*** image,int hauteur,int largeur,int dimmention){
     printf("%d",largeur);
     printf("%d",hauteur);
     printf("%d \n",dimmention);

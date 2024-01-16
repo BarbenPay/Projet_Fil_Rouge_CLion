@@ -5,11 +5,6 @@
 #ifndef PROJET_FIL_ROUGE_CLION_MENU_H
 #define PROJET_FIL_ROUGE_CLION_MENU_H
 
-#include "../Découpage/Decoupage.h"
-#include "../Log/fichier_Log.h"
-#include "../Regroupement/Regroupement.h"
-#include "../Analyse_Phrase/Analyse.h"
-#include "../Image/header.h"
 
 typedef struct valeur
 {
@@ -22,7 +17,7 @@ void viderBuffer();
 Valeur input();
 void choix_langue();
 void choix_test(Valeur);
-void traitement_commande(Valeur);
-void traitement_image(Valeur);
+void traitement_commande(Valeur langue);
+void traitement_image();
 
 #endif //PROJET_FIL_ROUGE_CLION_MENU_H

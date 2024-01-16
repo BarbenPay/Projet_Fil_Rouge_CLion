@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "menu.h"
+#include "../Image/header.h"
 #include "../Découpage/Decoupage.h"
 #include "../Log/fichier_Log.h"
 #include "../Regroupement/Regroupement.h"
@@ -76,6 +77,7 @@ void choix_test(Valeur l)
     if(strcmp((const char *) v.c, "1") == 0)
     {
         v.i = 1;
+        traitement_image();
     }
     else if(strcmp((const char *) v.c, "2") == 0)
     {
@@ -147,7 +149,7 @@ void traitement_commande(Valeur l)
 
 }
 
-void traitement_image(Valeur l)
+void traitement_image()
 {
     FILE* picture = fopen("../Image/banque/IMG_5389.txt", "r");
     int largeur = -1;
@@ -179,18 +181,18 @@ void traitement_image(Valeur l)
     if(dimension != 3){
         printf("la photo n'est pas en couleur");
     }
-    remplirMatriceImage(image,largeur,hauteur);
+    remplirMatriceImage(matrice,largeur,longueur);
     bin_pixel(matrice,largeur,longueur);
-    saturation(image,largeur,hauteur);
-    quantification(image,hauteur,largeur,tab,p);
+    saturation(matrice,largeur,longueur);
+    quantification(matrice,longueur,largeur,tab,p);
     for (int i=0;i<compteur_objet;i++){
         objet* tempon = &tab[i];
         donner_position(tempon,largeur);
         verif_objet(tempon);
-        nature_objet(tempon,image);
-        encadrement(image_origine, hauteur, largeur,tempon);
+        nature_objet(tempon,matrice);
+        encadrement(matrice, longueur, largeur,tempon);
     }
-    //sortie_image(image_origine,hauteur,largeur,dimmention);
+    //sortie_image(image_origine,longueur,largeur,dimmention);
     if(compteur_objet != 0){
         for(int x=0;x<compteur_objet;x++){
             objet* tempon2 =&tab[x];
