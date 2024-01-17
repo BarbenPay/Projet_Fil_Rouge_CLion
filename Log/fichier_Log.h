@@ -15,7 +15,7 @@
 
 char* date();
 
-int log_file(char* texte_A_Ajouter_Dans_Le_Fichier_Log);
+int log_file(char* texte_A_Ajouter); // Ajoute la phrase à la suite du fichier log.
 
 int log_file_init();
 
