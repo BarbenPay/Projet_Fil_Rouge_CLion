@@ -19,7 +19,7 @@ bool isWordInDict(char* word, char* dict){
         return false;
     }
 
-    char tampon[30];  // Taille de la chaine de cractère temporaire pour stocker les différents mots du dictionnaire
+    char* tampon = (char*) malloc( 30 * sizeof(char));  // Taille de la chaine de cractère temporaire pour stocker les différents mots du dictionnaire
     bool isFound = false;
 
 
