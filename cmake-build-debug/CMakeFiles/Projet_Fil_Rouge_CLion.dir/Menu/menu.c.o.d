@@ -1,5 +1,5 @@
 CMakeFiles/Projet_Fil_Rouge_CLion.dir/Menu/menu.c.o: \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/menu.c \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/menu.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/cdefs.h \
@@ -42,10 +42,9 @@ CMakeFiles/Projet_Fil_Rouge_CLion.dir/Menu/menu.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/secure/_strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/secure/_string.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/menu.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/../Image/header.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/../Découpage/Decoupage.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/../Log/fichier_Log.h \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/menu.h \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/../Découpage/Decoupage.h \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/../Log/fichier_Log.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/time.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/_types/_clock_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/_types/_time_t.h \
@@ -91,8 +90,9 @@ CMakeFiles/Projet_Fil_Rouge_CLion.dir/Menu/menu.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/malloc/_malloc_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/_types/_dev_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/_types/_mode_t.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/../Regroupement/Regroupement.h \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/../Regroupement/Regroupement.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/../Regroupement/../Découpage/Decoupage.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/../Analyse_Phrase/Analyse.h \
-  /Users/jean-baptiste/1ere_annee_upssitech/Projet\ Fil\ Rouge/Projet_Fil_Rouge_CLion/Menu/../Analyse_Phrase/../Regroupement/Regroupement.h
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/../Regroupement/../Découpage/Decoupage.h \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/../Analyse_Phrase/Analyse.h \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/../Analyse_Phrase/../Regroupement/Regroupement.h \
+  /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/../Image/traitement_image.h

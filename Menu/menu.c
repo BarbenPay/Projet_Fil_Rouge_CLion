@@ -4,11 +4,11 @@
 #include <stdio.h>
 #include <string.h>
 #include "menu.h"
-#include "../Image/header.h"
 #include "../Découpage/Decoupage.h"
 #include "../Log/fichier_Log.h"
 #include "../Regroupement/Regroupement.h"
 #include "../Analyse_Phrase/Analyse.h"
+#include "../Image/traitement_image.h"
 
 void viderBuffer()
 {
@@ -151,54 +151,9 @@ void traitement_commande(Valeur l)
 
 void traitement_image()
 {
-    FILE* picture = fopen("../Image/banque/IMG_01.txt", "r");
-    int largeur = -1;
-    int longueur = -1;
-    int dimension = -1;
-    fscanf(picture,"%d %d %d",&largeur,&longueur,&dimension);
-    int*** matrice = (int***)malloc(largeur * sizeof(int**));
-    for(int i = 0; i < largeur; i++){
-        matrice[i] = (int**)malloc(longueur * sizeof(int*));
-        for (int j = 0; j < longueur; j++){
-            matrice[i][j]=(int*)malloc(sizeof(int)* dimension);
-        }
-    }
+    picture_struct* original_picture = pictureStructFromFileAdress("../Image/banque/IMG_01.txt");
 
+    binary_picture_struct* binary_picture = binaryPictureStructFromPictureStruct(original_picture);
 
-    for(int i = 0; i<largeur;i++) {
-        for (int j = 0; j < dimension; j++) {
-            for (int v = 0; v < longueur; v++) {
-                fscanf(picture, "%d", &matrice[i][v][j]);
-            }
-        }
-    }
-    objet tab[10];
-    int compteur_objet=0;
-    int* p= &compteur_objet;
-    if(largeur > 400|| longueur > 400){
-        printf("l'image est trop volumineuse");
-    }
-    if(dimension != 3){
-        printf("la photo n'est pas en couleur");
-    }
-    //remplirMatriceImage(matrice,largeur,longueur);
-    bin_pixel(matrice,largeur,longueur);
-    saturation(matrice,largeur,longueur);
-    quantification(matrice,longueur,largeur,tab,p);
-    for (int i=0;i<compteur_objet;i++){
-        objet* tempon = &tab[i];
-        donner_position(tempon,largeur);
-        verif_objet(tempon);
-        nature_objet(tempon,matrice);
-        encadrement(matrice, longueur, largeur,tempon);
-    }
-    //sortie_image(image_origine,longueur,largeur,dimmention);
-    if(compteur_objet != 0){
-        for(int x=0;x<compteur_objet;x++){
-            objet* tempon2 =&tab[x];
-            sortie_objet(tempon2,compteur_objet);
-        }
-    }
-    else{printf("pas d'objet dans l'image\n");}
-    printf("%d,%d",compteur_objet,*p);
+    saveBinaryImageToJpg(binary_picture);
 }

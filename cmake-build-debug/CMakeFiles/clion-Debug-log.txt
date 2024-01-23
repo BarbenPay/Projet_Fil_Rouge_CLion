@@ -1,4 +1,4 @@
-/home/mc2/Téléchargements/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3 -B /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion -B /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -8,12 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- The C compiler identification is GNU 11.4.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Configuring done (1.1s)
--- Generating done (0.1s)
--- Build files have been written to: /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug

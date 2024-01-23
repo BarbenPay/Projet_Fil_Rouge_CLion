@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/mc2/Téléchargements/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake
 
 # The command to remove a file.
-RM = /home/mc2/Téléchargements/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3
+CMAKE_SOURCE_DIR = /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-d
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/home/mc2/Téléchargements/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/home/mc2/Téléchargements/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/CMakeFiles /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/CMakeFiles /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,53 +177,53 @@ Découpage/Decoupage.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.s
 .PHONY : Découpage/Decoupage.c.s
 
-Image/image.o: Image/image.c.o
-.PHONY : Image/image.o
+Image/analyse_image.o: Image/analyse_image.c.o
+.PHONY : Image/analyse_image.o
 
 # target to build an object file
-Image/image.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/image.c.o
-.PHONY : Image/image.c.o
+Image/analyse_image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/analyse_image.c.o
+.PHONY : Image/analyse_image.c.o
 
-Image/image.i: Image/image.c.i
-.PHONY : Image/image.i
+Image/analyse_image.i: Image/analyse_image.c.i
+.PHONY : Image/analyse_image.i
 
 # target to preprocess a source file
-Image/image.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/image.c.i
-.PHONY : Image/image.c.i
+Image/analyse_image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/analyse_image.c.i
+.PHONY : Image/analyse_image.c.i
 
-Image/image.s: Image/image.c.s
-.PHONY : Image/image.s
+Image/analyse_image.s: Image/analyse_image.c.s
+.PHONY : Image/analyse_image.s
 
 # target to generate assembly for a file
-Image/image.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/image.c.s
-.PHONY : Image/image.c.s
+Image/analyse_image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/analyse_image.c.s
+.PHONY : Image/analyse_image.c.s
 
-Image/scan_image.o: Image/scan_image.c.o
-.PHONY : Image/scan_image.o
+Image/traitement_image.o: Image/traitement_image.c.o
+.PHONY : Image/traitement_image.o
 
 # target to build an object file
-Image/scan_image.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.o
-.PHONY : Image/scan_image.c.o
+Image/traitement_image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/traitement_image.c.o
+.PHONY : Image/traitement_image.c.o
 
-Image/scan_image.i: Image/scan_image.c.i
-.PHONY : Image/scan_image.i
+Image/traitement_image.i: Image/traitement_image.c.i
+.PHONY : Image/traitement_image.i
 
 # target to preprocess a source file
-Image/scan_image.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.i
-.PHONY : Image/scan_image.c.i
+Image/traitement_image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/traitement_image.c.i
+.PHONY : Image/traitement_image.c.i
 
-Image/scan_image.s: Image/scan_image.c.s
-.PHONY : Image/scan_image.s
+Image/traitement_image.s: Image/traitement_image.c.s
+.PHONY : Image/traitement_image.s
 
 # target to generate assembly for a file
-Image/scan_image.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/scan_image.c.s
-.PHONY : Image/scan_image.c.s
+Image/traitement_image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/traitement_image.c.s
+.PHONY : Image/traitement_image.c.s
 
 Log/fichier_Log.o: Log/fichier_Log.c.o
 .PHONY : Log/fichier_Log.o
@@ -336,12 +336,12 @@ help:
 	@echo "... Découpage/Decoupage.o"
 	@echo "... Découpage/Decoupage.i"
 	@echo "... Découpage/Decoupage.s"
-	@echo "... Image/image.o"
-	@echo "... Image/image.i"
-	@echo "... Image/image.s"
-	@echo "... Image/scan_image.o"
-	@echo "... Image/scan_image.i"
-	@echo "... Image/scan_image.s"
+	@echo "... Image/analyse_image.o"
+	@echo "... Image/analyse_image.i"
+	@echo "... Image/analyse_image.s"
+	@echo "... Image/traitement_image.o"
+	@echo "... Image/traitement_image.i"
+	@echo "... Image/traitement_image.s"
 	@echo "... Log/fichier_Log.o"
 	@echo "... Log/fichier_Log.i"
 	@echo "... Log/fichier_Log.s"

@@ -1,0 +1,10 @@
+prefix=/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/JPEG_Library
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libjpeg
+Description: Reads and writes JPEG files
+Version: 9.6.0
+Libs: -L${libdir} -ljpeg
+Cflags: -I${includedir}
