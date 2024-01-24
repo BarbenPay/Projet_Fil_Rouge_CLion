@@ -90,16 +90,22 @@
 		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Découpage/Decoupage.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/analyse_image.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ColorAnalysis/colorAnalysis.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/analyse_image.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ColorAnalysis/colorAnalysis.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/traitement_image.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ObjectAnalysis/objectAnalysis.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/traitement_image.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ObjectAnalysis/objectAnalysis.h">
+			<Option target="Projet_Fil_Rouge_CLion"/>
+		</Unit>
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatment/imageTreatment.c">
+			<Option target="Projet_Fil_Rouge_CLion"/>
+		</Unit>
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatment/imageTreatment.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
 		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/fichier_Log.c">

@@ -177,53 +177,77 @@ Découpage/Decoupage.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.s
 .PHONY : Découpage/Decoupage.c.s
 
-Image/analyse_image.o: Image/analyse_image.c.o
-.PHONY : Image/analyse_image.o
+Image/ColorAnalysis/colorAnalysis.o: Image/ColorAnalysis/colorAnalysis.c.o
+.PHONY : Image/ColorAnalysis/colorAnalysis.o
 
 # target to build an object file
-Image/analyse_image.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/analyse_image.c.o
-.PHONY : Image/analyse_image.c.o
+Image/ColorAnalysis/colorAnalysis.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ColorAnalysis/colorAnalysis.c.o
+.PHONY : Image/ColorAnalysis/colorAnalysis.c.o
 
-Image/analyse_image.i: Image/analyse_image.c.i
-.PHONY : Image/analyse_image.i
+Image/ColorAnalysis/colorAnalysis.i: Image/ColorAnalysis/colorAnalysis.c.i
+.PHONY : Image/ColorAnalysis/colorAnalysis.i
 
 # target to preprocess a source file
-Image/analyse_image.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/analyse_image.c.i
-.PHONY : Image/analyse_image.c.i
+Image/ColorAnalysis/colorAnalysis.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ColorAnalysis/colorAnalysis.c.i
+.PHONY : Image/ColorAnalysis/colorAnalysis.c.i
 
-Image/analyse_image.s: Image/analyse_image.c.s
-.PHONY : Image/analyse_image.s
+Image/ColorAnalysis/colorAnalysis.s: Image/ColorAnalysis/colorAnalysis.c.s
+.PHONY : Image/ColorAnalysis/colorAnalysis.s
 
 # target to generate assembly for a file
-Image/analyse_image.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/analyse_image.c.s
-.PHONY : Image/analyse_image.c.s
+Image/ColorAnalysis/colorAnalysis.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ColorAnalysis/colorAnalysis.c.s
+.PHONY : Image/ColorAnalysis/colorAnalysis.c.s
 
-Image/traitement_image.o: Image/traitement_image.c.o
-.PHONY : Image/traitement_image.o
+Image/ObjectAnalysis/objectAnalysis.o: Image/ObjectAnalysis/objectAnalysis.c.o
+.PHONY : Image/ObjectAnalysis/objectAnalysis.o
 
 # target to build an object file
-Image/traitement_image.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/traitement_image.c.o
-.PHONY : Image/traitement_image.c.o
+Image/ObjectAnalysis/objectAnalysis.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.o
+.PHONY : Image/ObjectAnalysis/objectAnalysis.c.o
 
-Image/traitement_image.i: Image/traitement_image.c.i
-.PHONY : Image/traitement_image.i
+Image/ObjectAnalysis/objectAnalysis.i: Image/ObjectAnalysis/objectAnalysis.c.i
+.PHONY : Image/ObjectAnalysis/objectAnalysis.i
 
 # target to preprocess a source file
-Image/traitement_image.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/traitement_image.c.i
-.PHONY : Image/traitement_image.c.i
+Image/ObjectAnalysis/objectAnalysis.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.i
+.PHONY : Image/ObjectAnalysis/objectAnalysis.c.i
 
-Image/traitement_image.s: Image/traitement_image.c.s
-.PHONY : Image/traitement_image.s
+Image/ObjectAnalysis/objectAnalysis.s: Image/ObjectAnalysis/objectAnalysis.c.s
+.PHONY : Image/ObjectAnalysis/objectAnalysis.s
 
 # target to generate assembly for a file
-Image/traitement_image.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/traitement_image.c.s
-.PHONY : Image/traitement_image.c.s
+Image/ObjectAnalysis/objectAnalysis.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.s
+.PHONY : Image/ObjectAnalysis/objectAnalysis.c.s
+
+Image/imageTreatment/imageTreatment.o: Image/imageTreatment/imageTreatment.c.o
+.PHONY : Image/imageTreatment/imageTreatment.o
+
+# target to build an object file
+Image/imageTreatment/imageTreatment.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatment/imageTreatment.c.o
+.PHONY : Image/imageTreatment/imageTreatment.c.o
+
+Image/imageTreatment/imageTreatment.i: Image/imageTreatment/imageTreatment.c.i
+.PHONY : Image/imageTreatment/imageTreatment.i
+
+# target to preprocess a source file
+Image/imageTreatment/imageTreatment.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatment/imageTreatment.c.i
+.PHONY : Image/imageTreatment/imageTreatment.c.i
+
+Image/imageTreatment/imageTreatment.s: Image/imageTreatment/imageTreatment.c.s
+.PHONY : Image/imageTreatment/imageTreatment.s
+
+# target to generate assembly for a file
+Image/imageTreatment/imageTreatment.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatment/imageTreatment.c.s
+.PHONY : Image/imageTreatment/imageTreatment.c.s
 
 Log/fichier_Log.o: Log/fichier_Log.c.o
 .PHONY : Log/fichier_Log.o
@@ -336,12 +360,15 @@ help:
 	@echo "... Découpage/Decoupage.o"
 	@echo "... Découpage/Decoupage.i"
 	@echo "... Découpage/Decoupage.s"
-	@echo "... Image/analyse_image.o"
-	@echo "... Image/analyse_image.i"
-	@echo "... Image/analyse_image.s"
-	@echo "... Image/traitement_image.o"
-	@echo "... Image/traitement_image.i"
-	@echo "... Image/traitement_image.s"
+	@echo "... Image/ColorAnalysis/colorAnalysis.o"
+	@echo "... Image/ColorAnalysis/colorAnalysis.i"
+	@echo "... Image/ColorAnalysis/colorAnalysis.s"
+	@echo "... Image/ObjectAnalysis/objectAnalysis.o"
+	@echo "... Image/ObjectAnalysis/objectAnalysis.i"
+	@echo "... Image/ObjectAnalysis/objectAnalysis.s"
+	@echo "... Image/imageTreatment/imageTreatment.o"
+	@echo "... Image/imageTreatment/imageTreatment.i"
+	@echo "... Image/imageTreatment/imageTreatment.s"
 	@echo "... Log/fichier_Log.o"
 	@echo "... Log/fichier_Log.i"
 	@echo "... Log/fichier_Log.s"
