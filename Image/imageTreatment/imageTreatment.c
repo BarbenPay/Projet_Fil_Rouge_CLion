@@ -2,8 +2,9 @@
 // Created by Jean-Baptiste Salanie on 23/01/2024.
 //
 
-#include "analyse_image.h"
-#include "../Log/fichier_Log.h"
+#include "imageTreatment.h"
+#include "../../Log/fichier_Log.h"
+#include "../ColorAnalysis/colorAnalysis.h"
 
 
 picture_struct* pictureStructFromFileAdress(char* adress)
@@ -56,8 +57,6 @@ picture_struct* pictureStructFromFileAdress(char* adress)
     log_file("analyse_image.c --- Affectation des données dans la structure picture_struct correctement effectuée.");
     return res;
 }
-
-
 
 void encadrement_objet( picture_struct* input_image, object* input_object_tab ,int* cpt)
 {
@@ -139,135 +138,15 @@ void encadrement_objet( picture_struct* input_image, object* input_object_tab ,i
                     couleur_objet(buffer,input_image->image);
                     nature_objet(buffer,input_image->image);
                     compteur++;
-                    //printf("dans objet");
                 }
-                //printf("compteur :%d ",compteur);
             }
         }
     }
     *cpt = compteur;
+    log_file("imageTreatment.c --- Fin de l'analyse de l'image.");
+    char* toSend = (char*)malloc((77+(sizeof(compteur)/4) * sizeof(char)));
+    sprintf(toSend, "imageTreatment.c --- L'analyse de l'image a trouvé %d potentielle(s) image(s).", compteur);
+    log_file(toSend);
+    free(toSend);
 }
 
-
-
-void propagation(object* input_struct_object,int*** input_image,int width,int height)
-{
-    int i=1;
-    int centre_horizontal;
-    int centre_vertical;
-    /*propa vers le bas avec verif pixel couleur*/
-    while((detectercouleur(input_image[input_struct_object->coor_H + i][input_struct_object->coor_G]) != 'N') && ((input_struct_object->coor_H + i) <= height))
-    {
-        input_struct_object->coor_B = input_struct_object->coor_H+i;
-        i++;
-        //printf("propa vers bas");
-    }
-    i=1;
-    /*propa vers la droite avec verif pixel couleur*/
-    /*on commence en bas et vers la droite*/
-    while(detectercouleur(input_image[input_struct_object->coor_B][input_struct_object->coor_G + i]) != 'N' && (input_struct_object->coor_G+i) <= width ){
-        input_struct_object->coor_D = input_struct_object->coor_G+i;
-        i++;
-        //printf("propa vers droite");
-    }
-    /*boucle de verif avec centre*/
-    for(int iteration = 0; iteration<2;iteration++){
-        centre_horizontal = input_struct_object->coor_D - ((input_struct_object->coor_D - input_struct_object->coor_G)/2);
-        centre_vertical = input_struct_object->coor_B - ((input_struct_object->coor_B - input_struct_object->coor_H)/2);
-        //printf("centre hori : %d ", centre_horizontal);
-        //printf("centre verti : %d ", centre_vertical);
-        i=1;
-        //propagation vers gauche
-        while(detectercouleur(input_image[centre_vertical][centre_horizontal - i]) != 'N' && (centre_horizontal - i) >= 0){
-            if(input_struct_object->coor_G > centre_horizontal - i){
-                input_struct_object->coor_G = centre_horizontal - i;
-            }
-            i++;
-            //printf("propa vers gauche +1");
-        }
-        i=1;
-        //propagation vers D
-        while(detectercouleur(input_image[centre_vertical][centre_horizontal + i]) != 'N' && (centre_horizontal + i) <= width){
-            if(input_struct_object->coor_D < centre_horizontal + i){
-                input_struct_object->coor_D = centre_horizontal + i;
-            }
-            i++;
-            //printf("propa vers droite +1");
-        }
-        i=1;
-        //propagation vers bas
-        while(detectercouleur(input_image[centre_vertical + i][centre_horizontal]) != 'N' && (centre_vertical + i) <= height){
-            if(input_struct_object->coor_B < centre_vertical + i){
-                input_struct_object->coor_B = centre_vertical + i;
-            }
-            i++;
-            //printf("propa vers bas +1");
-        }
-    }
-}
-
-
-
-
-
-char detectercouleur(int* rgb)
-{
-    char couleur;
-
-
-    if (detectionGris(rgb[0],rgb[1],rgb[2]) == 'N'){
-        return 'N';
-    }
-
-
-    // Appliquer la quantification sur les 2 premiers bits pour chaque composante
-    int resultatRouge = quantificationDeuxBits(rgb[0]);
-    int resultatVert = quantificationDeuxBits(rgb[1]);
-    int resultatBleu = quantificationDeuxBits(rgb[2]);
-
-    // Organiser les résultats dans un seul nombre sur 6 bits
-    int resultatFinal = (resultatRouge << 4) | (resultatVert << 2) | resultatBleu;
-
-    couleur = detectionCouleur(resultatFinal);
-
-    return couleur;
-}
-
-
-
-void verif_objet(object* input_struct_object)
-{
-    int limite = 10;
-
-
-    if( input_struct_object->coor_B != input_struct_object->coor_H ){
-        if(input_struct_object->coor_B - input_struct_object->coor_H < limite || input_struct_object->coor_D - input_struct_object->coor_G < limite){
-            input_struct_object->nature = 'N';
-        }
-        if((input_struct_object->coor_D - input_struct_object->coor_G) / (input_struct_object->coor_B - input_struct_object->coor_H) > 1.5 || (input_struct_object->coor_D - input_struct_object->coor_G) / (input_struct_object->coor_B - input_struct_object->coor_H) < 0.65){
-            input_struct_object->nature = 'N';
-        }
-    }
-    else{
-        input_struct_object->nature = 'N';
-        input_struct_object->position = 'N';
-    }
-}
-
-
-char detectionGris(int r, int g, int b){
-    int seuilGris = 30;
-
-    // Calculer la différence maximale permise pour considérer le pixel comme gris
-    int diffMaxGris = seuilGris;
-
-    // Calculer les différences entre les composantes RGB
-    int diffR = abs(r - b);
-    int diffG = abs(g - b);
-    int diffB = abs(b - r);
-
-    // Vérifier la proximité des valeurs par rapport aux seuils
-    if (diffR <= diffMaxGris && diffG <= diffMaxGris && diffB <= diffMaxGris) {
-        return 'N';
-    }
-}

@@ -17,12 +17,14 @@ add_executable(Projet_Fil_Rouge_CLion main.c
         Regroupement/Regroupement.h
         Analyse_Phrase/Analyse.c
         Analyse_Phrase/Analyse.h
-        Image/traitement_image.c
-        Image/traitement_image.h
         Menu/menu.c
         Menu/menu.h
-        Image/analyse_image.c
-        Image/analyse_image.h
+        Image/imageTreatment/imageTreatment.c
+        Image/imageTreatment/imageTreatment.h
+        Image/ColorAnalysis/colorAnalysis.c
+        Image/ColorAnalysis/colorAnalysis.h
+        Image/ObjectAnalysis/objectAnalysis.c
+        Image/ObjectAnalysis/objectAnalysis.h
 
 
 )
