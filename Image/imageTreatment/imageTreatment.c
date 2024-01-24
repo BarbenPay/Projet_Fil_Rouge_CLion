@@ -145,6 +145,11 @@ void encadrement_objet( picture_struct* input_image, object* input_object_tab ,i
     *cpt = compteur;
     log_file("imageTreatment.c --- Fin de l'analyse de l'image.");
     char* toSend = (char*)malloc((77+(sizeof(compteur)/4) * sizeof(char)));
+    if(toSend == NULL)
+    {
+        log_file("imageTreatment.c --- Erreur dans l'allocation de la variable toSend dans la fonction encadrement_objet.");
+        exit(EXIT_FAILURE);
+    }
     sprintf(toSend, "imageTreatment.c --- L'analyse de l'image a trouvé %d potentielle(s) image(s).", compteur);
     log_file(toSend);
     free(toSend);
