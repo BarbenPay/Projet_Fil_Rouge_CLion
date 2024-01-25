@@ -123,7 +123,7 @@ bool isWordADegreeUnite(char* word, int code_language){
 
 bool isWordAnObject(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Objet/objet.txt");
+        return isWordInDict(word, "../Dictionnaire/FR/Objet/sphere.txt");
     } else if (code_language == 2) {
         return isWordInDict(word, "../Dictionnaire/EN/Object/object.txt");
     } else {
@@ -198,7 +198,8 @@ bool isWordARightDirection(char* word, int code_language){
     }
 }
 
-bool isWordAConjunction(char* word, int code_language){
+bool isWordAConjunction(char* word, int code_language)
+{
     if (code_language == 1) {
         return isWordInDict(word, "../Dictionnaire/FR/Conjonction/conjunction.txt");
     } else if (code_language == 2) {

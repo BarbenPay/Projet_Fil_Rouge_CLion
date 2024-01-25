@@ -7,8 +7,6 @@
 
 #include "imageTreatment/imageTreatment.h"
 
-void sortie_objet(object* inputObject,int x);
-
-void imageTreatmentCalling(char* pictureAdress);
+structObject* imageTreatmentCalling(char* pictureAdress);
 
 #endif //PROJET_FIL_ROUGE_CLION_IMAGETREATMENTCALLING_H

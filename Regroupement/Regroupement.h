@@ -57,6 +57,8 @@ bool isWordALeftDirection(char* word, int code_language);
 
 bool isWordARightDirection(char* word, int code_language);
 
+bool isWordAConjunction(char* word, int code_language);
+
 int wordType(char* word, int code_language); // Renvoie le code du type du mot
 
 wordTypeStruct* init_wordTypeStruct(); // Initialise une structure wordTypeStruct

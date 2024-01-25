@@ -1,0 +1,4 @@
+boule
+balle
+sphere
+sphère

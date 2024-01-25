@@ -18,4 +18,6 @@ structObject* encadrement_objet(picture_struct* input_image);
 
 void objectTabToLogFile(structObject* inputStructObject);
 
+void freeObjectStruct(structObject* inputStructObject);
+
 #endif //PROJET_FIL_ROUGE_CLION_IMAGETREATMENT_H

@@ -10,6 +10,7 @@
 #include "../Analyse_Phrase/Analyse.h"
 #include "../Image/imageTreatmentCalling.h"
 
+
 void viderBuffer()
 {
     int c = 0;
@@ -154,6 +155,8 @@ void traitement_commande(Valeur l)
 void traitement_image()
 {
 
-    imageTreatmentCalling("../Image/Banque/IMG_07.txt");
+    structObject* res = imageTreatmentCalling("../Image/Banque/IMG_20.txt");
+
+    freeObjectStruct(res);
 
 }
