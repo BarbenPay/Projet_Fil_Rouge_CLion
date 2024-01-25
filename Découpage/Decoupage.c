@@ -5,7 +5,7 @@
 
 #include <string.h>
 #include <stdlib.h>
-#include "../Log/fichier_Log.h"
+#include "../Log/logFile.h"
 
 
 
@@ -112,3 +112,22 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
     return res;
 
 }// Découpage de la phrase passée en paramètre et renvoie une structure composée des différents mots en chaîne de caractère
+
+void freePhrase(Phrase* phrase)
+{
+    if (phrase == NULL)
+    {
+        return; // Rien à libérer si la structure est NULL
+    }
+
+    for (int i = 0; i < phrase->wordNumber; i++)
+    {
+        if (phrase->wordArray[i] != NULL)
+        {
+            free(phrase->wordArray[i]);
+        }
+    }
+
+    free(phrase->wordArray);
+    free(phrase);
+}

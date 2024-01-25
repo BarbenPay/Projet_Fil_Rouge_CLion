@@ -16,12 +16,11 @@ void propagation(object* input_struct_object,int*** input_image,int width,int he
     {
         input_struct_object->coor_B = input_struct_object->coor_H+i;
         i++;
-        //printf("propa vers bas");
     }
     i=1;
     /*propa vers la droite avec verif pixel couleur*/
     /*on commence en bas et vers la droite*/
-    while(detectercouleur(input_image[input_struct_object->coor_B][input_struct_object->coor_G + i]) != 'N' && (input_struct_object->coor_G+i) <= width ){
+    while(((input_struct_object->coor_G+i) <= width-1) && (detectercouleur(input_image[input_struct_object->coor_B][input_struct_object->coor_G + i]) != 'N')){
         input_struct_object->coor_D = input_struct_object->coor_G+i;
         i++;
         //printf("propa vers droite");
@@ -34,7 +33,7 @@ void propagation(object* input_struct_object,int*** input_image,int width,int he
         //printf("centre verti : %d ", centre_vertical);
         i=1;
         //propagation vers gauche
-        while(detectercouleur(input_image[centre_vertical][centre_horizontal - i]) != 'N' && (centre_horizontal - i) >= 0){
+        while((centre_horizontal-i >=0)&&(detectercouleur(input_image[centre_vertical][centre_horizontal - i]) != 'N')){
             if(input_struct_object->coor_G > centre_horizontal - i){
                 input_struct_object->coor_G = centre_horizontal - i;
             }
@@ -43,7 +42,7 @@ void propagation(object* input_struct_object,int*** input_image,int width,int he
         }
         i=1;
         //propagation vers D
-        while(detectercouleur(input_image[centre_vertical][centre_horizontal + i]) != 'N' && (centre_horizontal + i) <= width){
+        while(((centre_horizontal + i) <= width-1) && (detectercouleur(input_image[centre_vertical][centre_horizontal + i]) != 'N')){
             if(input_struct_object->coor_D < centre_horizontal + i){
                 input_struct_object->coor_D = centre_horizontal + i;
             }

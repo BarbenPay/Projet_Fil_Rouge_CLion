@@ -97,19 +97,19 @@ CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Découpage/Decoupage.c -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.s
 
-CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o: CMakeFiles/Projet_Fil_Rouge_CLion.dir/flags.make
-CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o: /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/fichier_Log.c
-CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o: CMakeFiles/Projet_Fil_Rouge_CLion.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o -MF CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o.d -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o -c /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/fichier_Log.c
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o: CMakeFiles/Projet_Fil_Rouge_CLion.dir/flags.make
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o: /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/logFile.c
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o: CMakeFiles/Projet_Fil_Rouge_CLion.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o -MF CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o.d -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o -c /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/logFile.c
 
-CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/fichier_Log.c > CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.i
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/logFile.c > CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.i
 
-CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/fichier_Log.c -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.s
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/logFile.c -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.s
 
 CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o: CMakeFiles/Projet_Fil_Rouge_CLion.dir/flags.make
 CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o: /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Regroupement/Regroupement.c
@@ -195,34 +195,49 @@ CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.s: c
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ObjectAnalysis/objectAnalysis.c -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.s
 
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o: CMakeFiles/Projet_Fil_Rouge_CLion.dir/flags.make
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o: /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatmentCalling.c
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o: CMakeFiles/Projet_Fil_Rouge_CLion.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o -MF CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o.d -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o -c /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatmentCalling.c
+
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatmentCalling.c > CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.i
+
+CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatmentCalling.c -o CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.s
+
 # Object files for target Projet_Fil_Rouge_CLion
 Projet_Fil_Rouge_CLion_OBJECTS = \
 "CMakeFiles/Projet_Fil_Rouge_CLion.dir/main.c.o" \
 "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.o" \
-"CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o" \
+"CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o" \
 "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o" \
 "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Analyse_Phrase/Analyse.c.o" \
 "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Menu/menu.c.o" \
 "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatment/imageTreatment.c.o" \
 "CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ColorAnalysis/colorAnalysis.c.o" \
-"CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.o"
+"CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.o" \
+"CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o"
 
 # External object files for target Projet_Fil_Rouge_CLion
 Projet_Fil_Rouge_CLion_EXTERNAL_OBJECTS =
 
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/main.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Découpage/Decoupage.c.o
-Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o
+Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Regroupement/Regroupement.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Analyse_Phrase/Analyse.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Menu/menu.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatment/imageTreatment.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ColorAnalysis/colorAnalysis.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/ObjectAnalysis/objectAnalysis.c.o
+Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make
-Projet_Fil_Rouge_CLion: /Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/JPEG_Library/lib/libjpeg.a
 Projet_Fil_Rouge_CLion: CMakeFiles/Projet_Fil_Rouge_CLion.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable Projet_Fil_Rouge_CLion"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable Projet_Fil_Rouge_CLion"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Projet_Fil_Rouge_CLion.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

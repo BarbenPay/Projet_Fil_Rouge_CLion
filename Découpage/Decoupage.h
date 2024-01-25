@@ -13,6 +13,9 @@ typedef struct etStruct{
 } Phrase;
 
 Phrase * init_Sentence();
+
 Phrase * decoupage (char* phrase);
+
+void freePhrase(Phrase* phrase);
 
 #endif //PROJET_FIL_ROUGE_CLION_DECOUPAGE_H

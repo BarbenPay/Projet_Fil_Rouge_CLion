@@ -2,8 +2,8 @@
 // Created by Jean-Baptiste Salanie on 28/12/2023.
 //
 
-#ifndef PROJET_FIL_ROUGE_CLION_FICHIER_LOG_H
-#define PROJET_FIL_ROUGE_CLION_FICHIER_LOG_H
+#ifndef PROJET_FIL_ROUGE_CLION_LOGFILE_H
+#define PROJET_FIL_ROUGE_CLION_LOGFILE_H
 
 
 #include <stdio.h>
@@ -20,4 +20,4 @@ int log_file(char* texte_A_Ajouter); // Ajoute la phrase à la suite du fichier 
 int log_file_init();
 
 
-#endif //PROJET_FIL_ROUGE_CLION_FICHIER_LOG_H
+#endif //PROJET_FIL_ROUGE_CLION_LOGFILE_H

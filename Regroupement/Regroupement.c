@@ -3,14 +3,15 @@
 //
 
 #include "Regroupement.h"
-#include "../Log/fichier_Log.h"
+#include "../Log/logFile.h"
 #include <ctype.h>
 
 
 bool isWordInDict(char* word, char* dict){
     FILE* dictionnaire = fopen(dict, "r"); //on ouvre le dictionnaire
 
-    if (dictionnaire == NULL) { //Si le programme n'arrive pas à ouvrir le dictionnaire, il renvoie une erreur sur le fichier log
+    if (dictionnaire == NULL)
+    { //Si le programme n'arrive pas à ouvrir le dictionnaire, il renvoie une erreur sur le fichier log
         char* toSend = (char*)malloc(sizeof(char)*(64 + strlen(dict)));
         strcpy(toSend,"Regroupement.c --- Erreur lors de l'ouverture du dictionnaire: ");
         strcat(toSend, dict);
@@ -25,7 +26,7 @@ bool isWordInDict(char* word, char* dict){
 
     for(int i = 0; i < strlen(word); i++){
         if( isupper(word[i])){
-            word[i] = tolower(word[i]);
+            word[i] =(char)tolower(word[i]);
         }
     }
 
@@ -457,4 +458,32 @@ sentencesStruct* sentencesToAnalysedSentencesTab(Phrase* phrase, int code_langua
     }
     log_file("Regroupement.c --- Analyse correctement effectuée.");
     return res;
+}
+
+void freeStructures(sentencesStruct* sentences)
+{
+    if (sentences == NULL)
+    {
+        return; // Rien à libérer si la structure est NULL
+    }
+
+    for (int i = 0; i < sentences->numberOfSentence; i++)
+    {
+        if (sentences->sentences[i] != NULL)
+        {
+            for (int j = 0; j < sentences->sentences[i]->numberOfWord; j++)
+            {
+                if (sentences->sentences[i]->words[j] != NULL)
+                {
+                    free(sentences->sentences[i]->words[j]->word);
+                    free(sentences->sentences[i]->words[j]);
+                }
+            }
+            free(sentences->sentences[i]->words);
+            free(sentences->sentences[i]);
+        }
+    }
+
+    free(sentences->sentences);
+    free(sentences);
 }

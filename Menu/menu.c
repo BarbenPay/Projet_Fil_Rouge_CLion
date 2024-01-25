@@ -5,10 +5,10 @@
 #include <string.h>
 #include "menu.h"
 #include "../Découpage/Decoupage.h"
-#include "../Log/fichier_Log.h"
+#include "../Log/logFile.h"
 #include "../Regroupement/Regroupement.h"
 #include "../Analyse_Phrase/Analyse.h"
-#include "../Image/traitement_image.h"
+#include "../Image/imageTreatmentCalling.h"
 
 void viderBuffer()
 {
@@ -109,6 +109,9 @@ void traitement_commande(Valeur l)
     }
     sentencesStruct* typeWord;
     typeWord = sentencesToAnalysedSentencesTab(res, l.i);
+
+    freePhrase(res);
+
     for(int indexPhrase = 0; indexPhrase < typeWord->numberOfSentence; indexPhrase++)
     {
         for (int i = 0; i < typeWord->sentences[indexPhrase]->numberOfWord; i++) {
@@ -120,8 +123,7 @@ void traitement_commande(Valeur l)
         analyse(typeWord->sentences[indexPhrase]);
     }
 
-    free(res);
-    free(typeWord);
+    freeStructures(typeWord);
 
     Valeur p;
     printf("\nNouvelle commande : 1 \nRetour : 2 \n\n");
@@ -151,9 +153,7 @@ void traitement_commande(Valeur l)
 
 void traitement_image()
 {
-    picture_struct* original_picture = pictureStructFromFileAdress("../Image/banque/IMG_01.txt");
 
-    binary_picture_struct* binary_picture = binaryPictureStructFromPictureStruct(original_picture);
+    imageTreatmentCalling("../Image/Banque/IMG_01.txt");
 
-    saveBinaryImageToJpg(binary_picture);
 }

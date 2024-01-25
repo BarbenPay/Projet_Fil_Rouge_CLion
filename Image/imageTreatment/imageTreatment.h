@@ -10,10 +10,10 @@
 
 picture_struct* pictureStructFromFileAdress(char* adress);
 
-void encadrement_objet( picture_struct* input_image, object* input_object_tab ,int* cpt);
+structObject* initStructObject();
 
-void propagation(object* input_struct_object,int*** input_image,int width,int height);
+void createNewObject(structObject* inputStructObject, int horizontalIndex, int verticalIndex, picture_struct* input_image);
 
-void verif_objet(object* input_struct_object);
+structObject* encadrement_objet(picture_struct* input_image);
 
 #endif //PROJET_FIL_ROUGE_CLION_IMAGETREATMENT_H

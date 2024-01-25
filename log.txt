@@ -1,1 +1,5 @@
-[21/01/2024 20:06:58] traitement_image.c --- Initialisation de la structure picture_struct.
+[25/01/2024 01:24:27] traitement_image.c --- Initialisation de la structure picture_struct.
+[25/01/2024 01:24:27] analyse_image.c --- Affectation des données dans la structure picture_struct correctement effectuée.
+[25/01/2024 01:24:27] analyse_image.c --- Début de l'analyse de l'image
+[25/01/2024 01:24:27] imageTreatment.c --- Fin de l'analyse de l'image.
+[25/01/2024 01:24:27] imageTreatment.c --- L'analyse de l'image a trouvé 1581 potentielle(s) image(s).

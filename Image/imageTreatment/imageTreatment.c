@@ -3,7 +3,7 @@
 //
 
 #include "imageTreatment.h"
-#include "../../Log/fichier_Log.h"
+#include "../../Log/logFile.h"
 #include "../ColorAnalysis/colorAnalysis.h"
 
 
@@ -43,12 +43,11 @@ picture_struct* pictureStructFromFileAdress(char* adress)
         }
     }
 
-
-    for(int i = 0; i<res->width;i++)
+    for (int j = 0; j < res->dimension; j++)
     {
-        for (int j = 0; j < res->dimension; j++)
+        for(int i = 0; i<res->height;i++)
         {
-            for (int v = 0; v < res->height; v++)
+            for (int v = 0; v < res->width; v++)
             {
                 fscanf(picture, "%d", &res->image[i][v][j]);
             }
@@ -58,100 +57,108 @@ picture_struct* pictureStructFromFileAdress(char* adress)
     return res;
 }
 
-void encadrement_objet( picture_struct* input_image, object* input_object_tab ,int* cpt)
+structObject* initStructObject()
+{
+
+    structObject* res = (structObject*)malloc(sizeof(structObject));
+
+    res->objectTab=NULL;
+    res->counter=0;
+
+    return res;
+
+}
+
+void createNewObject(structObject* inputStructObject, int horizontalIndex, int verticalIndex, picture_struct* input_image)
+{
+    inputStructObject->objectTab=(object**) realloc(inputStructObject->objectTab, (inputStructObject->counter+1) * sizeof(object*));
+
+    if (inputStructObject->objectTab == NULL)
+    {
+        free(inputStructObject->objectTab);
+        log_file("Erreur lors de la réallocation de mémoire pour input_object_tab.");
+        exit(EXIT_FAILURE);
+    }
+
+    inputStructObject->objectTab[inputStructObject->counter] = (object*) malloc (sizeof(object));
+
+
+    inputStructObject->objectTab[inputStructObject->counter]->coor_H = horizontalIndex;
+    inputStructObject->objectTab[inputStructObject->counter]->coor_B = horizontalIndex;
+    inputStructObject->objectTab[inputStructObject->counter]->coor_D = verticalIndex;
+    inputStructObject->objectTab[inputStructObject->counter]->coor_G = verticalIndex;
+
+    propagation(inputStructObject->objectTab[inputStructObject->counter], input_image->image, input_image->width, input_image->height);
+    verif_objet(inputStructObject->objectTab[inputStructObject->counter]);
+    donner_position(inputStructObject->objectTab[inputStructObject->counter], input_image->width);
+    couleur_objet(inputStructObject->objectTab[inputStructObject->counter], input_image->image);
+    nature_objet(inputStructObject->objectTab[inputStructObject->counter], input_image->image);
+
+    inputStructObject->counter++;
+}
+
+structObject* encadrement_objet(picture_struct* input_image)
 {
 
     log_file("analyse_image.c --- Début de l'analyse de l'image");
 
+    structObject * res = initStructObject();
 
     char color;
     int Bool;
-    int aire = 6; /*zone morte autour des objets deja detectés*/
-    int compteur=0;
+    int aire = 6; /*zone morte autour des objets déjà détectés*/
 
-
-
-
-    for (int i = 0; i < input_image->height; ++i) /*Parcours de l'image pixel par pixel*/
+    for (int i = 0; i < input_image->height; ++i)
     {
-        for (int j = 0; j <input_image->width; ++j)
+        for (int j = 0; j < input_image->width; ++j)
         {
-            /*mettre la couleur du pixel dans un variable*/
             color = detectercouleur(input_image->image[i][j]);
 
-            if((compteur == 0) && (color != 'N')) /*premiere iteration de l'encadrement*/
+            if ((res->counter == 0) && (color != 'N'))
             {
-
-                object* buffer=&input_object_tab[compteur]; /*premier pixel trouver on initialise la couleur et les coordonné dans tab[0]*/
-
-                buffer->coor_H = i;
-                buffer->coor_B = i;
-                buffer->coor_D = j;
-                buffer->coor_G = j;
-
-                propagation(buffer,input_image->image,input_image->width,input_image->height);
-                verif_objet(buffer);
-                donner_position(buffer,input_image->width);
-                couleur_objet(buffer,input_image->image);
-                nature_objet(buffer,input_image->image);
-                compteur++;
-
-            }
-
-            else if(compteur != 0 && color != 'N')
-            {
-
+                createNewObject(res, i, j, input_image);
+            } else if (res->counter != 0 && color != 'N') {
                 Bool = 0;
 
-                for(int t = 0 ; t < compteur ; t++)
+                for (int t = 0; t < res->counter; t++)
                 {
+                    object* buffer = res->objectTab[t];
 
-                    object* buffer = &input_object_tab[t];
-                    //si le pixel est dans la zone d'un autre objet
-
-                    if(buffer->nature != 'N')
+                    if (buffer->nature != 'N')
                     {
-
-                        if(j <= (buffer->coor_D + buffer->coor_D / aire) && (j >= buffer->coor_G - buffer->coor_G/aire) && (i <= buffer->coor_B + buffer->coor_B/aire) && (i >= buffer->coor_H) && Bool == 0)
+                        if (j <= (buffer->coor_D + buffer->coor_D / aire) &&
+                            (j >= buffer->coor_G - buffer->coor_G / aire) &&
+                            (i <= buffer->coor_B + buffer->coor_B / aire) &&
+                            (i >= buffer->coor_H) && Bool == 0)
                         {
-
                             Bool = 1;
-                            //printf("bool = 1\n");
                         }
                     }
                 }
-                // Si on se trouve dans un objet deja cree, on n'en creer pas un nouveau
-                if(Bool == 0){
-                    //premier pixel trouver on initialise la couleur et les coordonné dans tab[compteur]
-                    object* buffer=&input_object_tab[compteur];
 
-
-                    buffer->coor_H = i;
-                    buffer->coor_B = i;
-                    buffer->coor_D = j;
-                    buffer->coor_G = j;
-
-
-                    propagation(buffer,input_image->image,input_image->width,input_image->height);
-                    verif_objet(buffer);
-                    donner_position(buffer,input_image->width);
-                    couleur_objet(buffer,input_image->image);
-                    nature_objet(buffer,input_image->image);
-                    compteur++;
+                if (Bool == 0)
+                {
+                    createNewObject(res, i, j, input_image);
                 }
             }
         }
     }
-    *cpt = compteur;
+
     log_file("imageTreatment.c --- Fin de l'analyse de l'image.");
-    char* toSend = (char*)malloc((77+(sizeof(compteur)/4) * sizeof(char)));
-    if(toSend == NULL)
+    char* toSend = (char*)malloc((77 + (sizeof(res->counter) / 4) * sizeof(char)));
+    if (toSend == NULL)
     {
+        free(toSend);
         log_file("imageTreatment.c --- Erreur dans l'allocation de la variable toSend dans la fonction encadrement_objet.");
         exit(EXIT_FAILURE);
     }
-    sprintf(toSend, "imageTreatment.c --- L'analyse de l'image a trouvé %d potentielle(s) image(s).", compteur);
+
+    sprintf(toSend, "imageTreatment.c --- L'analyse de l'image a trouvé %d potentielle(s) image(s).", res->counter);
     log_file(toSend);
     free(toSend);
+
+
+    return res;
 }
+
 

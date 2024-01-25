@@ -23,6 +23,11 @@ typedef struct objet{
     char position;
 }object;
 
+typedef struct structObject{
+    int counter;
+    object** objectTab;
+}structObject;
+
 void propagation(object* input_struct_object,int*** input_image,int width,int height);
 
 void verif_objet(object* input_struct_object);

@@ -249,29 +249,53 @@ Image/imageTreatment/imageTreatment.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatment/imageTreatment.c.s
 .PHONY : Image/imageTreatment/imageTreatment.c.s
 
-Log/fichier_Log.o: Log/fichier_Log.c.o
-.PHONY : Log/fichier_Log.o
+Image/imageTreatmentCalling.o: Image/imageTreatmentCalling.c.o
+.PHONY : Image/imageTreatmentCalling.o
 
 # target to build an object file
-Log/fichier_Log.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.o
-.PHONY : Log/fichier_Log.c.o
+Image/imageTreatmentCalling.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.o
+.PHONY : Image/imageTreatmentCalling.c.o
 
-Log/fichier_Log.i: Log/fichier_Log.c.i
-.PHONY : Log/fichier_Log.i
+Image/imageTreatmentCalling.i: Image/imageTreatmentCalling.c.i
+.PHONY : Image/imageTreatmentCalling.i
 
 # target to preprocess a source file
-Log/fichier_Log.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.i
-.PHONY : Log/fichier_Log.c.i
+Image/imageTreatmentCalling.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.i
+.PHONY : Image/imageTreatmentCalling.c.i
 
-Log/fichier_Log.s: Log/fichier_Log.c.s
-.PHONY : Log/fichier_Log.s
+Image/imageTreatmentCalling.s: Image/imageTreatmentCalling.c.s
+.PHONY : Image/imageTreatmentCalling.s
 
 # target to generate assembly for a file
-Log/fichier_Log.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/fichier_Log.c.s
-.PHONY : Log/fichier_Log.c.s
+Image/imageTreatmentCalling.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Image/imageTreatmentCalling.c.s
+.PHONY : Image/imageTreatmentCalling.c.s
+
+Log/logFile.o: Log/logFile.c.o
+.PHONY : Log/logFile.o
+
+# target to build an object file
+Log/logFile.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.o
+.PHONY : Log/logFile.c.o
+
+Log/logFile.i: Log/logFile.c.i
+.PHONY : Log/logFile.i
+
+# target to preprocess a source file
+Log/logFile.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.i
+.PHONY : Log/logFile.c.i
+
+Log/logFile.s: Log/logFile.c.s
+.PHONY : Log/logFile.s
+
+# target to generate assembly for a file
+Log/logFile.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_Fil_Rouge_CLion.dir/build.make CMakeFiles/Projet_Fil_Rouge_CLion.dir/Log/logFile.c.s
+.PHONY : Log/logFile.c.s
 
 Menu/menu.o: Menu/menu.c.o
 .PHONY : Menu/menu.o
@@ -369,9 +393,12 @@ help:
 	@echo "... Image/imageTreatment/imageTreatment.o"
 	@echo "... Image/imageTreatment/imageTreatment.i"
 	@echo "... Image/imageTreatment/imageTreatment.s"
-	@echo "... Log/fichier_Log.o"
-	@echo "... Log/fichier_Log.i"
-	@echo "... Log/fichier_Log.s"
+	@echo "... Image/imageTreatmentCalling.o"
+	@echo "... Image/imageTreatmentCalling.i"
+	@echo "... Image/imageTreatmentCalling.s"
+	@echo "... Log/logFile.o"
+	@echo "... Log/logFile.i"
+	@echo "... Log/logFile.s"
 	@echo "... Menu/menu.o"
 	@echo "... Menu/menu.i"
 	@echo "... Menu/menu.s"

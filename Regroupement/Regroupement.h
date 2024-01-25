@@ -67,6 +67,8 @@ sentencesStruct* init_sentencesStruct();
 
 sentencesStruct* sentencesToAnalysedSentencesTab(Phrase* phrase, int code_language); // Analyse de la phrase et renvoie une structure composé du nombre de phrase et de la chaine de caractère du mot
 
+void freeStructures(sentencesStruct* sentences);
+
 
 
 

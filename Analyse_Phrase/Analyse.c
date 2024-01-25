@@ -3,11 +3,11 @@
 //
 
 #include "Analyse.h"
-#include "../Log/fichier_Log.h"
+#include "../Log/logFile.h"
 
 int charToNumber(char* numberChar){
     log_file("Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.");
-    return (strtol(numberChar, NULL, 10));
+    return (int)strtol(numberChar, NULL, 10);
 }
 
 int analyse(sentenceTypeStruct* phrase){
