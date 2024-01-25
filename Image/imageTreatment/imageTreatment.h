@@ -18,6 +18,8 @@ structObject* encadrement_objet(picture_struct* input_image);
 
 void objectTabToLogFile(structObject* inputStructObject);
 
+int isThereASpecificObjectWithColor (structObject* inputStructObject, char shape, char color);
+
 void freeObjectStruct(structObject* inputStructObject);
 
 #endif //PROJET_FIL_ROUGE_CLION_IMAGETREATMENT_H

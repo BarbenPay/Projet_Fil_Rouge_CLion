@@ -43,7 +43,9 @@ bool isWordACentimeterUnite(char* word, int code_language); // Définit si le mo
 
 bool isWordADegreeUnite(char* word, int code_language);
 
-bool isWordAnObject(char* word, int code_language);
+bool isWordASphere(char* word, int code_language);
+
+bool isWordACube(char* word, int code_language);
 
 bool isWordANegation(char* word, int code_language); // Définit si le mot est un mot de négation
 
@@ -58,6 +60,12 @@ bool isWordALeftDirection(char* word, int code_language);
 bool isWordARightDirection(char* word, int code_language);
 
 bool isWordAConjunction(char* word, int code_language);
+
+bool isWordAYellowColor(char* word, int code_language);
+
+bool isWordABlueColor(char* word, int code_language);
+
+bool isWordARedColor(char* word, int code_language);
 
 int wordType(char* word, int code_language); // Renvoie le code du type du mot
 

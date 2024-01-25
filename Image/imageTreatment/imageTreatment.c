@@ -178,8 +178,6 @@ structObject* encadrement_objet(picture_struct* input_image)
     return res;
 }
 
-
-
 void objectTabToLogFile(structObject* inputStructObject)
 {
 
@@ -238,6 +236,25 @@ void objectTabToLogFile(structObject* inputStructObject)
         }
 
     }
+
+}
+
+int isThereASpecificObjectWithColor (structObject* inputStructObject, char shape, char color)
+{
+
+    for(int i = 0; i < inputStructObject->counter; i ++)
+    {
+        if(inputStructObject->objectTab[i]->nature == shape)
+        {
+            if(inputStructObject->objectTab[i]->couleur == color)
+            {
+                return 1;
+            }
+        }
+
+
+    }
+    return -1;
 
 }
 

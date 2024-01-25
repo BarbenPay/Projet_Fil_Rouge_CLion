@@ -1,0 +1,4 @@
+bleu
+bleue
+violet
+azur

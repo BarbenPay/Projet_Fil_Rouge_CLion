@@ -121,13 +121,31 @@ bool isWordADegreeUnite(char* word, int code_language){
     }
 }
 
-bool isWordAnObject(char* word, int code_language){
-    if (code_language == 1) {
+bool isWordASphere(char* word, int code_language)
+{
+    if (code_language == 1)
+    {
         return isWordInDict(word, "../Dictionnaire/FR/Objet/sphere.txt");
+    }
+    else if (code_language == 2)
+    {
+        return isWordInDict(word, "../Dictionnaire/EN/Object/sphere.txt");
+    }
+    else
+    {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordASphere.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordACube(char* word, int code_language)
+{
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Objet/cube.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Object/object.txt");
+        return isWordInDict(word, "../Dictionnaire/EN/Object/cube.txt");
     } else {
-        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAnObject.");
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordACube.");
         exit(EXIT_FAILURE);
     }
 }
@@ -210,6 +228,42 @@ bool isWordAConjunction(char* word, int code_language)
     }
 }
 
+bool isWordAYellowColor(char* word, int code_language)
+{
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Color/yellow.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Color/yellow.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAYellowColor.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordABlueColor(char* word, int code_language)
+{
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Color/blue.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Color/blue.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordABlueColor.");
+        exit(EXIT_FAILURE);
+    }
+}
+
+bool isWordARedColor(char* word, int code_language)
+{
+    if (code_language == 1) {
+        return isWordInDict(word, "../Dictionnaire/FR/Color/red.txt");
+    } else if (code_language == 2) {
+        return isWordInDict(word, "../Dictionnaire/EN/Color/red.txt");
+    } else {
+        log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordARedColor.");
+        exit(EXIT_FAILURE);
+    }
+}
+
 
 
 ////////////////////////////////////////// Code ////////////////////////////////////////////////////
@@ -217,10 +271,11 @@ bool isWordAConjunction(char* word, int code_language)
 // 1. backward_movement / 2. forward_movement / 3. rotating_movement / 4. movement /
 // 10. forward_direction / 11. backward_direction / 12. right_direction / 13. left_direction /
 // 20. number /
-// 30. object /
+// 30. sphere/ 31. cube /
 // 40. negation /
-// 50. mètre / 51. centimètre / 52.degré /
+// 50. meter / 51. centimeter / 52. degree /
 // 60. conjonction /
+// 70. yellow / 71. blue / 72. red /
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -306,14 +361,23 @@ int wordType (char* word, int code_language){
         free(toSend);
         return 20;
     }
-    else if(isWordAnObject(word, code_language))
+    else if(isWordASphere(word, code_language))
     {
         char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
-        strcpy(toSend,"Regroupement.c --- Objet trouvé.     Mot: ");
+        strcpy(toSend,"Regroupement.c --- Mot \"Sphère\" trouvé.     Mot: ");
         strcat(toSend, word);
         log_file(toSend);
         free(toSend);
         return 30;
+    }
+    else if(isWordACube(word, code_language))
+    {
+        char* toSend = (char*) malloc(sizeof (char) * (43 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Mot \"Cube\" trouvé.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 31;
     }
     else if (isWordANegation(word, code_language))
     {
@@ -359,6 +423,33 @@ int wordType (char* word, int code_language){
         log_file(toSend);
         free(toSend);
         return 60;
+    }
+    else if(isWordAYellowColor(word, code_language))
+    {
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Couleur jaune trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 70;
+    }
+    else if(isWordABlueColor(word, code_language))
+    {
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Couleur bleue trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 71;
+    }
+    else if(isWordARedColor(word, code_language))
+    {
+        char* toSend = (char*) malloc(sizeof (char) * (58 + strlen(word)));
+        strcpy(toSend,"Regroupement.c --- Couleur rouge trouvée.     Mot: ");
+        strcat(toSend, word);
+        log_file(toSend);
+        free(toSend);
+        return 72;
     }
     else
     {

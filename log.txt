@@ -1,7 +1,9 @@
-[25/01/2024 16:21:15] traitement_image.c --- Initialisation de la structure picture_struct.
-[25/01/2024 16:21:15] analyse_image.c --- Affectation des données dans la structure picture_struct correctement effectuée.
-[25/01/2024 16:21:15] analyse_image.c --- Début de l'analyse de l'image
-[25/01/2024 16:21:15] imageTreatment.c --- Fin de l'analyse de l'image.
-[25/01/2024 16:21:15] imageTreatment.c --- L'analyse de l'image a trouvé 0 potentielle(s) objet(s).
-[25/01/2024 16:21:15] imageTreatment.c --- L'analyse n'a pas détectée d'objet.
-
+[25/01/2024 18:21:17] Démarrage du découpage de la phrase: avance
+[25/01/2024 18:21:17] Découpage.c --- Découpage correctement effectué.
+[25/01/2024 18:21:17] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[25/01/2024 18:21:17] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[25/01/2024 18:21:17] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[25/01/2024 18:21:17] Regroupement.c --- Analyse correctement effectuée.
+[25/01/2024 18:21:17] Analyse.c --- Démarage du traitement de la phrase.
+[25/01/2024 19:40:38] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'avant sans spécification de la distance
+[25/01/2024 19:40:38] Analyse.c --- Traitement correctement effectué.
