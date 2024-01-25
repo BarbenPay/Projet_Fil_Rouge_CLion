@@ -20,6 +20,8 @@ void objectTabToLogFile(structObject* inputStructObject);
 
 int isThereASpecificObjectWithColor (structObject* inputStructObject, char shape, char color);
 
+int isThereASpecificObject (structObject* inputStructObject, char shape);
+
 void freeObjectStruct(structObject* inputStructObject);
 
 #endif //PROJET_FIL_ROUGE_CLION_IMAGETREATMENT_H

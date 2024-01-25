@@ -17,6 +17,7 @@ void viderBuffer();
 Valeur input();
 void choix_langue();
 void choix_test(Valeur);
+char* choixImage();
 void traitement_commande(Valeur langue);
 void traitement_image();
 

@@ -258,6 +258,22 @@ int isThereASpecificObjectWithColor (structObject* inputStructObject, char shape
 
 }
 
+int isThereASpecificObject (structObject* inputStructObject, char shape)
+{
+
+    for(int i = 0; i < inputStructObject->counter; i ++)
+    {
+        if(inputStructObject->objectTab[i]->nature == shape)
+        {
+            return 1;
+        }
+
+
+    }
+    return -1;
+
+}
+
 void freeObjectStruct(structObject* inputStructObject)
 {
 

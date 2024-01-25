@@ -8,6 +8,11 @@
 #include "../Regroupement/Regroupement.h"
 
 int charToNumber(char* numberChar);
+
+int foundColorObjectBool(int objectCode, int yellowCode, int blueCode, int redCode);
+
+int handleForwardMovementToSphere (int sphereCode, int yellowCode, int blueCode, int redCode);
+
 int analyse(sentenceTypeStruct* phrase);
 
 #endif //PROJET_FIL_ROUGE_CLION_ANALYSE_H

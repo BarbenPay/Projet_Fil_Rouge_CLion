@@ -151,11 +151,23 @@ void traitement_commande(Valeur l)
     }
 
 }
+char* choixImage()
+{
+    char* input = (char*) malloc(2 * sizeof(char));
+    printf("Quelle image souhaitez-vous analyser ?\n");
+    scanf("%02s", input);
+    while(getchar() != '\n');
+    char* toSend = (char*)malloc(30 * sizeof(char));
+    strcpy(toSend,"../Image/Banque/IMG_");
+    strcat(toSend,input);
+    strcat(toSend,".txt");
+    return toSend;
+}
 
 void traitement_image()
 {
 
-    structObject* res = imageTreatmentCalling("../Image/Banque/IMG_20.txt");
+    structObject* res = imageTreatmentCalling(choixImage());
 
     freeObjectStruct(res);
 
