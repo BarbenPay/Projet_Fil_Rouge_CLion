@@ -154,6 +154,6 @@ void traitement_commande(Valeur l)
 void traitement_image()
 {
 
-    imageTreatmentCalling("../Image/Banque/IMG_01.txt");
+    imageTreatmentCalling("../Image/Banque/IMG_07.txt");
 
 }

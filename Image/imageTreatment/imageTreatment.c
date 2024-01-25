@@ -80,21 +80,37 @@ void createNewObject(structObject* inputStructObject, int horizontalIndex, int v
         exit(EXIT_FAILURE);
     }
 
-    inputStructObject->objectTab[inputStructObject->counter] = (object*) malloc (sizeof(object));
+    object* tmp = (object*) malloc (sizeof(object));
 
 
-    inputStructObject->objectTab[inputStructObject->counter]->coor_H = horizontalIndex;
-    inputStructObject->objectTab[inputStructObject->counter]->coor_B = horizontalIndex;
-    inputStructObject->objectTab[inputStructObject->counter]->coor_D = verticalIndex;
-    inputStructObject->objectTab[inputStructObject->counter]->coor_G = verticalIndex;
+    tmp->coor_H = horizontalIndex;
+    tmp->coor_B = horizontalIndex;
+    tmp->coor_D = verticalIndex;
+    tmp->coor_G = verticalIndex;
 
-    propagation(inputStructObject->objectTab[inputStructObject->counter], input_image->image, input_image->width, input_image->height);
-    verif_objet(inputStructObject->objectTab[inputStructObject->counter]);
-    donner_position(inputStructObject->objectTab[inputStructObject->counter], input_image->width);
-    couleur_objet(inputStructObject->objectTab[inputStructObject->counter], input_image->image);
-    nature_objet(inputStructObject->objectTab[inputStructObject->counter], input_image->image);
+    propagation(tmp, input_image->image, input_image->width, input_image->height);
+    verif_objet(tmp);
+    donner_position(tmp, input_image->width);
+    couleur_objet(tmp, input_image->image);
+    nature_objet(tmp, input_image->image);
 
-    inputStructObject->counter++;
+
+    if ( tmp->nature == 'N')
+    {
+
+        free (tmp);
+
+    }
+    else
+    {
+
+        inputStructObject->objectTab[inputStructObject->counter] = tmp;
+
+        inputStructObject->counter++;
+    }
+
+
+
 }
 
 structObject* encadrement_objet(picture_struct* input_image)
@@ -153,12 +169,88 @@ structObject* encadrement_objet(picture_struct* input_image)
         exit(EXIT_FAILURE);
     }
 
-    sprintf(toSend, "imageTreatment.c --- L'analyse de l'image a trouvé %d potentielle(s) image(s).", res->counter);
+    sprintf(toSend, "imageTreatment.c --- L'analyse de l'image a trouvé %d potentielle(s) objet(s).", res->counter);
     log_file(toSend);
     free(toSend);
+    objectTabToLogFile(res);
 
 
     return res;
 }
 
 
+
+void objectTabToLogFile(structObject* inputStructObject)
+{
+
+    for (int i = 0; i < inputStructObject->counter;i ++)
+    {
+        object* tmp = inputStructObject->objectTab[i];
+        if(tmp->nature == 'S')
+        {
+
+            int coordHorizontal = (tmp->coor_G + (tmp->coor_D - tmp->coor_G)/2);
+            int coordVertical = (tmp->coor_H + (tmp->coor_B - tmp->coor_H)/2);
+
+            char* toSend = (char*)malloc(91 * sizeof(char));
+
+            switch (tmp->couleur)
+            {
+
+                case 'O':
+                    sprintf(toSend,"imageTreatment.c --- Une sphère orange a été détectée aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    break;
+                case 'B':
+                    sprintf(toSend,"imageTreatment.c --- Une sphère bleue a été détectée aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    break;
+                case 'J':
+                    sprintf(toSend,"imageTreatment.c --- Une sphère jaune a été détectée aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    break;
+
+            }
+            log_file(toSend);
+            free(toSend);
+        }
+        else if (tmp->nature == 'C')
+        {
+
+            int coordHorizontal = (tmp->coor_G + (tmp->coor_D - tmp->coor_G)/2);
+            int coordVertical = (tmp->coor_H + (tmp->coor_B - tmp->coor_H)/2);
+
+            char* toSend = (char*)malloc( 87 * sizeof(char));
+            switch (tmp->couleur)
+            {
+
+                case 'O':
+                    sprintf(toSend,"imageTreatment.c --- Un cube orange a été détecté aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    break;
+                case 'B':
+                    sprintf(toSend,"imageTreatment.c --- Un cube bleu a été détecté aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    break;
+                case 'J':
+                    sprintf(toSend,"imageTreatment.c --- Un cube jaune a été détecté aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    break;
+
+            }
+            log_file(toSend);
+            free(toSend);
+
+        }
+
+    }
+
+}
+
+void freeObjectStruct(structObject* inputStructObject)
+{
+
+    for (int i = 0; i < inputStructObject->counter; i++)
+    {
+
+        free(inputStructObject->objectTab[i]);
+
+    }
+
+    free(inputStructObject);
+
+}

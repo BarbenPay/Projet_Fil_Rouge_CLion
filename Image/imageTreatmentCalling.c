@@ -8,8 +8,6 @@
 
 void sortie_objet(object* inputObject,int x)
 {
-    if(inputObject->nature != 'N')
-    {
         printf("Objet n %d \n",x+1);
         printf("Limite gauche= %d \n",inputObject->coor_G);
         printf("Limite droite= %d \n",inputObject->coor_D);
@@ -18,7 +16,7 @@ void sortie_objet(object* inputObject,int x)
         printf("Couleur = %c \n",inputObject->couleur);
         printf("Nature = %c \n",inputObject->nature);
         printf("Position = %c \n",inputObject->position);
-    }
+        printf("\n\n");
 }
 
 void imageTreatmentCalling(char* pictureAdress)

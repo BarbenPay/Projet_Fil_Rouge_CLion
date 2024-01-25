@@ -85,11 +85,11 @@ void donner_position(object* input_struct_object,int width)
     if(input_struct_object->nature != 'N')
     {
 
-        if(input_struct_object->coor_G + ((input_struct_object->coor_D - input_struct_object->coor_G)/2) < width/3)
+        if(input_struct_object->coor_G + ((input_struct_object->coor_D - input_struct_object->coor_G)/2) < 2 * width/5)
         {
             input_struct_object->position = 'G';
         }
-        else if(input_struct_object->coor_G + ((input_struct_object->coor_D - input_struct_object->coor_G)/2) < 2 * width / 3)
+        else if(input_struct_object->coor_G + ((input_struct_object->coor_D - input_struct_object->coor_G)/2) < 3 * width / 5)
         {
             input_struct_object->position = 'M';
         }
