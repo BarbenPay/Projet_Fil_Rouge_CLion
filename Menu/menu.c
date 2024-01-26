@@ -104,21 +104,24 @@ void traitement_commande(Valeur l)
     v = input();
     Phrase* res;
     res = decoupage(v.c);
+#ifdef DEBUG
     for (int i = 0; i<res->wordNumber; i++)
     {
         printf("%s\n", res->wordArray[i]);
     }
+#endif
     sentencesStruct* typeWord;
     typeWord = sentencesToAnalysedSentencesTab(res, l.i);
 
     freePhrase(res);
-
+#ifdef DEBUG
     for(int indexPhrase = 0; indexPhrase < typeWord->numberOfSentence; indexPhrase++)
     {
         for (int i = 0; i < typeWord->sentences[indexPhrase]->numberOfWord; i++) {
             printf("Le mot %s est de type %d\n", typeWord->sentences[indexPhrase]->words[i]->word , typeWord->sentences[indexPhrase]->words[i]->typeWord);
         }
     }
+#endif
     for(int indexPhrase = 0; indexPhrase < typeWord->numberOfSentence; indexPhrase++)
     {
         analyse(typeWord->sentences[indexPhrase]);

@@ -12,7 +12,68 @@ int charToNumber(char* numberChar){
     return (int)strtol(numberChar, NULL, 10);
 }
 
-int foundColorObjectBool(int objectCode, int yellowCode, int blueCode, int redCode)
+
+
+
+int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode)
+{
+    structObject* tmp = imageTreatmentCalling(choixImage());
+
+    if (tmp == NULL )
+    {
+        log_file("Analyse.c --- Erreur dans lors de la sauvegarde des données du traitement d'image.");
+        exit(EXIT_FAILURE);
+    }
+
+    if ((yellowCode || blueCode || redCode) == 0)
+    {
+        int foundObjectBool =  isThereASpecificObject (tmp, (objectCode == 1) ? 'S' : (objectCode == 2) ? 'C' : '\0');
+        if(foundObjectBool == 1)
+        {
+            char* toSend = (char*)malloc( 143 * sizeof(char));
+
+            if(toSend == NULL)
+            {
+                free(toSend);
+                log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans foundColorObjectBoolToHandleForwardMovementToObject().");
+                exit(EXIT_FAILURE);
+            }
+
+            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : "\0");
+
+            log_file(toSend);
+            printf("Le robot va avancer d'un mètre vers %s.\n", (objectCode == 1) ? "la première boule detectée" : (objectCode == 2) ? "le premier cube détecté" : '\0');
+            log_file("Analyse.c --- Traitement correctement effectué.");
+            free(toSend);
+            return -2;
+        }
+        else
+        {
+            char* toSend = (char*)malloc( 200 * sizeof(char));
+
+            if(toSend == NULL)
+            {
+                free(toSend);
+                log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans foundColorObjectBoolToHandleForwardMovementToObject().");
+                exit(EXIT_FAILURE);
+            }
+
+            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0');
+            log_file(toSend);
+            printf("Le robot ne va pas bouger.\n");
+            log_file("Analyse.c --- Traitement correctement effectué.");
+            free(toSend);
+            return -3;
+        }
+
+    }
+
+    int foundColorObjectBool = isThereASpecificObjectWithColor(tmp, (objectCode == 1) ? 'S' : (objectCode == 2) ? 'C' : '\0', (yellowCode) ? 'J' : (blueCode) ? 'B' : (redCode) ? 'O' : '\0');
+    return foundColorObjectBool;
+
+}
+
+int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode)
 {
     structObject* tmp = imageTreatmentCalling(choixImage());
 
@@ -22,37 +83,40 @@ int foundColorObjectBool(int objectCode, int yellowCode, int blueCode, int redCo
         if(foundObjectBool)
         {
             char* toSend = (char*)malloc( 143 * sizeof(char));
-            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : "\0");
+            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : "\0");
 
             log_file(toSend);
-            printf("Le robot va avancer d'un mètre vers %s.\n", (objectCode == 1) ? "la première boule detectée" : (objectCode == 2) ? "le premier cube détecté" : '\0');
+            printf("Le robot va se tourner vers %s.\n", (objectCode == 1) ? "la première boule detectée" : (objectCode == 2) ? "le premier cube détecté" : '\0');
             log_file("Analyse.c --- Traitement correctement effectué.");
             free(toSend);
-            return -1;
+            return -2;
         }
         else
         {
             char* toSend = (char*)malloc( 200 * sizeof(char));
-            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0');
+            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s, cependant elle n'a pas trouvé d'objets qui convenaient.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0');
             log_file(toSend);
             printf("Le robot ne va pas bouger.\n");
             log_file("Analyse.c --- Traitement correctement effectué.");
             free(toSend);
-            return -1;
+            return -3;
         }
 
     }
 
-    int foundColorObjectBool = isThereASpecificObjectWithColor(tmp, (objectCode == 1) ? 'S' : (objectCode == 2) ? 'C' : '\0', (yellowCode) ? 'Y' : (blueCode) ? 'B' : (redCode) ? 'O' : '\0');
+    int foundColorObjectBool = isThereASpecificObjectWithColor(tmp, (objectCode == 1) ? 'S' : (objectCode == 2) ? 'C' : '\0', (yellowCode) ? 'J' : (blueCode) ? 'B' : (redCode) ? 'O' : '\0');
     return foundColorObjectBool;
 
 }
 
-int handleForwardMovementToSphere (int objectCode, int yellowCode, int blueCode, int redCode)
-{
-    int foundColorObject = foundColorObjectBool(objectCode,yellowCode,blueCode,redCode);
 
-    if(foundColorObject){
+
+
+int handleForwardMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode)
+{
+    int foundColorObject = foundColorObjectBoolToHandleForwardMovementToObject(objectCode,yellowCode,blueCode,redCode);
+
+    if(foundColorObject == 1){
         char* toSend = (char*)malloc( 143 * sizeof(char));
         snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s %s sans spécification de la distance", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0' ,(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
 
@@ -62,6 +126,10 @@ int handleForwardMovementToSphere (int objectCode, int yellowCode, int blueCode,
         free(toSend);
         return 1;
 
+    }
+    else if((foundColorObject == -2) || (foundColorObject == -3))
+    {
+        return foundColorObject;
     }
     else
     {
@@ -73,14 +141,51 @@ int handleForwardMovementToSphere (int objectCode, int yellowCode, int blueCode,
         printf("Le robot ne va pas bouger.\n");
         log_file("Analyse.c --- Traitement correctement effectué.");
         free(toSend);
-        return 1;
+        return 0;
     }
 }
+
+int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode)
+{
+    int foundColorObject = foundColorObjectBoolToHandleRotatingMovementToObject(objectCode,yellowCode,blueCode,redCode);
+
+    if(foundColorObject == 1){
+        char* toSend = (char*)malloc( 143 * sizeof(char));
+        snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s %s.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0' ,(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
+
+        log_file(toSend);
+        printf("Le robot va se tourner vers %s %s.\n", (objectCode == 1) ? "la sphère" : (objectCode == 2) ? "le cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
+        log_file("Analyse.c --- Traitement correctement effectué.");
+        free(toSend);
+        return 1;
+
+    }
+    else if ((foundColorObject == -2)||(foundColorObject == -3))
+    {
+        return foundColorObject;
+    }
+    else
+    {
+
+        char* toSend = (char*)malloc( 200 * sizeof(char));
+        snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s %s, cependant elle n'a pas trouvé d'objets qui convenaient.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
+
+        log_file(toSend);
+        printf("Le robot ne va pas bouger.\n");
+        log_file("Analyse.c --- Traitement correctement effectué.");
+        free(toSend);
+        return 0;
+    }
+}
+
+
+
+
 
 int analyse(sentenceTypeStruct* phrase){
 
     log_file("Analyse.c --- Démarage du traitement de la phrase.");
-    int isBackwardMovementWordPresent = -1, isForwardMovementWordPresent = -1, isRotatingWordPresent = -1, isMovementWordPresent = -1, isForwardDirectionPresent = -1, isBackwardDirectionPresent = -1, isRightDirectionPresent = -1, isLeftDirectionPresent = -1,isNumberPresent = -1, isSphereObjectPresent = -1, isCubeObjectPresent = -1, isNegationPresent = 0, isThereUnite = 0, isYellowColorPresent = -1,isBlueColorPresent = -1,isRedColorPresent = -1;
+    int isBackwardMovementWordPresent = -1, isForwardMovementWordPresent = -1, isRotatingWordPresent = -1, isMovementWordPresent = -1, isForwardDirectionPresent = -1, isBackwardDirectionPresent = -1, isRightDirectionPresent = -1, isLeftDirectionPresent = -1,isNumberPresent = -1, isSphereObjectPresent = -1, isCubeObjectPresent = -1, isNegationPresent = 0, isThereUnite = 0, isYellowColorPresent = 0,isBlueColorPresent = 0,isRedColorPresent = 0;
 
     for (int i = 0; i < phrase->numberOfWord; i++) {
         int wordType = phrase->words[i]->typeWord;
@@ -324,130 +429,13 @@ int analyse(sentenceTypeStruct* phrase){
 
                 else if(isSphereObjectPresent==1)
                 {
-                    if(isYellowColorPresent == 1 && isBlueColorPresent == 0 && isRedColorPresent == 0)
-                    {
-                        structObject* tmp = imageTreatmentCalling(choice);
-                        int positionObject = isThereASpecificObjectWithColor(tmp,'S','Y');
-                        if(positionObject)
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers la sphère jaune sans spécification de la distance");
-                            printf("Le robot va tourner vers la boule jaune.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                        }
-                        else
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers la sphère jaune sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.");
-                            printf("Le robot ne va pas bouger.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                        }
-
-                    }
-                    else if (isYellowColorPresent == 0 && isBlueColorPresent == 1 && isRedColorPresent == 0)
-                    {
-                        structObject* tmp = imageTreatmentCalling(choice);
-                        int positionObject = isThereASpecificObjectWithColor(tmp,'S','B');
-                        if(positionObject)
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers la sphère bleue sans spécification de la distance");
-                            printf("Le robot va tourner vers la boule bleue.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                        }
-                        else
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers la sphère bleue sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.");
-                            printf("Le robot ne va pas bouger.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                        }
-                    }
-                    else if (isYellowColorPresent == 0 && isBlueColorPresent == 0 && isRedColorPresent == 1)
-                    {
-                        structObject* tmp = imageTreatmentCalling(choice);
-                        int positionObject = isThereASpecificObjectWithColor(tmp,'S','O');
-                        if(positionObject)
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers la sphère rouge sans spécification de la distance");
-                            printf("Le robot va tourner vers la boule rouge.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                        }
-                        else
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers la sphère rouge sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.");
-                            printf("Le robot ne va pas bouger.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                        }
-                    }
+                     int toReturn = handleRotatingMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                    return toReturn;
                 }
                 else if(isCubeObjectPresent == 1)
                 {
-                    if(isYellowColorPresent == 1 && isBlueColorPresent == 0 && isRedColorPresent == 0)
-                    {
-                        structObject* tmp = imageTreatmentCalling(choice);
-                        int positionObject = isThereASpecificObjectWithColor(tmp,'C','Y');
-                        if(positionObject)
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers le cube jaune sans spécification de la distance");
-                            printf("Le robot va tourner vers le cube jaune.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                            return 1;
-                        }
-                        else
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers le cube jaune sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.");
-                            printf("Le robot ne va pas bouger.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                            return 1;
-                        }
-                    }
-                    else if (isYellowColorPresent == 0 && isBlueColorPresent == 1 && isRedColorPresent == 0)
-                    {
-                        structObject* tmp = imageTreatmentCalling(choice);
-                        int positionObject = isThereASpecificObjectWithColor(tmp,'C','B');
-                        if(positionObject)
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers le cube bleue sans spécification de la distance");
-                            printf("Le robot va tourner vers le cube bleue.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                            return 1;
-                        }
-                        else
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers le cube bleue sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.");
-                            printf("Le robot ne va pas bouger.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                            return 1;
-                        }
-                    }
-                    else if (isYellowColorPresent == 0 && isBlueColorPresent == 0 && isRedColorPresent == 1)
-                    {
-                        structObject* tmp = imageTreatmentCalling(choice);
-                        int positionObject = isThereASpecificObjectWithColor(tmp,'C','O');
-                        if(positionObject)
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers le cube rouge sans spécification de la distance");
-                            printf("Le robot va tourner vers le cube rouge.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                            return 1;
-                        }
-                        else
-                        {
-                            log_file("Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait une rotation vers le cube rouge sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.");
-                            printf("Le robot ne va pas bouger.\n");
-                            log_file("Analyse.c --- Traitement correctement effectué.");
-                            return 1;
-                            return 1;
-                        }
-                    }
+                    int toReturn = handleRotatingMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                    return toReturn;
                 }
 
                 else if (isThereUnite == 3)
@@ -471,19 +459,13 @@ int analyse(sentenceTypeStruct* phrase){
                 {
                     if(isSphereObjectPresent==1)
                     {
-                        int toReturn = handleForwardMovementToSphere(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
-                        if (toReturn)
-                        {
-                            return 1;
-                        }
+                        int toReturn = handleForwardMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        return toReturn;
                     }
                     else if(isCubeObjectPresent == 1)
                     {
-                        int toReturn = handleForwardMovementToSphere(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
-                        if(toReturn)
-                        {
-                            return 1;
-                        }
+                        int toReturn = handleForwardMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        return toReturn;
                     }
                     else
                     {
@@ -515,6 +497,16 @@ int analyse(sentenceTypeStruct* phrase){
                         printf("Le robot va reculer d'un mètre.\n");
                         log_file("Analyse.c --- Traitement correctement effectué.");
                         return 1;
+                    }
+                    else if(isSphereObjectPresent==1)
+                    {
+                        int toReturn = handleForwardMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        return toReturn;
+                    }
+                    else if(isCubeObjectPresent == 1)
+                    {
+                        int toReturn = handleForwardMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        return toReturn;
                     }
                     else
                     {

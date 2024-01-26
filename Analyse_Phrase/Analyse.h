@@ -9,9 +9,21 @@
 
 int charToNumber(char* numberChar);
 
-int foundColorObjectBool(int objectCode, int yellowCode, int blueCode, int redCode);
 
-int handleForwardMovementToSphere (int sphereCode, int yellowCode, int blueCode, int redCode);
+
+int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode);
+
+int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode);
+
+
+
+
+int handleForwardMovementToObject (int sphereCode, int yellowCode, int blueCode, int redCode);
+
+int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode);
+
+
+
 
 int analyse(sentenceTypeStruct* phrase);
 
