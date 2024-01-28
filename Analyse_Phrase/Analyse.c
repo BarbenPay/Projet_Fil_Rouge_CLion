@@ -5,7 +5,7 @@
 #include "Analyse.h"
 #include "../Log/logFile.h"
 #include "../Image/imageTreatmentCalling.h"
-#include "../Menu/menu.h"
+
 
 int charToNumber(char* numberChar){
     log_file("Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.");
@@ -589,5 +589,4 @@ int analyse(sentenceTypeStruct* phrase, Valeur l){
         printf("Le robot ne va rien faire.\n");
         return 0;
     }
-    return 0;
 }
