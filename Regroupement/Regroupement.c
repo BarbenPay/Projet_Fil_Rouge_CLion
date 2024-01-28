@@ -46,9 +46,9 @@ bool isWordInDict(char* word, char* dict){
 
 bool isWordABackwardMovementWord(char* word, int code_language) {
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/backward_movement.txt");
+        return isWordInDict(word, "../Dictionnaire/FR/Movement/backward_movement.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/backward_movement.txt");
+        return isWordInDict(word, "../Dictionnaire/EN/Movement/backward_movement.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordABackwardMovementWord.");
         exit(EXIT_FAILURE);
@@ -57,9 +57,9 @@ bool isWordABackwardMovementWord(char* word, int code_language) {
 
 bool isWordAForwardMovementWord(char* word, int code_language){
     if(code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/forward_movement.txt");
+        return isWordInDict(word, "../Dictionnaire/FR/Movement/forward_movement.txt");
     }else if(code_language == 2){
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/forward_movement.txt");
+        return isWordInDict(word, "../Dictionnaire/EN/Movement/forward_movement.txt");
     }else{
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAForwardMovementWord.");
         exit(EXIT_FAILURE);
@@ -68,9 +68,9 @@ bool isWordAForwardMovementWord(char* word, int code_language){
 
 bool isWordARotationWord(char* word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/rotation.txt");
+        return isWordInDict(word, "../Dictionnaire/FR/Movement/rotation.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/rotation.txt");
+        return isWordInDict(word, "../Dictionnaire/EN/Movement/rotation.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordARotationWord.");
         exit(EXIT_FAILURE);
@@ -79,9 +79,9 @@ bool isWordARotationWord(char* word, int code_language){
 
 bool isWordAMovementWord(char*word, int code_language){
     if (code_language == 1) {
-        return isWordInDict(word, "../Dictionnaire/FR/Mouvement/movement.txt");
+        return isWordInDict(word, "../Dictionnaire/FR/Movement/movement.txt");
     } else if (code_language == 2) {
-        return isWordInDict(word, "../Dictionnaire/EN/Mouvement/movement.txt");
+        return isWordInDict(word, "../Dictionnaire/EN/Movement/movement.txt");
     } else {
         log_file("Regroupement.c --- Erreur dans le code de la langue dans la fonction isWordAMovementWord.");
         exit(EXIT_FAILURE);
@@ -514,11 +514,12 @@ sentencesStruct* sentencesToAnalysedSentencesTab(Phrase* phrase, int code_langua
     res->sentences = (sentenceTypeStruct**)malloc(sizeof(sentenceTypeStruct*));
     res->sentences[res->numberOfSentence - 1] = init_sentenceTypeStruct();
     for(int i = 0; i< phrase->wordNumber; i++){
-        if(wordType(phrase->wordArray[i],code_language) != 60)
+        int wordTypeToKnowIfItIsAConJunction = wordType(phrase->wordArray[i],code_language);
+        if(wordTypeToKnowIfItIsAConJunction != 60)
         {
             res->sentences[res->numberOfSentence-1]->words = (wordTypeStruct**)realloc(res->sentences[res->numberOfSentence-1]->words, ((i-decalage)+1)*sizeof(wordTypeStruct*));
             res->sentences[res->numberOfSentence-1]->words[i-decalage] = init_wordTypeStruct();
-            res->sentences[res->numberOfSentence-1]->words[i-decalage]->typeWord = wordType(phrase->wordArray[i], code_language);
+            res->sentences[res->numberOfSentence-1]->words[i-decalage]->typeWord = wordTypeToKnowIfItIsAConJunction;
             res->sentences[res->numberOfSentence-1]->words[i-decalage]->word = strdup(phrase->wordArray[i]);
             if(res->sentences[res->numberOfSentence-1]->words[i-decalage]->typeWord == -2)
             {

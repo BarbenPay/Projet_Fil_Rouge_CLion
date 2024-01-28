@@ -30,7 +30,8 @@ int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yell
         int foundObjectBool =  isThereASpecificObject (tmp, (objectCode == 1) ? 'S' : (objectCode == 2) ? 'C' : '\0');
         if(foundObjectBool == 1)
         {
-            char* toSend = (char*)malloc( 143 * sizeof(char));
+            int toSendSize = 146;
+            char* toSend = (char*)malloc( toSendSize * sizeof(char));
 
             if(toSend == NULL)
             {
@@ -38,8 +39,8 @@ int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yell
                 log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans foundColorObjectBoolToHandleForwardMovementToObject().");
                 exit(EXIT_FAILURE);
             }
-
-            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : "\0");
+            strcpy(toSend,"");
+            snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : "\0");
 
             log_file(toSend);
             printf("Le robot va avancer d'un mètre vers %s.\n", (objectCode == 1) ? "la première boule detectée" : (objectCode == 2) ? "le premier cube détecté" : '\0');
@@ -49,7 +50,8 @@ int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yell
         }
         else
         {
-            char* toSend = (char*)malloc( 200 * sizeof(char));
+            int toSendSize = 200;
+            char* toSend = (char*)malloc( toSendSize * sizeof(char));
 
             if(toSend == NULL)
             {
@@ -57,8 +59,8 @@ int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yell
                 log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans foundColorObjectBoolToHandleForwardMovementToObject().");
                 exit(EXIT_FAILURE);
             }
-
-            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0');
+            strcpy(toSend,"");
+            snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0');
             log_file(toSend);
             printf("Le robot ne va pas bouger.\n");
             log_file("Analyse.c --- Traitement correctement effectué.");
@@ -82,9 +84,17 @@ int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yel
         int foundObjectBool =  isThereASpecificObject (tmp, (objectCode == 1) ? 'S' : (objectCode == 2) ? 'C' : '\0');
         if(foundObjectBool)
         {
-            char* toSend = (char*)malloc( 143 * sizeof(char));
-            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : "\0");
+            int toSendSize = 146;
+            char* toSend = (char*)malloc( toSendSize * sizeof(char));
 
+            if(toSend == NULL)
+            {
+                free(toSend);
+                log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans foundColorObjectBoolToHandleRotatingMovementToObject().");
+                exit(EXIT_FAILURE);
+            }
+            strcpy(toSend,"");
+            snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : "\0");
             log_file(toSend);
             printf("Le robot va se tourner vers %s.\n", (objectCode == 1) ? "la première boule detectée" : (objectCode == 2) ? "le premier cube détecté" : '\0');
             log_file("Analyse.c --- Traitement correctement effectué.");
@@ -93,8 +103,17 @@ int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yel
         }
         else
         {
-            char* toSend = (char*)malloc( 200 * sizeof(char));
-            snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s, cependant elle n'a pas trouvé d'objets qui convenaient.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0');
+            int toSendSize = 200;
+            char* toSend = (char*)malloc( toSendSize * sizeof(char));
+
+            if(toSend == NULL)
+            {
+                free(toSend);
+                log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans foundColorObjectBoolToHandleRotatingMovementToObject().");
+                exit(EXIT_FAILURE);
+            }
+            strcpy(toSend,"");
+            snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s, cependant elle n'a pas trouvé d'objets qui convenaient.",(objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0');
             log_file(toSend);
             printf("Le robot ne va pas bouger.\n");
             log_file("Analyse.c --- Traitement correctement effectué.");
@@ -117,9 +136,17 @@ int handleForwardMovementToObject (int objectCode, int yellowCode, int blueCode,
     int foundColorObject = foundColorObjectBoolToHandleForwardMovementToObject(objectCode,yellowCode,blueCode,redCode);
 
     if(foundColorObject == 1){
-        char* toSend = (char*)malloc( 143 * sizeof(char));
-        snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s %s sans spécification de la distance", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0' ,(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
+        int toSendSize = 146;
+        char* toSend = (char*)malloc(toSendSize * sizeof(char));
 
+        if(toSend == NULL)
+        {
+            free(toSend);
+            log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans handleForwardMovementToObject().");
+            exit(EXIT_FAILURE);
+        }
+        strcpy(toSend,"");
+        snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s %s sans spécification de la distance.", (objectCode == 1) ? "la sphère" : (objectCode == 2) ? "le cube" : '\0' ,(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
         log_file(toSend);
         printf("Le robot va avancer d'un mètre vers %s %s.\n", (objectCode == 1) ? "la sphère" : (objectCode == 2) ? "le cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
         log_file("Analyse.c --- Traitement correctement effectué.");
@@ -133,10 +160,17 @@ int handleForwardMovementToObject (int objectCode, int yellowCode, int blueCode,
     }
     else
     {
+        int toSendSize = 200;
+        char* toSend = (char*)malloc( toSendSize * sizeof(char));
 
-        char* toSend = (char*)malloc( 200 * sizeof(char));
-        snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s %s sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
-
+        if(toSend == NULL)
+        {
+            free(toSend);
+            log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans handleForwardMovementToObject().");
+            exit(EXIT_FAILURE);
+        }
+        strcpy(toSend,"");
+        snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers %s %s sans spécification de la distance, cependant elle n'a pas trouvé d'objets qui convenaient.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
         log_file(toSend);
         printf("Le robot ne va pas bouger.\n");
         log_file("Analyse.c --- Traitement correctement effectué.");
@@ -150,9 +184,18 @@ int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode
     int foundColorObject = foundColorObjectBoolToHandleRotatingMovementToObject(objectCode,yellowCode,blueCode,redCode);
 
     if(foundColorObject == 1){
-        char* toSend = (char*)malloc( 143 * sizeof(char));
-        snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s %s.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0' ,(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
 
+        int toSendSize = 146;
+        char* toSend = (char*)malloc( toSendSize * sizeof(char));
+
+        if(toSend == NULL)
+        {
+            free(toSend);
+            log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans handleRotatingMovementToObject().");
+            exit(EXIT_FAILURE);
+        }
+        strcpy(toSend,"");
+        snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s %s.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0' ,(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
         log_file(toSend);
         printf("Le robot va se tourner vers %s %s.\n", (objectCode == 1) ? "la sphère" : (objectCode == 2) ? "le cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
         log_file("Analyse.c --- Traitement correctement effectué.");
@@ -166,10 +209,17 @@ int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode
     }
     else
     {
+        int toSendSize = 200;
+        char* toSend = (char*)malloc( toSendSize * sizeof(char));
 
-        char* toSend = (char*)malloc( 200 * sizeof(char));
-        snprintf(toSend,sizeof(toSend),"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s %s, cependant elle n'a pas trouvé d'objets qui convenaient.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
-
+        if(toSend == NULL)
+        {
+            free(toSend);
+            log_file("Analyse.c --- Erreur lors de l'allocation mémoire pour toSend dans handleRotatingMovementToObject().");
+            exit(EXIT_FAILURE);
+        }
+        strcpy(toSend,"");
+        snprintf(toSend,toSendSize,"Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers %s %s, cependant elle n'a pas trouvé d'objets qui convenaient.", (objectCode == 1) ? "une sphère" : (objectCode == 2) ? "un cube" : '\0',(yellowCode) ? "jaune" : (blueCode) ? "bleue" : (redCode) ? "rouge" : "");
         log_file(toSend);
         printf("Le robot ne va pas bouger.\n");
         log_file("Analyse.c --- Traitement correctement effectué.");
