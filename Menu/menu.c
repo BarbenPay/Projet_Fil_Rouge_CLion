@@ -179,7 +179,7 @@ char * choixImage(Valeur l)
     }
 
     char * image = (char*)malloc(50 * sizeof(char));
-    image = "Image/Banque/IMG_";
+    strcpy(image, "Image/Banque/IMG_");
 
     if (verif(9, v)) {
         strcat(image, "0");
