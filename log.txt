@@ -1,23 +1,2 @@
-[26/01/2024 08:39:20] Démarrage du découpage de la phrase: va vers la boule jaune
-[26/01/2024 08:39:20] Découpage.c --- Découpage correctement effectué.
-[26/01/2024 08:39:20] Regroupement.c --- Démarrage de l'analyse de la phrase.
-[26/01/2024 08:39:20] Regroupement.c --- Verbe de mouvement trouvé.     Mot: va
-[26/01/2024 08:39:20] Regroupement.c --- Verbe de mouvement trouvé.     Mot: va
-[26/01/2024 08:39:20] Regroupement.c --- Mot non reconnu.     Mot: vers
-[26/01/2024 08:39:20] Regroupement.c --- Mot non reconnu.     Mot: vers
-[26/01/2024 08:39:20] Regroupement.c --- Mot non reconnu.     Mot: la
-[26/01/2024 08:39:20] Regroupement.c --- Mot non reconnu.     Mot: la
-[26/01/2024 08:39:20] Regroupement.c --- Mot "Sphère" trouvé.     Mot: boule
-[26/01/2024 08:39:20] Regroupement.c --- Mot "Sphère" trouvé.     Mot: boule
-[26/01/2024 08:39:20] Regroupement.c --- Couleur jaune trouvée.     Mot: jaune
-[26/01/2024 08:39:20] Regroupement.c --- Couleur jaune trouvée.     Mot: jaune
-[26/01/2024 08:39:20] Regroupement.c --- Analyse correctement effectuée.
-[26/01/2024 08:39:20] Analyse.c --- Démarage du traitement de la phrase.
-[26/01/2024 08:39:22] traitement_image.c --- Initialisation de la structure picture_struct.
-[26/01/2024 08:39:22] analyse_image.c --- Affectation des données dans la structure picture_struct correctement effectuée.
-[26/01/2024 08:39:22] analyse_image.c --- Début de l'analyse de l'image
-[26/01/2024 08:39:22] imageTreatment.c --- Fin de l'analyse de l'image.
-[26/01/2024 08:39:22] imageTreatment.c --- L'analyse de l'image a trouvé 1 potentielle(s) objet(s).
-[26/01/2024 08:39:22] imageTreatment.c --- Une sphère jaune a été détectée aux coordonnées (x= 134, y= 139).
-[26/01/2024 08:39:22] Analyse
-[26/01/2024 08:39:22] Analyse.c --- Traitement correctement effectué.
+[28/01/2024 15:29:56] traitement_image.c --- Initialisation de la structure picture_struct.
+[28/01/2024 15:29:56] traitement_image.c --- Erreur dans l'ouverture de l'image originale.

@@ -15,9 +15,9 @@ int charToNumber(char* numberChar){
 
 
 
-int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode)
+int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode, Valeur l)
 {
-    structObject* tmp = imageTreatmentCalling(choixImage());
+    structObject* tmp = imageTreatmentCalling(choixImage(l));
 
     if (tmp == NULL )
     {
@@ -73,9 +73,9 @@ int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yell
 
 }
 
-int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode)
+int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode, Valeur l)
 {
-    structObject* tmp = imageTreatmentCalling(choixImage());
+    structObject* tmp = imageTreatmentCalling(choixImage(l));
 
     if ((yellowCode || blueCode || redCode) == 0)
     {
@@ -112,9 +112,9 @@ int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yel
 
 
 
-int handleForwardMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode)
+int handleForwardMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode, Valeur l)
 {
-    int foundColorObject = foundColorObjectBoolToHandleForwardMovementToObject(objectCode,yellowCode,blueCode,redCode);
+    int foundColorObject = foundColorObjectBoolToHandleForwardMovementToObject(objectCode,yellowCode,blueCode,redCode,l);
 
     if(foundColorObject == 1){
         char* toSend = (char*)malloc( 143 * sizeof(char));
@@ -145,9 +145,9 @@ int handleForwardMovementToObject (int objectCode, int yellowCode, int blueCode,
     }
 }
 
-int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode)
+int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode, Valeur l)
 {
-    int foundColorObject = foundColorObjectBoolToHandleRotatingMovementToObject(objectCode,yellowCode,blueCode,redCode);
+    int foundColorObject = foundColorObjectBoolToHandleRotatingMovementToObject(objectCode,yellowCode,blueCode,redCode,l);
 
     if(foundColorObject == 1){
         char* toSend = (char*)malloc( 143 * sizeof(char));
@@ -182,7 +182,7 @@ int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode
 
 
 
-int analyse(sentenceTypeStruct* phrase){
+int analyse(sentenceTypeStruct* phrase, Valeur l){
 
     log_file("Analyse.c --- Démarage du traitement de la phrase.");
     int isBackwardMovementWordPresent = -1, isForwardMovementWordPresent = -1, isRotatingWordPresent = -1, isMovementWordPresent = -1, isForwardDirectionPresent = -1, isBackwardDirectionPresent = -1, isRightDirectionPresent = -1, isLeftDirectionPresent = -1,isNumberPresent = -1, isSphereObjectPresent = -1, isCubeObjectPresent = -1, isNegationPresent = 0, isThereUnite = 0, isYellowColorPresent = 0,isBlueColorPresent = 0,isRedColorPresent = 0;
@@ -429,12 +429,12 @@ int analyse(sentenceTypeStruct* phrase){
 
                 else if(isSphereObjectPresent==1)
                 {
-                     int toReturn = handleRotatingMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                     int toReturn = handleRotatingMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent,l);
                     return toReturn;
                 }
                 else if(isCubeObjectPresent == 1)
                 {
-                    int toReturn = handleRotatingMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                    int toReturn = handleRotatingMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent,l);
                     return toReturn;
                 }
 
@@ -459,12 +459,12 @@ int analyse(sentenceTypeStruct* phrase){
                 {
                     if(isSphereObjectPresent==1)
                     {
-                        int toReturn = handleForwardMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        int toReturn = handleForwardMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent,l);
                         return toReturn;
                     }
                     else if(isCubeObjectPresent == 1)
                     {
-                        int toReturn = handleForwardMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        int toReturn = handleForwardMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent,l);
                         return toReturn;
                     }
                     else
@@ -500,12 +500,12 @@ int analyse(sentenceTypeStruct* phrase){
                     }
                     else if(isSphereObjectPresent==1)
                     {
-                        int toReturn = handleForwardMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        int toReturn = handleForwardMovementToObject(1,isYellowColorPresent,isBlueColorPresent,isRedColorPresent,l);
                         return toReturn;
                     }
                     else if(isCubeObjectPresent == 1)
                     {
-                        int toReturn = handleForwardMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent);
+                        int toReturn = handleForwardMovementToObject(2,isYellowColorPresent,isBlueColorPresent,isRedColorPresent,l);
                         return toReturn;
                     }
                     else

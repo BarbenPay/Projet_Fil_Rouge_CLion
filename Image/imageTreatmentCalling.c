@@ -16,9 +16,7 @@ structObject* imageTreatmentCalling(char* pictureAdress)
 
     if (ObjectArray->counter == 0)
     {
-
         log_file("imageTreatment.c --- L'analyse n'a pas détectée d'objet.\n");
-
     }
 
     return ObjectArray;
