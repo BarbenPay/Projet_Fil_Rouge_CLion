@@ -9,16 +9,12 @@
 
 structObject* imageTreatmentCalling(char* pictureAdress)
 {
-
-    picture_struct* original_image = pictureStructFromFileAdress(pictureAdress);
-
+    picture_struct * original_image = pictureStructFromFileAdress(pictureAdress);
     structObject* ObjectArray = encadrement_objet(original_image);
-
     if (ObjectArray->counter == 0)
     {
         log_file("imageTreatment.c --- L'analyse n'a pas détectée d'objet.\n");
     }
-
     return ObjectArray;
 
 

@@ -13,7 +13,6 @@ typedef struct valeur
 }
 Valeur;
 
-void viderBuffer();
 Valeur input();
 void choix_langue();
 void choix_test(Valeur);

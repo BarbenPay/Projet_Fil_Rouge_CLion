@@ -22,15 +22,6 @@ bool verif(char c, Valeur v) {
     return false;
 }
 
-void viderBuffer()
-{
-    int c = 0;
-    while (c != '\n' && c != EOF)
-    {
-        c = getchar();
-    }
-}
-
 Valeur input() {
     Valeur l;
     fgets(l.c, 100, stdin);
@@ -187,7 +178,8 @@ char * choixImage(Valeur l)
         v = input();
     }
 
-    char image[50] = "../Image/banque/IMG_";
+    char * image = (char*)malloc(50 * sizeof(char));
+    image = "Image/Banque/IMG_";
 
     if (verif(9, v)) {
         strcat(image, "0");
@@ -202,7 +194,9 @@ char * choixImage(Valeur l)
 
 void traitement_image(Valeur l)
 {
+    char* imageAdress = choixImage(l);
     structObject* res = imageTreatmentCalling(choixImage(l));
+    free(imageAdress);
     freeObjectStruct(res);
 
     Valeur p;

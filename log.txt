@@ -1,2 +1,0 @@
-[28/01/2024 15:29:56] traitement_image.c --- Initialisation de la structure picture_struct.
-[28/01/2024 15:29:56] traitement_image.c --- Erreur dans l'ouverture de l'image originale.
