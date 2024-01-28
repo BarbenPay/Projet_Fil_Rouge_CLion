@@ -13,12 +13,11 @@ typedef struct valeur
 }
 Valeur;
 
-void viderBuffer();
 Valeur input();
 void choix_langue();
 void choix_test(Valeur);
-char* choixImage();
-void traitement_commande(Valeur langue);
-void traitement_image();
+char * choixImage(Valeur);
+void traitement_commande(Valeur);
+void traitement_image(Valeur);
 
 #endif //PROJET_FIL_ROUGE_CLION_MENU_H

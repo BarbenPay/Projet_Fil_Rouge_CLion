@@ -54,6 +54,7 @@ picture_struct* pictureStructFromFileAdress(char* adress)
         }
     }
     log_file("analyse_image.c --- Affectation des données dans la structure picture_struct correctement effectuée.");
+
     return res;
 }
 

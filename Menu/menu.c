@@ -10,14 +10,16 @@
 #include "../Analyse_Phrase/Analyse.h"
 #include "../Image/imageTreatmentCalling.h"
 
-
-void viderBuffer()
-{
-    int c = 0;
-    while (c != '\n' && c != EOF)
+bool verif(char c, Valeur v) {
+    char * liste[100] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+    for(int i = 0; i < c; i ++)
     {
-        c = getchar();
+        if(strcmp((const char *) v.c, (const char *) liste[i]) == 0)
+        {
+            return true;
+        }
     }
+    return false;
 }
 
 Valeur input() {
@@ -35,7 +37,7 @@ void choix_langue()
 {
     printf("\nSélectionez la langue : \n\nFrançais : 1 \nEnglish : 2 \n\n");
     Valeur l = input();
-    while(strcmp((const char *) l.c, "1") != 0 && strcmp((const char *) l.c, "2") != 0)
+    while(!verif(2, l))
     {
         printf("\nSélection incorecte, essayer encore : \n\n");
         l = input();
@@ -63,7 +65,7 @@ void choix_test(Valeur l)
     }
     Valeur v;
     v = input();
-    while (strcmp((const char *) v.c, "1") != 0 && strcmp((const char *) v.c, "2") != 0 && strcmp((const char *) v.c, "3") != 0)
+    while (!verif(3, l))
     {
         if (l.i == 1)
         {
@@ -78,7 +80,7 @@ void choix_test(Valeur l)
     if(strcmp((const char *) v.c, "1") == 0)
     {
         v.i = 1;
-        traitement_image();
+        traitement_image(l);
     }
     else if(strcmp((const char *) v.c, "2") == 0)
     {
@@ -124,7 +126,7 @@ void traitement_commande(Valeur l)
 #endif
     for(int indexPhrase = 0; indexPhrase < typeWord->numberOfSentence; indexPhrase++)
     {
-        analyse(typeWord->sentences[indexPhrase]);
+        analyse(typeWord->sentences[indexPhrase], l);
     }
 
     freeStructures(typeWord);
@@ -154,24 +156,70 @@ void traitement_commande(Valeur l)
     }
 
 }
-char* choixImage()
+
+char * choixImage(Valeur l)
 {
-    char* input = (char*) malloc(2 * sizeof(char));
-    printf("Quelle image souhaitez-vous analyser ?\n");
-    scanf("%02s", input);
-    while(getchar() != '\n');
-    char* toSend = (char*)malloc(30 * sizeof(char));
-    strcpy(toSend,"../Image/Banque/IMG_");
-    strcat(toSend,input);
-    strcat(toSend,".txt");
-    return toSend;
+    if (l.i == 1) {
+        printf("\nPour choisir l'image à traiter, entrez un nombre entre 1 et 20 : \n\n");
+    }
+    else
+    {
+        printf("\nTo choose the image to process, enter a number between 1 and 20 : \n\n");
+    }
+
+    Valeur v;
+    v = input();
+    while (!verif(20, v)) {
+        if (l.i == 1) {
+            printf("\nSélection incorrecte, essayer encore : \n\n");
+        } else {
+            printf("\nIncorrect selection, try again : \n\n");
+        }
+        v = input();
+    }
+
+    char * image = (char*)malloc(50 * sizeof(char));
+    strcpy(image, "Image/Banque/IMG_");
+
+    if (verif(9, v)) {
+        strcat(image, "0");
+    }
+    strcat(image, v.c);
+    strcat(image, ".txt");
+
+    printf("\n%s\n", image);
+
+    return image;
 }
 
-void traitement_image()
+void traitement_image(Valeur l)
 {
-
-    structObject* res = imageTreatmentCalling(choixImage());
-
+    char* imageAdress = choixImage(l);
+    structObject* res = imageTreatmentCalling(choixImage(l));
+    free(imageAdress);
     freeObjectStruct(res);
 
+    Valeur p;
+    printf("\nNouvelle image : 1 \nRetour : 2 \n\n");
+    p = input();
+    while(!verif(2, p))
+    {
+        if (l.i == 1)
+        {
+            printf("\nSélection incorrecte, essayer encore : \n\n");
+        }
+        else
+        {
+            printf("\nIncorrect selection, try again : \n\n");
+        }
+        p = input();
+    }
+    if(strcmp((const char *) p.c, "1") == 0)
+    {
+        traitement_image(l);
+    }
+    else
+    {
+        choix_test(l);
+    }
 }
