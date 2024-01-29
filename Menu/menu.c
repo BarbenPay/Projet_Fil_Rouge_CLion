@@ -10,7 +10,7 @@
 #include "../Regroupement/Regroupement.h"
 #include "../Analyse_Phrase/Analyse.h"
 #include "../Image/imageTreatmentCalling.h"
-
+//#define DEBUG 1
 
 bool verif(char c, inputWithLanguageChoice v) {
     char * liste[50] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
@@ -26,7 +26,7 @@ bool verif(char c, inputWithLanguageChoice v) {
 
 inputWithLanguageChoice input() {
     inputWithLanguageChoice res;
-    fgets(res.inputTab, 100, stdin);
+    fgets(res.inputTab, 1000, stdin);
     int len = (int)strlen(res.inputTab);
     if (len > 0 && res.inputTab[len - 1] == '\n')
     {
@@ -168,7 +168,6 @@ char * choixImage(inputWithLanguageChoice inputBuffer)
     {
         printf("\nTo choose the image to process, enter a number between 1 and 20 : \n\n");
     }
-
     inputWithLanguageChoice imageNumber = input();
     while (!verif(20, imageNumber)) {
         if (inputBuffer.languageCode == 1) {

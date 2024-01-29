@@ -8,7 +8,7 @@
 
 typedef struct valeur
 {
-    char inputTab[100];
+    char inputTab[1000];
     int languageCode;
 }inputWithLanguageChoice;
 

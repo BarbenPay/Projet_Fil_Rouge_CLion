@@ -1,6 +1,54 @@
-[29/01/2024 11:27:21] traitement_image.c --- Initialisation de la structure picture_struct.
-[29/01/2024 11:27:21] analyse_image.c --- Affectation des données dans la structure picture_struct correctement effectuée.
-[29/01/2024 11:27:21] analyse_image.c --- Début de l'analyse de l'image
-[29/01/2024 11:27:21] imageTreatment.c --- Fin de l'analyse de l'image.
-[29/01/2024 11:27:21] imageTreatment.c --- L'analyse de l'image a trouvé 0 potentielle(s) objet(s).
-[29/01/2024 11:27:21] imageTreatment.c --- L'analyse n'a pas détectée d'objet.
+[29/01/2024 14:36:03] Découpage.c --- Démarrage du découpage de la phrase: avance et recule puis tourne toi vers la droite de 45 degrés. enfin avance vers la balle de 3 mètres
+[29/01/2024 14:36:03] Découpage.c --- Découpage correctement effectué.
+[29/01/2024 14:36:03] Regroupement.c --- Démarrage de l'analyse de la phrase.
+[29/01/2024 14:36:03] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[29/01/2024 14:36:03] Regroupement.c --- Connecteur de phrase trouvé.     Mot: et
+[29/01/2024 14:36:03] Regroupement.c --- Verbe de mouvement vers l'arrière trouvé.     Mot: recule
+[29/01/2024 14:36:03] Regroupement.c --- Connecteur de phrase trouvé.     Mot: puis
+[29/01/2024 14:36:03] Regroupement.c --- Verbe de rotation trouvé.     Mot: tourne
+[29/01/2024 14:36:03] Regroupement.c --- Mot non reconnu.     Mot: toi
+[29/01/2024 14:36:03] Regroupement.c --- Mot non reconnu.     Mot: vers
+[29/01/2024 14:36:03] Regroupement.c --- Mot non reconnu.     Mot: la
+[29/01/2024 14:36:03] Regroupement.c --- Direction vers la droite trouvée.     Mot: droite
+[29/01/2024 14:36:03] Regroupement.c --- Mot non reconnu.     Mot: de
+[29/01/2024 14:36:03] Regroupement.c --- Nombre trouvé.     Mot: 45
+[29/01/2024 14:36:03] Regroupement.c --- Unité "Degré" trouvée.     Mot: degrés
+[29/01/2024 14:36:03] Regroupement.c --- Connecteur de phrase trouvé.     Mot: enfin
+[29/01/2024 14:36:03] Regroupement.c --- Verbe de mouvement vers l'avant trouvé.     Mot: avance
+[29/01/2024 14:36:03] Regroupement.c --- Mot non reconnu.     Mot: vers
+[29/01/2024 14:36:03] Regroupement.c --- Mot non reconnu.     Mot: la
+[29/01/2024 14:36:03] Regroupement.c --- Mot "Sphère" trouvé.     Mot: balle
+[29/01/2024 14:36:03] Regroupement.c --- Mot non reconnu.     Mot: de
+[29/01/2024 14:36:03] Regroupement.c --- Nombre trouvé.     Mot: 3
+[29/01/2024 14:36:03] Regroupement.c --- Unité "Mètre" trouvée.     Mot: mètres
+[29/01/2024 14:36:03] Regroupement.c --- Analyse correctement effectuée.
+[29/01/2024 14:36:03] Analyse.c --- Démarrage du traitement de la phrase.
+[29/01/2024 14:36:03] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'avant sans spécification de la distance
+[29/01/2024 14:36:03] Analyse.c --- Traitement correctement effectué.
+
+
+[29/01/2024 14:36:03] Analyse.c --- Démarrage du traitement de la phrase.
+[29/01/2024 14:36:03] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers l'arrière sans spécification de la distance
+[29/01/2024 14:36:03] Analyse.c --- Traitement correctement effectué.
+
+
+[29/01/2024 14:36:03] Analyse.c --- Démarrage du traitement de la phrase.
+[29/01/2024 14:36:03] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement de rotation vers la droite avec une spécification de l'angle.
+[29/01/2024 14:36:03] Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.
+[29/01/2024 14:36:03] Analyse.c --- Traitement correctement effectué.
+
+
+[29/01/2024 14:36:03] Analyse.c --- Démarrage du traitement de la phrase.
+[29/01/2024 14:36:03] Analyse.c --- Démarrage de la transcription du nombre de la forme char vers la forme int.
+[29/01/2024 14:36:08] traitement_image.c --- Initialisation de la structure picture_struct.
+[29/01/2024 14:36:08] analyse_image.c --- Affectation des données dans la structure picture_struct correctement effectuée.
+[29/01/2024 14:36:08] analyse_image.c --- Début de l'analyse de l'image
+[29/01/2024 14:36:08] imageTreatment.c --- Fin de l'analyse de l'image.
+[29/01/2024 14:36:08] imageTreatment.c --- L'analyse de l'image a trouvé 3 potentielle(s) objet(s).
+[29/01/2024 14:36:08] imageTreatment.c --- Une sphère jaune a été détectée aux coordonnées (x= 26, y= 111).
+[29/01/2024 14:36:08] imageTreatment.c --- Une sphère bleue a été détectée aux coordonnées (x= 278, y= 123).
+[29/01/2024 14:36:08] imageTreatment.c --- Une sphère orange a été détectée aux coordonnées (x= 158, y= 207).
+[29/01/2024 14:36:08] Analyse.c --- Le traitement de la phrase a déterminé qu'elle signifiait un mouvement vers une sphère avec spécification de la distance
+[29/01/2024 14:36:08] Analyse.c --- Traitement correctement effectué.
+
+
