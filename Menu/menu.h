@@ -8,16 +8,15 @@
 
 typedef struct valeur
 {
-    char c[100];
-    int i;
-}
-Valeur;
+    char inputTab[100];
+    int languageCode;
+}inputWithLanguageChoice;
 
-Valeur input();
+inputWithLanguageChoice input();
 void choix_langue();
-void choix_test(Valeur);
-char * choixImage(Valeur);
-void traitement_commande(Valeur);
-void traitement_image(Valeur);
+void choix_test(inputWithLanguageChoice);
+char * choixImage(inputWithLanguageChoice);
+void traitement_commande(inputWithLanguageChoice);
+void traitement_image(inputWithLanguageChoice);
 
 #endif //PROJET_FIL_ROUGE_CLION_MENU_H

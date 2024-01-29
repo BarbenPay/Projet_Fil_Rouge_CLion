@@ -12,7 +12,7 @@ void propagation(object* input_struct_object,int*** input_image,int width,int he
     int centre_horizontal;
     int centre_vertical;
     /*propa vers le bas avec verif pixel couleur*/
-    while((detectercouleur(input_image[input_struct_object->coor_H + i][input_struct_object->coor_G]) != 'N') && ((input_struct_object->coor_H + i) <= height))
+    while(((input_struct_object->coor_H + i) < height) && (detectercouleur(input_image[input_struct_object->coor_H + i][input_struct_object->coor_G]) != 'N'))
     {
         input_struct_object->coor_B = input_struct_object->coor_H+i;
         i++;
@@ -51,7 +51,7 @@ void propagation(object* input_struct_object,int*** input_image,int width,int he
         }
         i=1;
         //propagation vers bas
-        while(detectercouleur(input_image[centre_vertical + i][centre_horizontal]) != 'N' && (centre_vertical + i) <= height){
+        while((centre_vertical + i) < height && detectercouleur(input_image[centre_vertical + i][centre_horizontal]) != 'N'){
             if(input_struct_object->coor_B < centre_vertical + i){
                 input_struct_object->coor_B = centre_vertical + i;
             }

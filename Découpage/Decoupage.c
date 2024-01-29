@@ -31,9 +31,9 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
 
 
 
-    char* toSend = (char*)malloc(sizeof(char)*(38+ strlen(phrase)));
+    char* toSend = (char*)malloc(sizeof(char)*(54+ strlen(phrase)));
 
-    strcpy(toSend,"Démarrage du découpage de la phrase: ");
+    strcpy(toSend,"Découpage.c --- Démarrage du découpage de la phrase: ");
 
     strcat(toSend,phrase);
 
@@ -43,7 +43,7 @@ Phrase* decoupage(char* phrase){ // découpe la phrase en une structure composé
 
     Phrase* res = init_Sentence(); //initialisation de la phrase de sortie
 
-    char* tmp_word = (char*) malloc(sizeof(char)*50); /* String temporaire stockant le mot, il sera modifier pour avoir une taille conforme au mot */
+    char* tmp_word = (char*) malloc(sizeof(char)*51); /* String temporaire stockant le mot, il sera modifier pour avoir une taille conforme au mot */
 
     if (tmp_word == NULL){
         log_file("Découpage.c --- Erreur d'allocation de mémoire pour tmp_word");

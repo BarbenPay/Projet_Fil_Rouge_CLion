@@ -1,6 +1,7 @@
 //
 // Created by mc2 on 09/01/24.
 //
+
 #include <stdio.h>
 #include <string.h>
 #include "menu.h"
@@ -10,11 +11,12 @@
 #include "../Analyse_Phrase/Analyse.h"
 #include "../Image/imageTreatmentCalling.h"
 
-bool verif(char c, Valeur v) {
-    char * liste[100] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+
+bool verif(char c, inputWithLanguageChoice v) {
+    char * liste[50] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
     for(int i = 0; i < c; i ++)
     {
-        if(strcmp((const char *) v.c, (const char *) liste[i]) == 0)
+        if(strcmp((const char *) v.inputTab, (const char *) liste[i]) == 0)
         {
             return true;
         }
@@ -22,40 +24,40 @@ bool verif(char c, Valeur v) {
     return false;
 }
 
-Valeur input() {
-    Valeur l;
-    fgets(l.c, 100, stdin);
-    int len = strlen(l.c);
-    if (len > 0 && l.c[len - 1] == '\n')
+inputWithLanguageChoice input() {
+    inputWithLanguageChoice res;
+    fgets(res.inputTab, 100, stdin);
+    int len = (int)strlen(res.inputTab);
+    if (len > 0 && res.inputTab[len - 1] == '\n')
     {
-        l.c[len - 1] = '\0';
+        res.inputTab[len - 1] = '\0';
     }
-    return l;
+    return res;
 }
 
 void choix_langue()
 {
     printf("\nSélectionez la langue : \n\nFrançais : 1 \nEnglish : 2 \n\n");
-    Valeur l = input();
-    while(!verif(2, l))
+    inputWithLanguageChoice buffer = input();
+    while(!verif(2, buffer))
     {
         printf("\nSélection incorecte, essayer encore : \n\n");
-        l = input();
+        buffer = input();
     }
-    if(strcmp((const char *) l.c, "1") == 0)
+    if(strcmp((const char *) buffer.inputTab, "1") == 0)
     {
-        l.i = 1;
+        buffer.languageCode = 1;
     }
     else
     {
-        l.i = 2;
+        buffer.languageCode = 2;
     }
-    choix_test(l);
+    choix_test(buffer);
 }
 
-void choix_test(Valeur l)
+void choix_test(inputWithLanguageChoice inputBuffer)
 {
-    if (l.i == 1)
+    if (inputBuffer.languageCode == 1)
     {
         printf("\nSélectionez ce que vous voulez tester : \n\nTraitement d'image : 1 \nTraitement de commande : 2 \n\nRetour : 3 \n\n");
     }
@@ -63,11 +65,11 @@ void choix_test(Valeur l)
     {
         printf("\nSelect what you want to test : \n\nImage processing : 1 \nOrder processing : 2 \n\nBack : 3 \n\n");
     }
-    Valeur v;
-    v = input();
-    while (!verif(3, l))
+
+    inputWithLanguageChoice newBuffer = input();
+    while (!verif(3, inputBuffer))
     {
-        if (l.i == 1)
+        if (inputBuffer.languageCode == 1)
         {
             printf("\nSélection incorrecte, essayer encore : \n\n");
         }
@@ -75,17 +77,17 @@ void choix_test(Valeur l)
         {
             printf("\nIncorrect selection, try again : \n\n");
         }
-        v = input();
+        newBuffer = input();
     }
-    if(strcmp((const char *) v.c, "1") == 0)
+    if(strcmp((const char *) newBuffer.inputTab, "1") == 0)
     {
-        v.i = 1;
-        traitement_image(l);
+        newBuffer.languageCode = 1;
+        traitement_image(inputBuffer);
     }
-    else if(strcmp((const char *) v.c, "2") == 0)
+    else if(strcmp((const char *) newBuffer.inputTab, "2") == 0)
     {
-        v.i = 2;
-        traitement_commande(l);
+        newBuffer.languageCode = 2;
+        traitement_commande(inputBuffer);
     }
     else
     {
@@ -93,19 +95,18 @@ void choix_test(Valeur l)
     }
 }
 
-void traitement_commande(Valeur l)
+void traitement_commande(inputWithLanguageChoice inputBuffer)
 {
-    Valeur v;
-    if (l.i == 1) {
+    if (inputBuffer.languageCode == 1) {
         printf("\nSaissez votre commande : \n\n");
     }
     else
     {
         printf("\nEnter your order : \n\n");
     }
-    v = input();
+    inputWithLanguageChoice sentenceToSendToAnalysis = input();
     Phrase* res;
-    res = decoupage(v.c);
+    res = decoupage(sentenceToSendToAnalysis.inputTab);
 #ifdef DEBUG
     for (int i = 0; i<res->wordNumber; i++)
     {
@@ -113,7 +114,7 @@ void traitement_commande(Valeur l)
     }
 #endif
     sentencesStruct* typeWord;
-    typeWord = sentencesToAnalysedSentencesTab(res, l.i);
+    typeWord = sentencesToAnalysedSentencesTab(res, inputBuffer.languageCode);
 
     freePhrase(res);
 #ifdef DEBUG
@@ -126,17 +127,16 @@ void traitement_commande(Valeur l)
 #endif
     for(int indexPhrase = 0; indexPhrase < typeWord->numberOfSentence; indexPhrase++)
     {
-        analyse(typeWord->sentences[indexPhrase], l);
+        analyse(typeWord->sentences[indexPhrase], inputBuffer);
     }
 
     freeStructures(typeWord);
 
-    Valeur p;
     printf("\nNouvelle commande : 1 \nRetour : 2 \n\n");
-    p = input();
-    while(strcmp((const char *) p.c, "1") != 0 && strcmp((const char *) p.c, "2") != 0)
+    inputWithLanguageChoice newBuffer = input();
+    while(strcmp((const char *) newBuffer.inputTab, "1") != 0 && strcmp((const char *) newBuffer.inputTab, "2") != 0)
     {
-        if (l.i == 1)
+        if (inputBuffer.languageCode == 1)
         {
             printf("\nSélection incorrecte, essayer encore : \n\n");
         }
@@ -144,22 +144,24 @@ void traitement_commande(Valeur l)
         {
             printf("\nIncorrect selection, try again : \n\n");
         }
-        p = input();
+        newBuffer = input();
     }
-    if(strcmp((const char *) p.c, "1") == 0)
+    if(strcmp((const char *) newBuffer.inputTab, "1") == 0)
     {
-        traitement_commande(l);
+        log_file("\n");
+        traitement_commande(inputBuffer);
     }
     else
     {
-        choix_test(l);
+        log_file("\n");
+        choix_test(inputBuffer);
     }
 
 }
 
-char * choixImage(Valeur l)
+char * choixImage(inputWithLanguageChoice inputBuffer)
 {
-    if (l.i == 1) {
+    if (inputBuffer.languageCode == 1) {
         printf("\nPour choisir l'image à traiter, entrez un nombre entre 1 et 20 : \n\n");
     }
     else
@@ -167,24 +169,23 @@ char * choixImage(Valeur l)
         printf("\nTo choose the image to process, enter a number between 1 and 20 : \n\n");
     }
 
-    Valeur v;
-    v = input();
-    while (!verif(20, v)) {
-        if (l.i == 1) {
+    inputWithLanguageChoice imageNumber = input();
+    while (!verif(20, imageNumber)) {
+        if (inputBuffer.languageCode == 1) {
             printf("\nSélection incorrecte, essayer encore : \n\n");
         } else {
             printf("\nIncorrect selection, try again : \n\n");
         }
-        v = input();
+        imageNumber = input();
     }
 
-    char * image = (char*)malloc(50 * sizeof(char));
-    strcpy(image, "Image/Banque/IMG_");
+    char * image = (char*)malloc(27 * sizeof(char));
+    strcpy(image, "../Image/Banque/IMG_");
 
-    if (verif(9, v)) {
+    if (verif(9, imageNumber)) {
         strcat(image, "0");
     }
-    strcat(image, v.c);
+    strcat(image, imageNumber.inputTab);
     strcat(image, ".txt");
 
     printf("\n%s\n", image);
@@ -192,19 +193,30 @@ char * choixImage(Valeur l)
     return image;
 }
 
-void traitement_image(Valeur l)
+void traitement_image(inputWithLanguageChoice languageChoice)
 {
-    char* imageAdress = choixImage(l);
-    structObject* res = imageTreatmentCalling(choixImage(l));
+    char* imageAdress = choixImage(languageChoice);
+    structObject* res = imageTreatmentCalling(imageAdress);
+#ifdef DEBUG
+    for (int i = 0; i < res->counter; i ++){
+        printf("Objet n %d \n",i+1);
+        printf("Limite gauche= %d \n",res->objectTab[i]->coor_G);
+        printf("Limite droite= %d \n",res->objectTab[i]->coor_D);
+        printf("Limite haute= %d \n",res->objectTab[i]->coor_H);
+        printf("Limite bas= %d \n",res->objectTab[i]->coor_B);
+        printf("Couleur = %c \n",res->objectTab[i]->couleur);
+        printf("Nature = %c \n",res->objectTab[i]->nature);
+        printf("Position = %c \n",res->objectTab[i]->position);
+    }
+#endif
     free(imageAdress);
     freeObjectStruct(res);
 
-    Valeur p;
     printf("\nNouvelle image : 1 \nRetour : 2 \n\n");
-    p = input();
-    while(!verif(2, p))
+    inputWithLanguageChoice newBuffer = input();
+    while(!verif(2, newBuffer))
     {
-        if (l.i == 1)
+        if (languageChoice.languageCode == 1)
         {
             printf("\nSélection incorrecte, essayer encore : \n\n");
         }
@@ -212,14 +224,14 @@ void traitement_image(Valeur l)
         {
             printf("\nIncorrect selection, try again : \n\n");
         }
-        p = input();
+        newBuffer = input();
     }
-    if(strcmp((const char *) p.c, "1") == 0)
+    if(strcmp((const char *) newBuffer.inputTab, "1") == 0)
     {
-        traitement_image(l);
+        traitement_image(languageChoice);
     }
     else
     {
-        choix_test(l);
+        choix_test(languageChoice);
     }
 }

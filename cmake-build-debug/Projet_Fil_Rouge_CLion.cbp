@@ -8,132 +8,132 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug"/>
+				<Option working_dir="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projet_Fil_Rouge_CLion">
-				<Option output="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Projet_Fil_Rouge_CLion" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug"/>
+				<Option output="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Projet_Fil_Rouge_CLion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet_Fil_Rouge_CLion"/>
-					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet_Fil_Rouge_CLion"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projet_Fil_Rouge_CLion/fast">
-				<Option output="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Projet_Fil_Rouge_CLion" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug"/>
+				<Option output="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Projet_Fil_Rouge_CLion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet_Fil_Rouge_CLion/fast"/>
-					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet_Fil_Rouge_CLion/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug"/>
+				<Option working_dir="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug"/>
+				<Option working_dir="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Analyse_Phrase/Analyse.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Analyse_Phrase/Analyse.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Analyse_Phrase/Analyse.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Analyse_Phrase/Analyse.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Découpage/Decoupage.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Découpage/Decoupage.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Découpage/Decoupage.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Découpage/Decoupage.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/ColorAnalysis/colorAnalysis.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ColorAnalysis/colorAnalysis.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/ColorAnalysis/colorAnalysis.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ColorAnalysis/colorAnalysis.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/ObjectAnalysis/objectAnalysis.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ObjectAnalysis/objectAnalysis.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/ObjectAnalysis/objectAnalysis.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/ObjectAnalysis/objectAnalysis.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/imageTreatment/imageTreatment.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatment/imageTreatment.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/imageTreatment/imageTreatment.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatment/imageTreatment.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/imageTreatmentCalling.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatmentCalling.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Image/imageTreatmentCalling.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Image/imageTreatmentCalling.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Log/logFile.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/logFile.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Log/logFile.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Log/logFile.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Menu/menu.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/menu.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Menu/menu.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Menu/menu.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Regroupement/Regroupement.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Regroupement/Regroupement.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/Regroupement/Regroupement.h">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/Regroupement/Regroupement.h">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/main.c">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/main.c">
 			<Option target="Projet_Fil_Rouge_CLion"/>
 		</Unit>
-		<Unit filename="/home/mc2/CLionProjects/Projet_Fil_Rouge_CLion3/CMakeLists.txt">
+		<Unit filename="/Users/jean-baptiste/1ere_annee_upssitech/Projet_Fil_Rouge/Projet_Fil_Rouge_CLion/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

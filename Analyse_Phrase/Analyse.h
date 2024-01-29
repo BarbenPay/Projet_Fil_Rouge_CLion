@@ -10,14 +10,26 @@
 
 int charToNumber(char* numberChar);
 
-int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode, Valeur langue);
 
-int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode, Valeur langue);
 
-int handleForwardMovementToObject (int sphereCode, int yellowCode, int blueCode, int redCode, Valeur langue);
 
-int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode, Valeur langue);
+int foundColorObjectBoolToHandleForwardMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode, inputWithLanguageChoice langue);
 
-int analyse(sentenceTypeStruct* phrase, Valeur langue);
+int foundColorObjectBoolToHandleRotatingMovementToObject(int objectCode, int yellowCode, int blueCode, int redCode, inputWithLanguageChoice langue);
+
+int foundColorObjectBoolToHandleForwardMovementToObjectWithNumberAndUnite(int objectCode, int yellowCode, int blueCode, int redCode, int number, int uniteCode,
+                                                                          inputWithLanguageChoice languageChoice);
+
+
+
+
+int handleForwardMovementToObject (int sphereCode, int yellowCode, int blueCode, int redCode, inputWithLanguageChoice langue);
+
+int handleRotatingMovementToObject (int objectCode, int yellowCode, int blueCode, int redCode, inputWithLanguageChoice langue);
+
+int handleForwardMovementToObjectWithNumberAndUnite(int objectCode, int yellowCode, int blueCode, int redCode, int number, int uniteCode,
+                                                    inputWithLanguageChoice languageChoice);
+
+int analyse(sentenceTypeStruct* phrase, inputWithLanguageChoice langue);
 
 #endif //PROJET_FIL_ROUGE_CLION_ANALYSE_H
