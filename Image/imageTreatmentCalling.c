@@ -18,6 +18,7 @@ structObject* imageTreatmentCalling(char* pictureAdress)
     {
 
         log_file("imageTreatment.c --- L'analyse n'a pas détectée d'objet.");
+        printf("\nL'analyse n'a pas détectée d'objet.\n");
 
     }
 

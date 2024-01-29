@@ -198,12 +198,15 @@ void objectTabToLogFile(structObject* inputStructObject)
 
                 case 'O':
                     sprintf(toSend,"imageTreatment.c --- Une sphère orange a été détectée aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    printf("\nUne sphère orange a été détectée aux coordonnées (x= %d, y= %d).\n", coordHorizontal, coordVertical);
                     break;
                 case 'B':
                     sprintf(toSend,"imageTreatment.c --- Une sphère bleue a été détectée aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    printf("\nUne sphère bleue a été détectée aux coordonnées (x= %d, y= %d).\n", coordHorizontal, coordVertical);
                     break;
                 case 'J':
                     sprintf(toSend,"imageTreatment.c --- Une sphère jaune a été détectée aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    printf("\nUne sphère jaune a été détectée aux coordonnées (x= %d, y= %d).\n", coordHorizontal, coordVertical);
                     break;
 
             }
@@ -222,12 +225,15 @@ void objectTabToLogFile(structObject* inputStructObject)
 
                 case 'O':
                     sprintf(toSend,"imageTreatment.c --- Un cube orange a été détecté aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    printf("\nUn cube orange a été détectée aux coordonnées (x= %d, y= %d).\n", coordHorizontal, coordVertical);
                     break;
                 case 'B':
                     sprintf(toSend,"imageTreatment.c --- Un cube bleu a été détecté aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    printf("\nUn cube bleu a été détectée aux coordonnées (x= %d, y= %d).\n", coordHorizontal, coordVertical);
                     break;
                 case 'J':
                     sprintf(toSend,"imageTreatment.c --- Un cube jaune a été détecté aux coordonnées (x= %d, y= %d).", coordHorizontal,coordVertical);
+                    printf("\nUn cube jaune a été détectée aux coordonnées (x= %d, y= %d).\n", coordHorizontal, coordVertical);
                     break;
 
             }

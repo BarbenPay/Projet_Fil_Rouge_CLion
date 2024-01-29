@@ -188,7 +188,7 @@ char * choixImage(inputWithLanguageChoice inputBuffer)
     strcat(image, imageNumber.inputTab);
     strcat(image, ".txt");
 
-    printf("\n%s\n", image);
+    //printf("\n%s\n", image);
 
     return image;
 }
